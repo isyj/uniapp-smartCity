@@ -2,11 +2,10 @@
 	<view>
 
 		<view class="box-bg">
-			<uni-nav-bar leftWidth="50rpx" rightWidth="60rpx">
+			<uni-nav-bar leftWidth="50rpx" rightWidth="60rpx" border="false">
 				<view class="input-view">
 					<uni-icons class="input-uni-icon" type="search" size="18" color="#999" />
-					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词"
-						@confirm="confirm" />
+					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" />
 				</view>
 				<block slot="right">
 					<view class="city">
@@ -33,21 +32,10 @@
 	$nav-height: 30px;
 
 	.box-bg {
-		background-color: #F5F5F5;
+		background-color: white;
 		padding: 5px 0;
 	}
-
-	.city {
-		/* #ifndef APP-PLUS-NVUE */
-		display: flex;
-		/* #endif */
-		flex-direction: row;
-		align-items: center;
-		justify-content: flex-start;
-		// width: 160rpx;
-		margin-left: 4px;
-	}
-
+	
 	.input-view {
 		/* #ifndef APP-PLUS-NVUE */
 		display: flex;

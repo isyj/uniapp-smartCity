@@ -4,7 +4,7 @@
 			<swiper class="swiper" circular :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 				<swiper-item v-for="(item, index) in list" :key="index">
 					<view class="swiper-item">
-						<image class="img" :src="demo(item.advImg)" mode="" />
+						<image class="img" :src="imgUrl(item.advImg)" mode="" />
 					</view>
 				</swiper-item>
 			</swiper>
@@ -26,8 +26,8 @@
 
 		},
 		methods: {
-			demo(Img) {
-				return this.url + Img
+			imgUrl(img) {
+				return this.url + img
 			}
 		},
 		mounted() {
@@ -54,7 +54,7 @@
 			box-sizing: border-box;
 			display: flex;
 			width: 100%;
-			padding: 10rpx 25rpx;
+			padding: 20rpx 25rpx;
 			border-radius: 5px;
 			justify-self: center;
 			align-items: center;

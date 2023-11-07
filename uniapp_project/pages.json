@@ -5,6 +5,14 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path" : "pages/allServices/allServices",
+			"style" : 
+			{
+				"navigationBarTitleText" : "全部服务",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
@@ -13,5 +21,25 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#FFC0CB",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "",
+				"selectedIconPath": "",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/allServices/allServices",
+				"iconPath": "",
+				"selectedIconPath": "",
+				"text": "全部服务"
+			}
+		]
+	}
 }
