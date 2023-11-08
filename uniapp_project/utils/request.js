@@ -14,7 +14,7 @@ const request = (url, data = {}, method = 'GET') => {
 			success: (res) => {
 				resolve(res)
 			},
-			fail: () => {
+			fail: (err) => {
 				reject(err)
 			}
 		});
