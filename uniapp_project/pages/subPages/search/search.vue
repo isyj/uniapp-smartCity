@@ -31,11 +31,13 @@
 		},
 		methods: {
 			backIndex() {
-				uni.navigateBack();
+				uni.navigateBack({
+					animationType:'fade-out'
+				});
 			},
 			confirm() {
 				uni.showToast({
-					title: '搜索',
+					title: this.keyword,
 					icon: 'none'
 				});
 			}
