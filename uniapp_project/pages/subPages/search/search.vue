@@ -2,11 +2,20 @@
 	<view>
 
 		<view class="box-bg">
-			<uni-nav-bar leftWidth="0rpx" rightWidth="0rpx" border="false" statusBar>
+			<uni-nav-bar leftWidth="60rpx" rightWidth="60rpx" border="false" statusBar>
 				<view class="input-view">
 					<uni-icons class="input-uni-icon" type="search" size="18" color="#999" />
-					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" @click="search()" />
+					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" auto-focus
+						@confirm="confirm()" v-model="keyword" />
 				</view>
+				<block slot="right">
+					<view class="city" @click="confirm()">
+						搜索
+					</view>
+				</block>
+				<block slot="left">
+					<uni-icons type="left" @click="backIndex()"></uni-icons>
+				</block>
 			</uni-nav-bar>
 		</view>
 
@@ -17,14 +26,18 @@
 	export default {
 		data() {
 			return {
-
-			};
+				keyword: ''
+			}
 		},
 		methods: {
-			search() {
-				uni.navigateTo({
-					url:'/pages/subPages/search/search'
-				})
+			backIndex() {
+				uni.navigateBack();
+			},
+			confirm() {
+				uni.showToast({
+					title: '搜索',
+					icon: 'none'
+				});
 			}
 		}
 	}

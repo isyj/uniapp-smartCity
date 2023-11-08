@@ -21,7 +21,4 @@
 </script>
 
 <style lang="scss">
-	.home {
-		padding-top: env(safe-area-inset-top);
-	}
 </style>

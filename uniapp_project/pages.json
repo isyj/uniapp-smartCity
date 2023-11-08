@@ -13,6 +13,14 @@
 				"navigationBarTitleText" : "全部服务",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/subPages/search/search",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
