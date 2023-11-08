@@ -21,6 +21,30 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/zhihuihuanbao/zhihuihuanbao",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/shujvfenxi/shujvfenxi",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/user/user",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
@@ -38,15 +62,33 @@
 		"list": [
 			{
 				"pagePath": "pages/index/index",
-				"iconPath": "",
-				"selectedIconPath": "",
+				"iconPath": "static/tabBarImg/index.png",
+				"selectedIconPath": "static/tabBarImg/index2.png",
 				"text": "首页"
 			},
 			{
 				"pagePath": "pages/allServices/allServices",
-				"iconPath": "",
-				"selectedIconPath": "",
+				"iconPath": "static/tabBarImg/fenlei.png",
+				"selectedIconPath": "static/tabBarImg/fenlei2.png",
 				"text": "全部服务"
+			},
+			{
+				"pagePath": "pages/zhihuihuanbao/zhihuihuanbao",
+				"iconPath": "static/tabBarImg/zhihuihuanbao.png",
+				"selectedIconPath": "static/tabBarImg/zhihuihuanbao2.png",
+				"text": "智慧环保"
+			},
+			{
+				"pagePath": "pages/shujvfenxi/shujvfenxi",
+				"iconPath": "static/tabBarImg/shujvfenxi.png",
+				"selectedIconPath": "static/tabBarImg/shujvfenxi2.png",
+				"text": "数据分析"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "static/tabBarImg/user.png",
+				"selectedIconPath": "static/tabBarImg/user2.png",
+				"text": "个人"
 			}
 		]
 	}
