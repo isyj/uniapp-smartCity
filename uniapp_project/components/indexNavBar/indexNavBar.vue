@@ -5,7 +5,8 @@
 			<uni-nav-bar leftWidth="0rpx" rightWidth="0rpx" border="false" statusBar>
 				<view class="input-view">
 					<uni-icons class="input-uni-icon" type="search" size="18" color="#999" />
-					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" @click="search()" />
+					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词"
+						@click="search()" />
 				</view>
 			</uni-nav-bar>
 		</view>
@@ -23,8 +24,8 @@
 		methods: {
 			search() {
 				uni.navigateTo({
-					url:'/pages/subPages/search/search',
-					animationType:'fade-in'
+					url: '/pages/subPages/search/search',
+					animationType: 'fade-in'
 				})
 			}
 		}
