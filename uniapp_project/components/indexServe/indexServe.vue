@@ -35,11 +35,8 @@ export default {
 		}
 	},
 	mounted() {
-		uni.request({
-			url: 'http://124.93.196.45:10001/prod-api/api/service/list',
-			success: (res) => {
-				this.list = res.data.rows.slice(0, 9)
-			}
+		this.$request('/prod-api/api/service/list','','GET').then(res=>{
+			this.list = res.data.rows.slice(0, 9)
 		})
 	}
 }

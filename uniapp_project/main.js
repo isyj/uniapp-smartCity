@@ -1,4 +1,5 @@
 import App from './App'
+import request from "@/utils/request.js"
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -8,6 +9,7 @@ App.mpType = 'app'
 const app = new Vue({
   ...App
 })
+Vue.prototype.$request = request
 app.$mount()
 // #endif
 

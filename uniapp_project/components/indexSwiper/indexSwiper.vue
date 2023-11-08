@@ -31,12 +31,8 @@
 			}
 		},
 		mounted() {
-			uni.request({
-				method: 'GET',
-				url: 'http://124.93.196.45:10001/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2',
-				success: (res) => {
-					this.list = res.data.rows
-				}
+			this.$request('/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2','','GET').then(res=>{
+				this.list=res.data.rows;
 			})
 		}
 
