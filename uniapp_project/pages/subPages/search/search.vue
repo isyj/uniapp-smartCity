@@ -21,7 +21,7 @@
 
 
 		<view class="nows">
-			<view class="nowsList" v-for="(item,index) in searchList">
+			<view class="nowsList" v-for="(item,index) in searchList" :key="index">
 				<view class="txt">
 					{{item.title}}
 				</view>
@@ -130,12 +130,11 @@
 
 		.nowsList {
 			border: #f0f0f0 1px solid;
-			margin: 10rpx 0;
 			background-color: white;
 			border-radius: 5px;
 
 			.txt {
-				padding: 10rpx;
+				padding: 30rpx 10rpx;
 			}
 		}
 	}
