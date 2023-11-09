@@ -1,12 +1,10 @@
 <template>
 	<view>
-		<view class="">
+		<view class="nav">
 			<uni-nav-bar rightWidth="10rpx" leftWidth="50rpx" left-icon="back" :title="this.list.title" statusBar
 				@clickLeft="backSearch()"></uni-nav-bar>
 		</view>
-		<view class="" v-html="this.list.content">
-
-		</view>
+		<view class="content" v-html="this.list.content"></view>
 	</view>
 </template>
 
@@ -30,6 +28,9 @@
 	}
 </script>
 
-<style>
-
+<style lang="scss">
+	.content {
+		box-sizing: border-box;
+		padding: 20rpx;
+	}
 </style>
