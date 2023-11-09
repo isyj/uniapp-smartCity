@@ -21,13 +21,22 @@
 		},
 		methods: {
 			submit() {
-				console.log(this.username);
-				console.log(this.password);
 				this.$request('/prod-api/api/login', {
 					username: this.username,
 					password: this.password
 				}, 'POST').then(res => {
-					console.log(res);
+					if (res.data.code === 200) {
+						uni.showToast({
+							title: '登录成功',
+							icon: 'success',
+						})
+					} else {
+						uni.showToast({
+							title: '用户不存在/密码错误',
+							icon: 'none',
+						})
+					}
+
 				})
 			}
 		}
