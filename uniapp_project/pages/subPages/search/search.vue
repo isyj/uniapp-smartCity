@@ -23,9 +23,7 @@
 		<view class="nows">
 			<view class="nowsList" v-for="(item,index) in searchList">
 				<view class="txt">
-					{{
-						item.title
-					}}
+					{{item.title}}
 				</view>
 			</view>
 		</view>
@@ -123,7 +121,6 @@
 	}
 
 	.nows {
-
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
@@ -131,13 +128,11 @@
 		justify-content: center;
 		width: 100%;
 
-
-
 		.nowsList {
 			border: #f0f0f0 1px solid;
 			margin: 10rpx 0;
 			background-color: white;
-			border-radius: 10px;
+			border-radius: 5px;
 
 			.txt {
 				padding: 10rpx;
