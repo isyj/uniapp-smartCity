@@ -9,16 +9,26 @@
 						@confirm="confirm()" v-model="keyword" />
 				</view>
 				<block slot="right">
-					<view class="city" @click="confirm()">
+					<view class="search" @click="confirm()">
 						搜索
 					</view>
 				</block>
 				<block slot="left">
-					<uni-icons type="left" @click="backIndex()"></uni-icons>
+					<uni-icons class="icon" type="left" @click="backIndex()"></uni-icons>
 				</block>
 			</uni-nav-bar>
 		</view>
 
+
+		<view class="nows">
+			<view class="nowsList" v-for="(item,index) in searchList">
+				<view class="txt">
+					{{
+						item.title
+					}}
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -26,21 +36,45 @@
 	export default {
 		data() {
 			return {
-				keyword: ''
+				keyword: '',
+				searchList: [],
+				allSearchList: []
 			}
+		},
+		mounted() {
+			//向后台发送请求，拿到所有的数据然后赋值给allSearchList
+			this.$request('/prod-api/press/press/list', '', 'GET').then(res => {
+				this.allSearchList = res.data.rows
+
+			})
 		},
 		methods: {
 			backIndex() {
 				uni.navigateBack({
-					animationType:'fade-out'
+					animationType: 'fade-out'
 				});
 			},
 			confirm() {
-				uni.showToast({
-					title: this.keyword,
-					icon: 'none'
-				});
+				if (!this.keyword) {
+					uni.showToast({
+						title: '请输入内容',
+						icon: 'error'
+					});
+					this.searchList = []
+				} else {
+					//先清空展示的数据
+					this.searchList = []
+					//然后开始循环全部数据
+					for (var i = 0; i < this.allSearchList.length; i++) {
+						//判断数据里面是否有符合输入的内容  不符合返回-1 只需要大于或等于0就是符合
+						//符合的数据赋值给searchList
+						if (this.allSearchList[i].title.toLowerCase().indexOf(this.keyword.toLowerCase()) >= 0) {
+							this.searchList.push(this.allSearchList[i]);
+						}
+					}
+				}
 			}
+
 		}
 	}
 </script>
@@ -48,38 +82,66 @@
 <style lang="scss">
 	$nav-height: 30px;
 
+	.icon {
+		padding-left: 20rpx;
+	}
+
 	.box-bg {
 		padding: 5px 0;
+
+		.input-view {
+			/* #ifndef APP-PLUS-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: row;
+			// width: 500rpx;
+			flex: 1;
+			background-color: #f8f8f8;
+			height: $nav-height;
+			border-radius: 15px;
+			padding: 0 15px;
+			flex-wrap: nowrap;
+			margin: 7px 0;
+			line-height: $nav-height;
+
+			.input-uni-icon {
+				line-height: $nav-height;
+			}
+
+			.nav-bar-input {
+				height: $nav-height;
+				line-height: $nav-height;
+				/* #ifdef APP-PLUS-NVUE */
+				width: 370rpx;
+				/* #endif */
+				padding: 0 5px;
+				font-size: 12px;
+				background-color: #f8f8f8;
+			}
+
+		}
 	}
 
-	.input-view {
-		/* #ifndef APP-PLUS-NVUE */
+	.nows {
+
+		box-sizing: border-box;
 		display: flex;
-		/* #endif */
-		flex-direction: row;
-		// width: 500rpx;
-		flex: 1;
-		background-color: #f8f8f8;
-		height: $nav-height;
-		border-radius: 15px;
-		padding: 0 15px;
-		flex-wrap: nowrap;
-		margin: 7px 0;
-		line-height: $nav-height;
-	}
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
 
-	.input-uni-icon {
-		line-height: $nav-height;
-	}
 
-	.nav-bar-input {
-		height: $nav-height;
-		line-height: $nav-height;
-		/* #ifdef APP-PLUS-NVUE */
-		width: 370rpx;
-		/* #endif */
-		padding: 0 5px;
-		font-size: 12px;
-		background-color: #f8f8f8;
+
+		.nowsList {
+			border: #f0f0f0 1px solid;
+			margin: 10rpx 0;
+			background-color: white;
+			border-radius: 10px;
+
+			.txt {
+				padding: 10rpx;
+			}
+		}
 	}
 </style>

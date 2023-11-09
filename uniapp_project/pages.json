@@ -7,43 +7,38 @@
 			}
 		},
 		{
-			"path" : "pages/allServices/allServices",
-			"style" : 
-			{
-				"navigationBarTitleText" : "全部服务",
-				"enablePullDownRefresh" : false
+			"path": "pages/allServices/allServices",
+			"style": {
+				"navigationBarTitleText": "全部服务",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/subPages/search/search",
-			"style" : 
-			{
+			"path": "pages/subPages/search/search",
+			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh" : false
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/zhihuihuanbao/zhihuihuanbao",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
+			"path": "pages/zhihuihuanbao/zhihuihuanbao",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/shujvfenxi/shujvfenxi",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
+			"path": "pages/shujvfenxi/shujvfenxi",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/user/user",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 		}
 	],
@@ -59,8 +54,7 @@
 		"selectedColor": "#FFC0CB",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/index/index",
 				"iconPath": "static/tabBarImg/index.png",
 				"selectedIconPath": "static/tabBarImg/index2.png",

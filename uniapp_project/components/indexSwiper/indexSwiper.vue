@@ -31,8 +31,8 @@
 			}
 		},
 		mounted() {
-			this.$request('/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2','','GET').then(res=>{
-				this.list=res.data.rows;
+			this.$request('/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2', '', 'GET').then(res => {
+				this.list = res.data.rows;
 			})
 		}
 
