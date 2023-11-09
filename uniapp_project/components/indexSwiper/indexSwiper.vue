@@ -52,7 +52,7 @@
 			width: 100%;
 			padding: 20rpx 25rpx;
 			border-radius: 5px;
-			justify-self: center;
+			justify-content: center;
 			align-items: center;
 			overflow: hidden;
 		}
