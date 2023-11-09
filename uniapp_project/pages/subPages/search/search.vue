@@ -21,7 +21,7 @@
 
 
 		<view class="nows">
-			<view class="nowsList" v-for="(item,index) in searchList" :key="index">
+			<view class="nowsList" v-for="(item,index) in searchList" :key="index" @click="jump(item.id)">
 				<view class="txt">
 					{{item.title}}
 				</view>
@@ -71,8 +71,12 @@
 						}
 					}
 				}
+			},
+			jump(id) {
+				uni.navigateTo({
+					url: '/pages/subPages/search/newsDetails?id=' + id,
+				});
 			}
-
 		}
 	}
 </script>
