@@ -1,7 +1,7 @@
 <template>
 	<view class="">
-		<button @click="login()">登录</button>
-		<button @click="logout()">注销</button>
+		<button @click="login()" type="primary">登录</button>
+		<button @click="logout()" type="primary">注销</button>
 	</view>
 </template>
 
@@ -37,7 +37,6 @@
 
 <style lang="scss">
 	button {
-		background-color: pink;
 		margin-top: 25rpx;
 		width: 80%;
 		color: white;
