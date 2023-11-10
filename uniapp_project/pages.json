@@ -37,7 +37,7 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationStyle": "custom",
+				"navigationBarTitleText": "个人中心",
 				"enablePullDownRefresh": false
 			}
 		},
@@ -45,6 +45,14 @@
 			"path": "pages/subPages/search/newsDetails",
 			"style": {
 				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#f0f0f0",
 				"enablePullDownRefresh": false
 			}
 		}
