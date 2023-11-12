@@ -68,6 +68,12 @@
 						//符合的数据赋值给searchList
 						if (this.allSearchList[i].title.toLowerCase().indexOf(this.keyword.toLowerCase()) >= 0) {
 							this.searchList.push(this.allSearchList[i]);
+							return
+						} else {
+							uni.showToast({
+								title: '无相关内容',
+								icon: 'error'
+							})
 						}
 					}
 				}
