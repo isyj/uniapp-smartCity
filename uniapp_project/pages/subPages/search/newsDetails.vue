@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="home">
 		<view class="nav">
 			<uni-nav-bar rightWidth="10rpx" leftWidth="50rpx" left-icon="back" :title="this.list.title" statusBar
 				@clickLeft="backSearch()"></uni-nav-bar>
@@ -29,8 +29,15 @@
 </script>
 
 <style lang="scss">
-	.content {
-		box-sizing: border-box;
-		padding: 20rpx;
+	.home {
+		background-color: #f0f0f0;
+
+		.content {
+			background-color: #fff;
+			border-radius: 10px;
+			box-sizing: border-box;
+			padding: 20rpx;
+			margin: 20rpx;
+		}
 	}
 </style>
