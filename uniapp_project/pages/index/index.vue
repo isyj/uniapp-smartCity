@@ -3,6 +3,7 @@
 		<indexNavBar></indexNavBar>
 		<indexSwiper />
 		<indexServe></indexServe>
+		<indexHotModule></indexHotModule>
 	</view>
 </template>
 
@@ -10,6 +11,7 @@
 	import indexSwiper from '../../components/indexSwiper/indexSwiper.vue'
 	import indexNavBar from '../../components/indexNavBar/indexNavBar.vue'
 	import indexServe from "../../components/indexServe/indexServe.vue"
+	import indexModuleHot from "../../components/indexHotModule/indexHotModule.vue"
 
 	export default {
 		data() {
