@@ -20,7 +20,6 @@
 	export default {
 		data() {
 			return {
-				allNowsList: [],
 				hotNowsList: []
 			};
 		},
@@ -28,22 +27,19 @@
 			imgUrl(img) {
 				return 'http://124.93.196.45:10001' + img
 			},
-			hotModule() {
-				for (let i = 0; i < 2; i++) {
-					let count = Math.floor((Math.random() * this.allNowsList.length));
-					this.hotNowsList.push(this.allNowsList[count])
-				}
-			},
 			jump(id) {
 				uni.navigateTo({
 					url: '/pages/subPages/search/newsDetails?id=' + id,
 				});
-			}
+			},
 		},
 		mounted() {
 			this.$request('/prod-api/press/press/list', '', 'GET').then(res => {
-				this.allNowsList = res.data.rows
-				this.hotModule()
+				for (let i = 0; i < res.data.rows.length; i++) {
+					if (res.data.rows[i].hot == "Y") {
+						this.hotNowsList.push(res.data.rows[i])
+					}
+				}
 			})
 		},
 	}
@@ -86,13 +82,7 @@
 			.txt {
 				width: 100%;
 				font-size: 25rpx;
-				white-space: wrap;
-				display: -webkit-box;
-				/** 对象作为伸缩盒子模型显示 **/
-				-webkit-box-orient: vertical;
-				/** 设置或检索伸缩盒对象的子元素的排列方式 **/
-				-webkit-line-clamp: 2;
-				/** 显示的行数 **/
+				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;
 			}
