@@ -14,9 +14,6 @@
 </template>
 
 <script>
-	import {
-		randomInt
-	} from 'crypto';
 	export default {
 		data() {
 			return {
@@ -36,7 +33,7 @@
 		mounted() {
 			this.$request('/prod-api/press/press/list', '', 'GET').then(res => {
 				for (let i = 0; i < res.data.rows.length; i++) {
-					if (res.data.rows[i].hot == "Y") {
+					if (res.data.rows[i].hot === "Y") {
 						this.hotNowsList.push(res.data.rows[i])
 					}
 				}

@@ -4,8 +4,7 @@
 			<uni-nav-bar rightWidth="10rpx" leftWidth="50rpx" left-icon="back" :title="this.list.title" statusBar
 				@clickLeft="backSearch()"></uni-nav-bar>
 		</view>
-		<view class="content" v-html="this.list.content.replace(/\/prod-api/g, 'http://124.93.196.45:10001/prod-api')">
-		</view>
+		<view class="content" v-html="this.list"></view>
 	</view>
 </template>
 
@@ -13,13 +12,14 @@
 	export default {
 		data() {
 			return {
-				list: []
+				list: [],
 			}
 		},
 		onLoad(e) {
 			this.$request('/prod-api/press/press/' + e.id, '', 'GET').then(res => {
-				this.list = res.data.data
-				console.log(this.list.content.replace(/\/prod-api/g, 'http://124.93.196.45:10001/prod-api'));
+				this.list = res.data.data.content.replace(/\/prod-api/g,
+					'http://124.93.196.45:10001/prod-api')
+
 			})
 		},
 		methods: {
