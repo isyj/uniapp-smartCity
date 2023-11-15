@@ -53,7 +53,7 @@
 			margin-bottom: 30rpx;
 
 			.img {
-				width: 60%;
+				width: 40%;
 			}
 
 			.txt {

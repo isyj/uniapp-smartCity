@@ -4,6 +4,7 @@
 		<indexSwiper />
 		<indexServe></indexServe>
 		<indexHotModule></indexHotModule>
+		<indexNowsList></indexNowsList>
 	</view>
 </template>
 
@@ -12,6 +13,7 @@
 	import indexNavBar from '../../components/indexNavBar/indexNavBar.vue'
 	import indexServe from "../../components/indexServe/indexServe.vue"
 	import indexModuleHot from "../../components/indexHotModule/indexHotModule.vue"
+	import indexNowsList from "../../components/indexNowsList/indexNowsList.vue"
 
 	export default {
 		data() {
