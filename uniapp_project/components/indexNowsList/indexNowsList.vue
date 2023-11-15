@@ -53,6 +53,7 @@
 		mounted() {
 			this.$request('/prod-api/press/category/list', {}, 'GET').then(res => {
 				this.list = res.data.data
+
 				this.$request('/prod-api/press/press/list', {
 					type: this.list[0].id
 				}, 'GET').then(res => {
@@ -112,7 +113,8 @@
 			display: flex;
 			width: 100%;
 			border-radius: 5px;
-			margin: 10rpx 10rpx;
+			margin: 0 10rpx;
+			margin-top: 20rpx;
 
 			image {
 				max-width: 280rpx;
