@@ -72,8 +72,9 @@
 	}
 
 	.content {
-		padding: 25rpx;
-		margin: 25rpx 0;
+		border-top: 1px #eee solid;
+		padding: 15rpx 25rpx 0 25rpx;
+		margin: 25rpx 0 20rpx 0;
 
 		.nows {
 			white-space: nowrap;
@@ -84,7 +85,7 @@
 				width: 30%;
 				height: 50rpx;
 				line-height: 50rpx;
-				font-size: 35rpx;
+				font-size: 32rpx;
 
 				.btn {
 					color: #FFC0CB;
@@ -106,21 +107,20 @@
 
 	.nowsList {
 		display: flex;
-		background-color: #f0f0f0;
+		background-color: #eee;
 
 		.nowsContent {
 			background-color: white;
 			display: flex;
 			width: 100%;
 			border-radius: 5px;
-			margin: 0 10rpx;
-			margin-top: 20rpx;
+			margin: 17rpx 15rpx 0 15rpx;
 
 			image {
 				max-width: 280rpx;
-				max-height: 200rpx;
-				min-height: 200rpx;
-				border-radius: 20rpx;
+				max-height: 180rpx;
+				min-height: 180rpx;
+				border-radius: 20px;
 				padding: 10rpx;
 				border-radius: 20px;
 			}
@@ -128,6 +128,7 @@
 			.txt {
 				padding: 10rpx;
 				align-self: center;
+				font-size: 28rpx;
 			}
 		}
 	}
