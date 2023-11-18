@@ -86,6 +86,7 @@
 				height: 50rpx;
 				line-height: 50rpx;
 				font-size: 32rpx;
+				padding: 5rpx;
 
 				.btn {
 					color: #FFC0CB;
@@ -93,12 +94,12 @@
 
 				.btn::after {
 					content: '';
-					width: 20%;
+					width: 18%;
 					height: 3px;
 					background-color: #FFC0CB;
 					position: absolute;
 					bottom: 0;
-					margin-left: -142rpx;
+					margin-left: -125rpx;
 				}
 			}
 
