@@ -21,9 +21,13 @@ export const getIndexSwiper = (data) => http.get('/prod-api/api/rotation/list', 
 export const getServe = (data) => http.get('/prod-api/api/service/list', data)
 
 
-// get请求，获取新闻详情信息
+// get请求，获取新闻列表
 export const getNewsList = (data) => http.get('/prod-api/press/press/list', data)
 
 
 // get请求，获取新闻分类
 export const getNewsCategory = (data) => http.get('/prod-api/press/category/list', data)
+
+
+// get请求，获取新闻详情信息
+export const getNewsDetails = (data, id) => http.get('/prod-api/press/press/' + id, data)

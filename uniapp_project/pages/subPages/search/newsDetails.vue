@@ -9,6 +9,9 @@
 </template>
 
 <script>
+	import {
+		getNewsDetails
+	} from "../../../config/api.js"
 	export default {
 		data() {
 			return {
@@ -16,7 +19,7 @@
 			}
 		},
 		onLoad(e) {
-			uni.$u.http.get('/prod-api/press/press/' + e.id).then(res => {
+			getNewsDetails({}, e.id).then(res => {
 				this.list = res.data.content.replace(/\/prod-api/g,
 					'http://124.93.196.45:10001/prod-api')
 
