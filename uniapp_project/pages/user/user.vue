@@ -1,8 +1,9 @@
 <template>
-	<view class="">
-		<u-button class="button" @click="login()" type="primary">登录</u-button>
-		<u-button class="button" @click="logout()" type="primary" color='#f56c6c'>注销</u-button>
-
+	<view class="home">
+		<view class="button">
+			<u-button class="custom-style" @click="login()" type="primary" shape="circle">登录</u-button>
+			<u-button class="custom-style" @click="logout()" type="primary" shape="circle" color='#f56c6c'>注销</u-button>
+		</view>
 	</view>
 </template>
 
@@ -44,11 +45,21 @@
 </script>
 
 <style lang="scss">
-	.button {
-		margin-top: 25rpx;
-		width: 80%;
-		color: white;
-		font-size: 40rpx;
-		font-family: '苹方-简';
+	.home {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.button {
+			width: 80%;
+
+			.custom-style {
+				margin-top: 25rpx;
+				color: white;
+				font-size: 40rpx;
+				font-family: '苹方-简';
+			}
+		}
 	}
 </style>
