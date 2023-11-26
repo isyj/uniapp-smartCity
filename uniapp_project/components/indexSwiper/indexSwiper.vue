@@ -14,6 +14,9 @@
 </template>
 
 <script>
+	import {
+		getIndexSwiper
+	} from "../../config/api.js"
 	export default {
 
 		data() {
@@ -30,7 +33,11 @@
 			}
 		},
 		mounted() {
-			uni.$u.http.get('/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2').then(res => {
+			getIndexSwiper({
+				pageNum: 1,
+				pageSize: 8,
+				type: 2
+			}).then(res => {
 				this.list = res.rows;
 			})
 		}

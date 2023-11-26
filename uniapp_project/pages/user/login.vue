@@ -14,6 +14,9 @@
 </template>
 
 <script>
+	import {
+		postLogin
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
@@ -24,7 +27,7 @@
 		onLoad() {},
 		methods: {
 			submit() {
-				uni.$u.http.post('/prod-api/api/login', {
+				postLogin({
 					username: this.username,
 					password: this.password
 				}).then(res => {

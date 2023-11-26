@@ -31,7 +31,7 @@ module.exports = (vm) => {
 						title: '请登录',
 						icon: 'error'
 					})
-					uni.reLaunch({
+					uni.switchTab({
 						url: '/pages/user/user',
 					})
 					return false

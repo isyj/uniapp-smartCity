@@ -12,6 +12,9 @@
 </template>
 
 <script>
+	import {
+		getServe
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
@@ -27,7 +30,7 @@
 			}
 		},
 		onLoad() {
-			uni.$u.http.get('/prod-api/api/service/list').then(res => {
+			getServe().then(res => {
 				this.list = res.rows
 			})
 		}

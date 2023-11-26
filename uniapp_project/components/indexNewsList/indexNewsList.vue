@@ -2,21 +2,21 @@
 	<view>
 
 		<view class="content">
-			<scroll-view scroll-x="true" class="nows">
-				<view class="nowsName" v-for="(item,index) in list" :key="index" @click="change(index,item.id)">
-					<view :class="{btn:count==index}">
-						{{item.name}}
+			<scroll-view scroll-x="true" class="news">
+				<view class="newsName" v-for="(item, index) in list" :key="index" @click="change(index, item.id)">
+					<view :class="{ btn: count == index }">
+						{{ item.name }}
 					</view>
 				</view>
 			</scroll-view>
 		</view>
 
 
-		<view class="nowsList" v-for="(item,index) in nowsList" :key="index">
-			<view class="nowsContent" @click="jump(item.id)">
+		<view class="newsList" v-for="(item, index) in newsList" :key="index">
+			<view class="newsContent" @click="jump(item.id)">
 				<image :src="imgUrl(item.cover)" mode="widthFix"></image>
 				<view class="txt">
-					{{item.title}}
+					{{ item.title }}
 				</view>
 			</view>
 		</view>
@@ -24,23 +24,27 @@
 </template>
 
 <script>
+	import {
+		getNewsList,
+		getNewsCategory
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
 				list: [],
 				count: 0,
-				nowsList: []
+				newsList: []
 			};
 		},
 		methods: {
 			change(index, id) {
 				this.count = index
-				uni.$u.http.get('/prod-api/press/press/list', {
+				getNewsList({
 					params: {
 						type: id
 					}
 				}).then(res => {
-					this.nowsList = res.rows
+					this.newsList = res.rows
 				})
 			},
 			imgUrl(img) {
@@ -53,15 +57,15 @@
 			}
 		},
 		mounted() {
-			uni.$u.http.get('/prod-api/press/category/list').then(res => {
+			getNewsCategory().then(res => {
 				this.list = res.data
 
-				uni.$u.http.get('/prod-api/press/press/list', {
+				getNewsList({
 					params: {
 						type: this.list[0].id
 					}
 				}).then(res => {
-					this.nowsList = res.rows
+					this.newsList = res.rows
 				})
 			})
 		}
@@ -80,11 +84,11 @@
 		padding: 15rpx 25rpx 0 25rpx;
 		margin: 25rpx 0 20rpx 0;
 
-		.nows {
+		.news {
 			white-space: nowrap;
 			width: 100%;
 
-			.nowsName {
+			.newsName {
 				display: inline-block;
 				width: 30%;
 				height: 50rpx;
@@ -111,11 +115,11 @@
 		}
 	}
 
-	.nowsList {
+	.newsList {
 		display: flex;
 		background-color: #eee;
 
-		.nowsContent {
+		.newsContent {
 			background-color: white;
 			display: flex;
 			width: 100%;

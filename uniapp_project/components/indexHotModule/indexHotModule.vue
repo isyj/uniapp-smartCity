@@ -14,6 +14,9 @@
 </template>
 
 <script>
+	import {
+		getNewsList
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
@@ -31,7 +34,7 @@
 			},
 		},
 		mounted() {
-			uni.$u.http.get('/prod-api/press/press/list').then(res => {
+			getNewsList().then(res => {
 				for (let i = 0; i < res.rows.length; i++) {
 					if (res.rows[i].hot === "Y") {
 						this.hotNowsList.push(res.rows[i])
