@@ -31,10 +31,10 @@
 			},
 		},
 		mounted() {
-			this.$request('/prod-api/press/press/list', '', 'GET').then(res => {
-				for (let i = 0; i < res.data.rows.length; i++) {
-					if (res.data.rows[i].hot === "Y") {
-						this.hotNowsList.push(res.data.rows[i])
+			uni.$u.http.get('/prod-api/press/press/list').then(res => {
+				for (let i = 0; i < res.rows.length; i++) {
+					if (res.rows[i].hot === "Y") {
+						this.hotNowsList.push(res.rows[i])
 					}
 				}
 			})
@@ -79,6 +79,7 @@
 			.txt {
 				width: 100%;
 				font-size: 25rpx;
+				font-family: '苹方-简';
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;

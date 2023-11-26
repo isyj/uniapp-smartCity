@@ -18,8 +18,7 @@
 
 		data() {
 			return {
-				list: [],
-				url: 'http://124.93.196.45:10001'
+				list: {},
 			};
 		},
 		onLoad() {
@@ -27,12 +26,12 @@
 		},
 		methods: {
 			imgUrl(img) {
-				return this.url + img
+				return 'http://124.93.196.45:10001' + img
 			}
 		},
 		mounted() {
-			this.$request('/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2', '', 'GET').then(res => {
-				this.list = res.data.rows;
+			uni.$u.http.get('/prod-api/api/rotation/list?pageNum=1&pageSize=8&type=2').then(res => {
+				this.list = res.rows;
 			})
 		}
 

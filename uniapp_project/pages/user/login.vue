@@ -21,37 +21,30 @@
 				password: '123456'
 			};
 		},
+		onLoad() {},
 		methods: {
 			submit() {
-				if (Boolean(uni.getStorageSync('token')) == true) {
-					uni.showToast({
-						title: '您已登录',
-						icon: 'error'
-					});
-					return
-				} else {
-					this.$request('/prod-api/api/login', {
-						username: this.username,
-						password: this.password
-					}, 'POST').then(res => {
-						if (res.data.code === 200) {
-							uni.showToast({
-									title: '登录成功',
-									icon: 'success',
-								}),
-								uni.setStorageSync('token', res.data.token),
-								uni.reLaunch({
-									url: '/pages/user/user'
-								})
-						} else {
-							uni.showToast({
-								title: '用户不存在/密码错误',
-								icon: 'none',
+				uni.$u.http.post('/prod-api/api/login', {
+					username: this.username,
+					password: this.password
+				}).then(res => {
+					if (res.code === 200) {
+						uni.showToast({
+								title: '登录成功',
+								icon: 'success',
+							}),
+							uni.setStorageSync('token', res.token),
+							uni.switchTab({
+								url: '/pages/index/index'
 							})
-						}
+					} else {
+						uni.showToast({
+							title: '用户不存在/密码错误',
+							icon: 'none',
+						})
+					}
 
-					})
-				}
+				})
 			}
 		}
 	}
@@ -81,7 +74,7 @@
 
 			.txt {
 				color: pink;
-				font-weight: bold;
+				font-family: '苹方-简';
 				font-size: 50rpx;
 				margin-top: 80rpx;
 			}
@@ -101,7 +94,7 @@
 				button {
 					background-color: pink;
 					color: white;
-					font-weight: bold;
+					font-family: '苹方-简';
 					margin-top: 50rpx;
 				}
 			}

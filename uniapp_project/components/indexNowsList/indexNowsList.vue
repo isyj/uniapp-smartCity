@@ -35,10 +35,12 @@
 		methods: {
 			change(index, id) {
 				this.count = index
-				this.$request('/prod-api/press/press/list', {
-					type: id
-				}, 'GET').then(res => {
-					this.nowsList = res.data.rows
+				uni.$u.http.get('/prod-api/press/press/list', {
+					params: {
+						type: id
+					}
+				}).then(res => {
+					this.nowsList = res.rows
 				})
 			},
 			imgUrl(img) {
@@ -51,13 +53,15 @@
 			}
 		},
 		mounted() {
-			this.$request('/prod-api/press/category/list', {}, 'GET').then(res => {
-				this.list = res.data.data
+			uni.$u.http.get('/prod-api/press/category/list').then(res => {
+				this.list = res.data
 
-				this.$request('/prod-api/press/press/list', {
-					type: this.list[0].id
-				}, 'GET').then(res => {
-					this.nowsList = res.data.rows
+				uni.$u.http.get('/prod-api/press/press/list', {
+					params: {
+						type: this.list[0].id
+					}
+				}).then(res => {
+					this.nowsList = res.rows
 				})
 			})
 		}
@@ -86,6 +90,7 @@
 				height: 50rpx;
 				line-height: 50rpx;
 				font-size: 32rpx;
+				font-family: '苹方-简';
 				padding: 5rpx;
 
 				.btn {
@@ -130,6 +135,7 @@
 				padding: 10rpx;
 				align-self: center;
 				font-size: 28rpx;
+				font-family: '苹方-简';
 			}
 		}
 	}

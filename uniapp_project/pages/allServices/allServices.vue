@@ -26,9 +26,9 @@
 
 			}
 		},
-		mounted() {
-			this.$request('/prod-api/api/service/list', '', 'GET').then(res => {
-				this.list = res.data.rows
+		onLoad() {
+			uni.$u.http.get('/prod-api/api/service/list').then(res => {
+				this.list = res.rows
 			})
 		}
 	}
@@ -59,6 +59,7 @@
 			.txt {
 				width: 100%;
 				font-size: 25rpx;
+				font-family: '苹方-简';
 				margin-top: 20rpx;
 				white-space: nowrap;
 				text-overflow: ellipsis;

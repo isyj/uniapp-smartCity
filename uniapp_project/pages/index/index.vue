@@ -1,7 +1,7 @@
 <template>
 	<view class="home">
 		<indexNavBar></indexNavBar>
-		<indexSwiper />
+		<indexSwiper></indexSwiper>
 		<indexServe></indexServe>
 		<indexHotModule></indexHotModule>
 		<indexNowsList></indexNowsList>

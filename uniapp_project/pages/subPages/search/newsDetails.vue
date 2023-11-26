@@ -16,8 +16,8 @@
 			}
 		},
 		onLoad(e) {
-			this.$request('/prod-api/press/press/' + e.id, '', 'GET').then(res => {
-				this.list = res.data.data.content.replace(/\/prod-api/g,
+			uni.$u.http.get('/prod-api/press/press/' + e.id).then(res => {
+				this.list = res.data.content.replace(/\/prod-api/g,
 					'http://124.93.196.45:10001/prod-api')
 
 			})

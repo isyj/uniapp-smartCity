@@ -41,8 +41,8 @@
 		},
 		mounted() {
 			//向后台发送请求，拿到所有的数据然后赋值给allSearchList
-			this.$request('/prod-api/press/press/list', '', 'GET').then(res => {
-				this.allSearchList = res.data.rows
+			uni.$u.http.get('/prod-api/press/press/list').then(res => {
+				this.allSearchList = res.rows
 
 			})
 		},

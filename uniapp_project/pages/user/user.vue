@@ -1,7 +1,8 @@
 <template>
 	<view class="">
-		<button @click="login()" type="primary">登录</button>
-		<button @click="logout()" type="primary">注销</button>
+		<u-button class="button" @click="login()" type="primary">登录</u-button>
+		<u-button class="button" @click="logout()" type="primary" color='#f56c6c'>注销</u-button>
+
 	</view>
 </template>
 
@@ -14,9 +15,16 @@
 		},
 		methods: {
 			login() {
-				uni.navigateTo({
-					url: '/pages/user/login',
-				});
+				if (uni.getStorageSync('token')) {
+					uni.showToast({
+						title: '您已登录',
+						icon: 'error'
+					})
+				} else {
+					uni.navigateTo({
+						url: '/pages/user/login'
+					})
+				}
 			},
 			logout() {
 				if (Boolean(uni.getStorageSync('token'))) {
@@ -36,10 +44,11 @@
 </script>
 
 <style lang="scss">
-	button {
+	.button {
 		margin-top: 25rpx;
 		width: 80%;
 		color: white;
-		font-weight: bold;
+		font-size: 40rpx;
+		font-family: '苹方-简';
 	}
 </style>
