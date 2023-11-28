@@ -2,7 +2,8 @@
 	<view>
 		<view class="content">
 			<view class="serveCategory">
-				<view class="category" v-for="(item,index) in serveList" :key="index" @click="serveCategory(item)">
+				<view class="category" :class="{ btn : count == index}" v-for="(item,index) in serveList" :key="index"
+					@click="serveCategory(item,index)">
 					{{item}}
 				</view>
 			</view>
@@ -27,7 +28,8 @@
 		data() {
 			return {
 				list: [],
-				serveList: ['全部服务', '车主服务', '便民服务', '生活服务']
+				serveList: ['全部服务', '车主服务', '便民服务', '生活服务'],
+				count: 0
 			};
 		},
 		methods: {
@@ -36,7 +38,8 @@
 					url: '/pages/' + link
 				})
 			},
-			serveCategory(item) {
+			serveCategory(item, index) {
+				this.count = index
 				if (item === '全部服务') {
 					getServe().then(res => {
 						this.list = res.rows
@@ -67,32 +70,41 @@
 		box-sizing: border-box;
 		flex-direction: row;
 		flex-wrap: wrap;
-		padding: 30rpx 25rpx;
+		padding: 30rpx 10rpx;
 
 		.serveCategory {
 			width: 20%;
 			display: flex;
-			align-items: center;
 			// 盒子模型不撑开容器本身大小
 			box-sizing: border-box;
 			flex-direction: column;
 			flex-wrap: wrap;
-			padding: 30rpx 0rpx;
+			padding: 30rpx 5rpx;
 
 			.category {
-				font-size: 30rpx;
-				margin: 10rpx;
+				text-align: center;
+				width: 100%;
+				font-size: 35rpx;
+				padding: 20rpx 10rpx;
+				margin: 10rpx 0;
+			}
+
+			.btn {
+				background-color: pink;
+				border-radius: 5px;
+				color: white;
 			}
 		}
 
 		.serve {
 			width: 80%;
 			display: flex;
+			height: 100%;
 			// 盒子模型不撑开容器本身大小
 			box-sizing: border-box;
 			flex-direction: row;
 			flex-wrap: wrap;
-			padding: 30rpx 25rpx;
+			padding: 30rpx 5rpx;
 
 			.serveList {
 				display: flex;
