@@ -71,7 +71,7 @@
 		height: 100%;
 
 		.carInfo {
-			margin: 25rpx;
+			margin: 25rpx 30rpx;
 			font-size: 35rpx;
 			font-weight: bold;
 
@@ -80,11 +80,11 @@
 		.carInfo::after {
 			content: '';
 			width: 10rpx;
-			height: 20px;
+			height: 32rpx;
 			background-color: #FFC0CB;
 			position: absolute;
-			margin-left: -150rpx;
-			margin-top: 7rpx;
+			margin-left: -155rpx;
+			margin-top: 10rpx;
 			border-radius: 5px;
 		}
 

@@ -135,7 +135,7 @@
 
 		image {
 			margin-top: 20rpx;
-			border-radius: 10px;
+			border-radius: 5px;
 			width: 100%;
 			min-height: 350rpx;
 			max-height: 350rpx;
