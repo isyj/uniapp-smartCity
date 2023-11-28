@@ -2,6 +2,9 @@ import App from './App'
 // 引入全局uView
 import uView from '@/uni_modules/uview-ui'
 Vue.use(uView)
+//服务器地址
+var ip = 'http://124.93.196.45:10001'
+Vue.prototype.ip=ip
 
 // #ifndef VUE3
 import Vue from 'vue'

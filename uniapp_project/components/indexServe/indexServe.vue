@@ -2,7 +2,7 @@
 	<view>
 		<view class="content">
 			<view class="serveList" v-for="(item, index) in list" :key="index" @click="jump(item.link)">
-				<image class="img" :src="imgUrl(item.imgUrl)" mode="widthFix"></image>
+				<image class="img" :src="ip + item.imgUrl" mode="widthFix"></image>
 				<view class="txt">
 					{{ item.serviceName }}
 				</view>
@@ -28,9 +28,6 @@
 			};
 		},
 		methods: {
-			imgUrl(img) {
-				return 'http://124.93.196.45:10001/' + img
-			},
 			jumpAllServe() {
 				uni.switchTab({
 					url: '/pages/allServices/allServices'

@@ -1,10 +1,10 @@
 <template>
 	<view class="home">
-		<view class="nav">
+		<view class="u-content">
 			<uni-nav-bar rightWidth="10rpx" leftWidth="50rpx" left-icon="back" :title="this.list.title" statusBar
 				@clickLeft="backSearch()"></uni-nav-bar>
 		</view>
-		<view class="content" v-html="this.list"></view>
+		<u-parse class="content" :content="this.list" :domain="this.ip" :tagStyle="style"></u-parse>
 	</view>
 </template>
 
@@ -15,13 +15,15 @@
 	export default {
 		data() {
 			return {
-				list: [],
+				list: "",
+				style: {
+					img: 'width: 100%'
+				}
 			}
 		},
 		onLoad(e) {
 			getNewsDetails({}, e.id).then(res => {
-				this.list = res.data.content.replace(/\/prod-api/g,
-					'http://124.93.196.45:10001/prod-api')
+				this.list = res.data.content
 
 			})
 		},
@@ -43,10 +45,6 @@
 			box-sizing: border-box;
 			padding: 20rpx;
 			margin: 20rpx;
-
-			/deep/img {
-				width: 100%;
-			}
 		}
 	}
 </style>

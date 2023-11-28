@@ -1,12 +1,20 @@
 <template>
 	<view>
 		<view class="content">
-			<view class="serveList" v-for="(item, index) in list" :key="index" @click="jump(item.link)">
-				<image class="img" :src="imgUrl(item.imgUrl)" mode="widthFix"></image>
-				<view class="txt">
-					{{ item.serviceName }}
+			<view class="serveCategory">
+				<view class="category" v-for="(item,index) in serveList" :key="index" @click="serveCategory(item)">
+					{{item}}
 				</view>
 			</view>
+			<view class="serve">
+				<view class="serveList" v-for="(item, index) in list" :key="index" @click="jump(item.link)">
+					<image class="img" :src="ip + item.imgUrl" mode="widthFix"></image>
+					<view class="txt">
+						{{ item.serviceName }}
+					</view>
+				</view>
+			</view>
+
 		</view>
 	</view>
 </template>
@@ -18,17 +26,30 @@
 	export default {
 		data() {
 			return {
-				list: []
+				list: [],
+				serveList: ['全部服务', '车主服务', '便民服务', '生活服务']
 			};
 		},
 		methods: {
-			imgUrl(img) {
-				return 'http://124.93.196.45:10001/' + img
-			},
 			jump(link) {
 				uni.navigateTo({
 					url: '/pages/' + link
 				})
+			},
+			serveCategory(item) {
+				if (item === '全部服务') {
+					getServe().then(res => {
+						this.list = res.rows
+					})
+				} else {
+					getServe({
+						params: {
+							serviceType: item
+						}
+					}).then(res => {
+						this.list = res.rows
+					})
+				}
 			}
 		},
 		onLoad() {
@@ -48,27 +69,53 @@
 		flex-wrap: wrap;
 		padding: 30rpx 25rpx;
 
-		.serveList {
+		.serveCategory {
+			width: 20%;
 			display: flex;
-			width: 33%;
+			align-items: center;
+			// 盒子模型不撑开容器本身大小
+			box-sizing: border-box;
+			flex-direction: column;
+			flex-wrap: wrap;
+			padding: 30rpx 0rpx;
+
+			.category {
+				font-size: 30rpx;
+				margin: 10rpx;
+			}
+		}
+
+		.serve {
+			width: 80%;
+			display: flex;
+			// 盒子模型不撑开容器本身大小
+			box-sizing: border-box;
 			flex-direction: row;
 			flex-wrap: wrap;
-			justify-content: center;
-			text-align: center;
-			margin-bottom: 30rpx;
+			padding: 30rpx 25rpx;
 
-			.img {
-				width: 40%;
-			}
+			.serveList {
+				display: flex;
+				width: 33%;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				text-align: center;
+				margin-bottom: 30rpx;
 
-			.txt {
-				width: 100%;
-				font-size: 25rpx;
-				font-family: '苹方-简';
-				margin-top: 20rpx;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				overflow: hidden;
+				.img {
+					width: 60%;
+				}
+
+				.txt {
+					width: 100%;
+					font-size: 25rpx;
+					font-family: '苹方-简';
+					margin-top: 20rpx;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
 			}
 		}
 	}

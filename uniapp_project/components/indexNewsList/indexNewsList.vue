@@ -14,7 +14,7 @@
 
 		<view class="newsList" v-for="(item, index) in newsList" :key="index">
 			<view class="newsContent" @click="jump(item.id)">
-				<image :src="imgUrl(item.cover)" mode="widthFix"></image>
+				<image :src="ip + item.cover" mode="widthFix"></image>
 				<view class="txt">
 					{{ item.title }}
 				</view>
@@ -47,26 +47,22 @@
 					this.newsList = res.rows
 				})
 			},
-			imgUrl(img) {
-				return 'http://124.93.196.45:10001' + img
-			},
 			jump(id) {
 				uni.navigateTo({
 					url: '/pages/subPages/search/newsDetails?id=' + id,
 				});
 			}
 		},
-		mounted() {
-			getNewsCategory().then(res => {
+		async mounted() {
+			await getNewsCategory().then(res => {
 				this.list = res.data
-
-				getNewsList({
-					params: {
-						type: this.list[0].id
-					}
-				}).then(res => {
-					this.newsList = res.rows
-				})
+			});
+			await getNewsList({
+				params: {
+					type: this.list[0].id
+				}
+			}).then(res => {
+				this.newsList = res.rows
 			})
 		}
 	}
