@@ -84,7 +84,7 @@
 			.category {
 				text-align: center;
 				width: 100%;
-				font-size: 35rpx;
+				font-size: 30rpx;
 				padding: 20rpx 10rpx;
 				margin: 10rpx 0;
 			}

@@ -31,3 +31,6 @@ export const getNewsCategory = (data) => http.get('/prod-api/press/category/list
 
 // get请求，获取新闻详情信息
 export const getNewsDetails = (data, id) => http.get('/prod-api/press/press/' + id, data)
+
+// get请求，获取停车场列表信息
+export const getParkList = (data) => http.get('/prod-api/api/park/lot/list', data)

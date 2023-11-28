@@ -4,6 +4,9 @@ module.exports = (vm) => {
 	uni.$u.http.setConfig((config) => {
 		/* config 为默认全局配置*/
 		config.baseURL = 'http://124.93.196.45:10001'; /* 根域名 */
+		config.header = {
+			Authorization: uni.getStorageSync('token')
+		}
 		return config
 	})
 
