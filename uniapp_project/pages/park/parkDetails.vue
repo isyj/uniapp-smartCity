@@ -49,7 +49,8 @@
 			open(open) {
 				if (open === 'Y') {
 					return '是'
-				} else {
+				}
+				if (open === 'N') {
 					return '否'
 				}
 			},

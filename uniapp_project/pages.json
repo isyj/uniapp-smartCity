@@ -21,14 +21,14 @@
 			}
 		},
 		{
-			"path": "pages/zhihuihuanbao/zhihuihuanbao",
+			"path": "pages/zhiHuiHuanBao/zhiHuiHuanBao",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "智慧环保",
 				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path": "pages/shujvfenxi/shujvfenxi",
+			"path": "pages/shuJuFenXi/shuJuFenXi",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
@@ -69,6 +69,13 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/library/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"globalStyle": {
@@ -96,13 +103,13 @@
 				"text": "全部服务"
 			},
 			{
-				"pagePath": "pages/zhihuihuanbao/zhihuihuanbao",
+				"pagePath": "pages/zhiHuiHuanBao/zhiHuiHuanBao",
 				"iconPath": "static/tabBarImg/zhihuihuanbao.png",
 				"selectedIconPath": "static/tabBarImg/zhihuihuanbao2.png",
 				"text": "智慧环保"
 			},
 			{
-				"pagePath": "pages/shujvfenxi/shujvfenxi",
+				"pagePath": "pages/shuJuFenXi/shuJuFenXi",
 				"iconPath": "static/tabBarImg/shujvfenxi.png",
 				"selectedIconPath": "static/tabBarImg/shujvfenxi2.png",
 				"text": "数据分析"
