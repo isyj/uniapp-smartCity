@@ -12,10 +12,9 @@
 		</view>
 
 
-		<view class="uCard">
-			<uni-card v-for="(item, index) in newsList" :key="index" @click="jump(item.id)" :title="item.title"
-				:subTitle="item.publishDate">
-				<image slot='cover' :src="ip+item.cover" mode="scaleToFill"></image>
+		<view class="uCard" v-for="(item, index) in newsList" :key="index" @click="jump(item.id)">
+			<uni-card :title="item.title" :subTitle="item.publishDate">
+				<image slot='cover' :src="ip+item.cover" mode="widthFix"></image>
 				<view class="card">
 					<view>
 						<uni-icons type="heart-filled"></uni-icons>
@@ -138,6 +137,8 @@
 			margin-top: 20rpx;
 			border-radius: 10px;
 			width: 100%;
+			min-height: 350rpx;
+			max-height: 350rpx;
 		}
 	}
 </style>

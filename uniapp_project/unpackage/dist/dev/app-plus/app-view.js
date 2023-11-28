@@ -3595,82 +3595,85 @@ var render = function () {
         ],
         1
       ),
-      _c(
-        "uni-view",
-        { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-        _vm._l(_vm._$g(6, "f"), function (item, index, $21, $31) {
-          return _c(
-            "uni-card",
-            {
-              key: item,
-              attrs: { _i: "6-" + $31 },
-              on: {
-                click: function ($event) {
-                  return _vm.$handleViewEvent($event)
-                },
+      _vm._l(_vm._$g(5, "f"), function (item, index, $21, $31) {
+        return _c(
+          "uni-view",
+          {
+            key: item,
+            staticClass: _vm._$g("5-" + $31, "sc"),
+            attrs: { _i: "5-" + $31 },
+            on: {
+              click: function ($event) {
+                return _vm.$handleViewEvent($event)
               },
             },
-            [
-              _c("v-uni-image", {
-                attrs: {
+          },
+          [
+            _c(
+              "uni-card",
+              { attrs: { _i: "6-" + $31 } },
+              [
+                _c("v-uni-image", {
+                  attrs: {
+                    slot: "cover",
+                    src: _vm._$g("7-" + $31, "a-src"),
+                    mode: "widthFix",
+                    _i: "7-" + $31,
+                  },
                   slot: "cover",
-                  src: _vm._$g("7-" + $31, "a-src"),
-                  mode: "scaleToFill",
-                  _i: "7-" + $31,
-                },
-                slot: "cover",
-              }),
-              _c(
-                "uni-view",
-                {
-                  staticClass: _vm._$g("8-" + $31, "sc"),
-                  attrs: { _i: "8-" + $31 },
-                },
-                [
-                  _c(
-                    "uni-view",
-                    { attrs: { _i: "9-" + $31 } },
-                    [
-                      _c("uni-icons", { attrs: { _i: "10-" + $31 } }),
-                      _c("v-uni-text", { attrs: { _i: "11-" + $31 } }, [
-                        _vm._v(_vm._$g("11-" + $31, "t0-0")),
-                      ]),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { attrs: { _i: "12-" + $31 } },
-                    [
-                      _c("uni-icons", { attrs: { _i: "13-" + $31 } }),
-                      _c("v-uni-text", { attrs: { _i: "14-" + $31 } }, [
-                        _vm._v(_vm._$g("14-" + $31, "t0-0")),
-                      ]),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { attrs: { _i: "15-" + $31 } },
-                    [
-                      _c("uni-icons", { attrs: { _i: "16-" + $31 } }),
-                      _c("v-uni-text", { attrs: { _i: "17-" + $31 } }, [
-                        _vm._v(_vm._$g("17-" + $31, "t0-0")),
-                      ]),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-            ],
-            1
-          )
-        }),
-        1
-      ),
+                }),
+                _c(
+                  "uni-view",
+                  {
+                    staticClass: _vm._$g("8-" + $31, "sc"),
+                    attrs: { _i: "8-" + $31 },
+                  },
+                  [
+                    _c(
+                      "uni-view",
+                      { attrs: { _i: "9-" + $31 } },
+                      [
+                        _c("uni-icons", { attrs: { _i: "10-" + $31 } }),
+                        _c("v-uni-text", { attrs: { _i: "11-" + $31 } }, [
+                          _vm._v(_vm._$g("11-" + $31, "t0-0")),
+                        ]),
+                      ],
+                      1
+                    ),
+                    _c(
+                      "uni-view",
+                      { attrs: { _i: "12-" + $31 } },
+                      [
+                        _c("uni-icons", { attrs: { _i: "13-" + $31 } }),
+                        _c("v-uni-text", { attrs: { _i: "14-" + $31 } }, [
+                          _vm._v(_vm._$g("14-" + $31, "t0-0")),
+                        ]),
+                      ],
+                      1
+                    ),
+                    _c(
+                      "uni-view",
+                      { attrs: { _i: "15-" + $31 } },
+                      [
+                        _c("uni-icons", { attrs: { _i: "16-" + $31 } }),
+                        _c("v-uni-text", { attrs: { _i: "17-" + $31 } }, [
+                          _vm._v(_vm._$g("17-" + $31, "t0-0")),
+                        ]),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+              ],
+              1
+            ),
+          ],
+          1
+        )
+      }),
     ],
-    1
+    2
   )
 }
 var recyclableRender = false
@@ -4110,7 +4113,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../hbuilderx/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 19);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* uni.scss */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n[data-v-f1e65ce8] ::-webkit-scrollbar {\r\n  display: none;\r\n  width: 0;\r\n  height: 0;\n}\n.content[data-v-f1e65ce8] {\r\n  border-top: 1px #eee solid;\r\n  padding: 15rpx 25rpx 0 25rpx;\r\n  margin: 25rpx 0 20rpx 0;\n}\n.content .news[data-v-f1e65ce8] {\r\n  white-space: nowrap;\r\n  width: 100%;\n}\n.content .news .newsName[data-v-f1e65ce8] {\r\n  display: inline-block;\r\n  width: 30%;\r\n  height: 50rpx;\r\n  line-height: 50rpx;\r\n  font-size: 32rpx;\r\n  padding: 5rpx;\n}\n.content .news .newsName .btn[data-v-f1e65ce8] {\r\n  color: #FFC0CB;\n}\n.content .news .newsName .btn[data-v-f1e65ce8]::after {\r\n  content: '';\r\n  width: 125rpx;\r\n  height: 3px;\r\n  background-color: #FFC0CB;\r\n  position: absolute;\r\n  bottom: 0;\r\n  margin-left: -125rpx;\n}\n.uCard .card[data-v-f1e65ce8] {\r\n  display: flex;\n}\n.uCard .card uni-view[data-v-f1e65ce8] {\r\n  width: 100%;\r\n  text-align: center;\n}\n.uCard uni-image[data-v-f1e65ce8] {\r\n  margin-top: 20rpx;\r\n  border-radius: 10px;\r\n  width: 100%;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* uni.scss */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n[data-v-f1e65ce8] ::-webkit-scrollbar {\r\n  display: none;\r\n  width: 0;\r\n  height: 0;\n}\n.content[data-v-f1e65ce8] {\r\n  border-top: 1px #eee solid;\r\n  padding: 15rpx 25rpx 0 25rpx;\r\n  margin: 25rpx 0 20rpx 0;\n}\n.content .news[data-v-f1e65ce8] {\r\n  white-space: nowrap;\r\n  width: 100%;\n}\n.content .news .newsName[data-v-f1e65ce8] {\r\n  display: inline-block;\r\n  width: 30%;\r\n  height: 50rpx;\r\n  line-height: 50rpx;\r\n  font-size: 32rpx;\r\n  padding: 5rpx;\n}\n.content .news .newsName .btn[data-v-f1e65ce8] {\r\n  color: #FFC0CB;\n}\n.content .news .newsName .btn[data-v-f1e65ce8]::after {\r\n  content: '';\r\n  width: 125rpx;\r\n  height: 3px;\r\n  background-color: #FFC0CB;\r\n  position: absolute;\r\n  bottom: 0;\r\n  margin-left: -125rpx;\n}\n.uCard .card[data-v-f1e65ce8] {\r\n  display: flex;\n}\n.uCard .card uni-view[data-v-f1e65ce8] {\r\n  width: 100%;\r\n  text-align: center;\n}\n.uCard uni-image[data-v-f1e65ce8] {\r\n  margin-top: 20rpx;\r\n  border-radius: 10px;\r\n  width: 100%;\r\n  min-height: 350rpx;\r\n  max-height: 350rpx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
