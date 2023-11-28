@@ -34,3 +34,6 @@ export const getNewsDetails = (data, id) => http.get('/prod-api/press/press/' + 
 
 // get请求，获取停车场列表信息
 export const getParkList = (data) => http.get('/prod-api/api/park/lot/list', data)
+
+// get请求，获取停车场详情信息
+export const getParkDetails = (data, id) => http.get('/prod-api/api/park/lot/' + id, data)

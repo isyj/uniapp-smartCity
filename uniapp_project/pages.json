@@ -62,6 +62,13 @@
 				"navigationBarTitleText": "停哪儿",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/park/parkDetails",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"globalStyle": {
