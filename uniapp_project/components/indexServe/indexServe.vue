@@ -1,13 +1,13 @@
 <template>
 	<view>
 		<view class="content">
-			<view class="serveList" v-for="(item, index) in list" :key="index">
+			<view class="serveList" v-for="(item, index) in list" :key="index" @click="jump(item.link)">
 				<image class="img" :src="imgUrl(item.imgUrl)" mode="widthFix"></image>
 				<view class="txt">
 					{{ item.serviceName }}
 				</view>
 			</view>
-			<view class="serveList" @click="jump()">
+			<view class="serveList" @click="jumpAllServe()">
 				<image class="img" src="../../static/other.png" mode="widthFix"></image>
 				<view class="txt">
 					更多
@@ -31,9 +31,14 @@
 			imgUrl(img) {
 				return 'http://124.93.196.45:10001/' + img
 			},
-			jump() {
+			jumpAllServe() {
 				uni.switchTab({
 					url: '/pages/allServices/allServices'
+				})
+			},
+			jump(link) {
+				uni.navigateTo({
+					url: '/pages/' + link
 				})
 			}
 		},
