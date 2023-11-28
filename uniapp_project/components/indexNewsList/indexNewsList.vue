@@ -98,7 +98,7 @@
 
 				.btn::after {
 					content: '';
-					width: 125 rpx;
+					width: 125rpx;
 					height: 3px;
 					background-color: #FFC0CB;
 					position: absolute;
