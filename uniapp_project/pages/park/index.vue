@@ -3,7 +3,7 @@
 		<uni-card :title="item.parkName" :sub-title="'距离 : '+item.distance+'m'" :extra="'空位 : '+item.vacancy"
 			v-for="(item,index) in list" :key="index" @click="jump(item.id)">
 			<view>地址：<uni-icons type="map"></uni-icons> {{item.address}}</view>
-			<text style="color: red;">价格：{{item.rates}}￥/小时</text>
+			<text style="color: red;">价格：￥{{item.rates}} / 小时</text>
 		</uni-card>
 	</view>
 </template>
@@ -38,7 +38,4 @@
 </script>
 
 <style lang="scss">
-	* {
-		font-family: '苹方-简';
-	}
 </style>

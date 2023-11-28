@@ -82,7 +82,6 @@
 			.txt {
 				width: 100%;
 				font-size: 25rpx;
-				font-family: '苹方-简';
 				white-space: nowrap;
 				text-overflow: ellipsis;
 				overflow: hidden;

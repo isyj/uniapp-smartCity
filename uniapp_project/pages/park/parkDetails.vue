@@ -68,7 +68,6 @@
 <style lang="scss">
 	.home {
 		height: 100%;
-		font-family: '苹方-简';
 
 		.carInfo {
 			margin: 25rpx;

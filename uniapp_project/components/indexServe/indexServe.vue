@@ -72,7 +72,6 @@
 			.txt {
 				width: 100%;
 				font-size: 25rpx;
-				font-family: '苹方-简';
 				margin-top: 20rpx;
 				white-space: nowrap;
 				text-overflow: ellipsis;

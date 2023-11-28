@@ -90,7 +90,6 @@
 				height: 50rpx;
 				line-height: 50rpx;
 				font-size: 32rpx;
-				font-family: '苹方-简';
 				padding: 5rpx;
 
 				.btn {
@@ -135,7 +134,6 @@
 				padding: 10rpx;
 				align-self: center;
 				font-size: 28rpx;
-				font-family: '苹方-简';
 			}
 		}
 	}
