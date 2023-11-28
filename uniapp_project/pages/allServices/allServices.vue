@@ -70,7 +70,7 @@
 		box-sizing: border-box;
 		flex-direction: row;
 		flex-wrap: wrap;
-		padding: 30rpx 10rpx;
+		padding: 10rpx;
 
 		.serveCategory {
 			width: 20%;
@@ -116,7 +116,7 @@
 				margin-bottom: 30rpx;
 
 				.img {
-					width: 60%;
+					width: 55%;
 				}
 
 				.txt {
