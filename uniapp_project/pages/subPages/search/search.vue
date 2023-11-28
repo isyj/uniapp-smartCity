@@ -20,17 +20,32 @@
 		</view>
 
 
-		<view class="nows">
-			<view class="nowsList" v-for="(item,index) in searchList" :key="index" @click="jump(item.id)">
-				<view class="txt">
-					{{item.title}}
+		<view v-for="(item,index) in searchList" :key="index" @click="jump(item.id)">
+			<uni-card :title="item.title" :sub-title="item.publishDate">
+				<view class="card">
+					<view>
+						<uni-icons type="heart-filled"></uni-icons>
+						<text>{{item.likeNum}}</text>
+					</view>
+					<view>
+						<uni-icons type="eye-filled"></uni-icons>
+						<text>{{item.readNum}}</text>
+					</view>
+					<view>
+						<uni-icons type="chat-filled"></uni-icons>
+						<text>{{item.commentNum}}</text>
+					</view>
 				</view>
-			</view>
+			</uni-card>
 		</view>
 	</view>
+
 </template>
 
 <script>
+	import {
+		getNewsList
+	} from "../../../config/api.js"
 	export default {
 		data() {
 			return {
@@ -41,10 +56,10 @@
 		},
 		mounted() {
 			//向后台发送请求，拿到所有的数据然后赋值给allSearchList
-			uni.$u.http.get('/prod-api/press/press/list').then(res => {
+			getNewsList().then(res => {
 				this.allSearchList = res.rows
-
 			})
+
 		},
 		methods: {
 			backIndex() {
@@ -120,26 +135,16 @@
 				font-size: 12px;
 				background-color: #f8f8f8;
 			}
-
 		}
+
 	}
 
-	.nows {
-		box-sizing: border-box;
+	.card {
 		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
-		width: 100%;
 
-		.nowsList {
-			border: #f0f0f0 1px solid;
-			background-color: white;
-			border-radius: 5px;
-
-			.txt {
-				padding: 30rpx 10rpx;
-			}
+		view {
+			width: 100%;
+			text-align: center;
 		}
 	}
 </style>

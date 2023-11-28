@@ -12,14 +12,27 @@
 		</view>
 
 
-		<view class="newsList" v-for="(item, index) in newsList" :key="index">
-			<view class="newsContent" @click="jump(item.id)">
-				<image :src="ip + item.cover" mode="widthFix"></image>
-				<view class="txt">
-					{{ item.title }}
+		<view class="uCard">
+			<uni-card v-for="(item, index) in newsList" :key="index" @click="jump(item.id)" :title="item.title"
+				:subTitle="item.publishDate">
+				<image slot='cover' :src="ip+item.cover" mode="scaleToFill"></image>
+				<view class="card">
+					<view>
+						<uni-icons type="heart-filled"></uni-icons>
+						<text>{{item.likeNum}}</text>
+					</view>
+					<view>
+						<uni-icons type="eye-filled"></uni-icons>
+						<text>{{item.readNum}}</text>
+					</view>
+					<view>
+						<uni-icons type="chat-filled"></uni-icons>
+						<text>{{item.commentNum}}</text>
+					</view>
 				</view>
-			</view>
+			</uni-card>
 		</view>
+
 	</view>
 </template>
 
@@ -104,37 +117,27 @@
 					position: absolute;
 					bottom: 0;
 					margin-left: -125rpx;
+
 				}
 			}
 
 		}
 	}
 
-	.newsList {
-		display: flex;
-		background-color: #eee;
-
-		.newsContent {
-			background-color: white;
+	.uCard {
+		.card {
 			display: flex;
+
+			view {
+				width: 100%;
+				text-align: center;
+			}
+		}
+
+		image {
+			margin-top: 20rpx;
+			border-radius: 10px;
 			width: 100%;
-			border-radius: 5px;
-			margin: 17rpx 15rpx 0 15rpx;
-
-			image {
-				max-width: 280rpx;
-				max-height: 180rpx;
-				min-height: 180rpx;
-				border-radius: 20px;
-				padding: 10rpx;
-				border-radius: 20px;
-			}
-
-			.txt {
-				padding: 10rpx;
-				align-self: center;
-				font-size: 28rpx;
-			}
 		}
 	}
 </style>
