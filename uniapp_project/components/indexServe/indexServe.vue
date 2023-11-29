@@ -34,16 +34,9 @@
 				})
 			},
 			jump(link) {
-				if (link === 'park/index') {
-					uni.navigateTo({
-						url: '/pages/' + link
-					})
-
-				} else {
-					uni.navigateTo({
-						url: '/pages/library/index'
-					})
-				}
+				uni.navigateTo({
+					url: '/pages/' + link
+				})
 			}
 		},
 		mounted() {

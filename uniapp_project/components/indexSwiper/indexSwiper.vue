@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<u-swiper :list="list" autoplay circular duration="500" previousMargin="10" nextMargin="10" bgColor="#fff"
-			height="312rpx"></u-swiper>
+			height="350rpx" @click="jump()"></u-swiper>
 	</view>
 </template>
 
@@ -16,20 +16,21 @@
 				list: [],
 			};
 		},
-		onLoad() {
-
-		},
 		methods: {
-
+			jump() {
+				uni.navigateTo({
+					url: '/pages/library/index'
+				});
+			}
 		},
-		mounted() {
-			getIndexSwiper({
+		async mounted() {
+			await getIndexSwiper({
 				pageNum: 1,
 				pageSize: 8,
 				type: 2
 			}).then(res => {
 				for (let i = 0; i < res.rows.length; i++) {
-					this.list.push('http://124.93.196.45:10001' + res.rows[i].advImg)
+					this.list.push(this.ip + res.rows[i].advImg)
 				}
 			})
 		}
@@ -39,6 +40,6 @@
 
 <style lang="scss">
 	.content {
-		margin: 10rpx 0;
+		margin: 15rpx 0 0 0;
 	}
 </style>

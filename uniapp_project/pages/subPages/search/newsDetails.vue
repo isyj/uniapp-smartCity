@@ -1,10 +1,10 @@
 <template>
 	<view class="home">
 		<view class="u-content">
-			<uni-nav-bar rightWidth="10rpx" leftWidth="50rpx" left-icon="back" :title="this.list.title" statusBar
+			<uni-nav-bar rightWidth="50rpx" leftWidth="80rpx" left-icon="back" :title="this.list.title" statusBar
 				@clickLeft="backSearch()"></uni-nav-bar>
 		</view>
-		<u-parse class="content" :content="this.list" :domain="this.ip" :tagStyle="style"></u-parse>
+		<u-parse class="content" :content="this.list.content" :domain="this.ip" :tagStyle="style"></u-parse>
 	</view>
 </template>
 
@@ -15,7 +15,7 @@
 	export default {
 		data() {
 			return {
-				list: "",
+				list: {},
 				style: {
 					img: 'width: 100%'
 				}
@@ -23,8 +23,7 @@
 		},
 		onLoad(e) {
 			getNewsDetails({}, e.id).then(res => {
-				this.list = res.data.content
-
+				this.list = res.data
 			})
 		},
 		methods: {
