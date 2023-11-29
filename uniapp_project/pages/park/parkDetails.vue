@@ -12,7 +12,7 @@
 
 
 		<view class="carInfo">
-			剩余车位
+			车位信息
 		</view>
 		<view>
 			<uni-card shadow="">

@@ -15,19 +15,18 @@
 
 <script>
 	import {
-		postLogin
+		postLogin,
 	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
 				username: 'tb123',
-				password: '123456'
+				password: '123456',
 			};
 		},
-		onLoad() {},
 		methods: {
-			submit() {
-				postLogin({
+			async submit() {
+				await postLogin({
 					username: this.username,
 					password: this.password
 				}).then(res => {

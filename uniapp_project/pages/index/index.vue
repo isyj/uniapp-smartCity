@@ -15,12 +15,16 @@
 	import indexModuleHot from "../../components/indexHotModule/indexHotModule.vue"
 	import indexNewsList from "../../components/indexNewsList/indexNewsList.vue"
 
+
+	import {
+		getUserInfo
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
 
 			};
-		},
+		}
 	}
 </script>
 

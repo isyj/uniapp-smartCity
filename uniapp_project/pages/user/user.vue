@@ -3,8 +3,8 @@
 
 		<uni-card>
 			<uni-card :isFull="true" :title="this.userInfo.nickName" :sub-title="this.userInfo.email"
-				:thumbnail="ip+this.userInfo.avatar" @click="login()">
-				<text>ID ：{{this.userInfo.userId}}</text>
+				:thumbnail="ip + this.userInfo.avatar" @click="login()">
+				<text>ID ：{{ this.userInfo.userId }}</text>
 			</uni-card>
 			<br />
 			<view class="">
@@ -12,21 +12,17 @@
 			</view>
 			<u-divider></u-divider>
 			<view class="">
-				个人信息
+				订单列表
 			</view>
 			<u-divider></u-divider>
 			<view class="">
-				个人信息
+				修改密码
 			</view>
 			<u-divider></u-divider>
 			<view class="">
-				个人信息
+				意见反馈
 			</view>
-			<u-divider></u-divider>
-			<view class="">
-				个人信息
-			</view>
-			<u-divider></u-divider>
+			<br />
 			<u-button type="error" text="退出登录" @click="logout()"></u-button>
 		</uni-card>
 
@@ -58,9 +54,12 @@
 			},
 			logout() {
 				if (Boolean(uni.getStorageSync('token'))) {
-					uni.clearStorage()
+					uni.clearStorage('token')
 					uni.showToast({
 						title: '注销成功'
+					})
+					uni.reLaunch({
+						url: '/pages/index/index'
 					})
 				} else {
 					uni.showToast({
@@ -70,18 +69,16 @@
 				}
 			}
 		},
-		onLoad() {
-			getUserInfo().then(res => {
-				if (res.data === 200) {
+		async onShow() {
+			if (uni.getStorageSync('token')) {
+				await getUserInfo().then(res => {
 					this.userInfo = res.user
-				} else {
-					this.userInfo = {
-						nickName: "***",
-						email: "***",
-						userId: "********"
-					}
-				}
-			})
+				})
+			} else {
+				uni.navigateTo({
+					url: '/pages/user/login'
+				})
+			}
 
 		}
 	}
