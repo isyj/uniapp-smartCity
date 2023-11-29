@@ -3,10 +3,9 @@
 
 		<view class="box-bg">
 			<uni-nav-bar leftWidth="0rpx" rightWidth="0rpx" border="false" statusBar>
-				<view class="input-view">
+				<view class="input-view" @click="search()">
 					<uni-icons class="input-uni-icon" type="search" size="18" color="#999" />
-					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词"
-						@click="search()" />
+					<input confirm-type="search" class="nav-bar-input" type="text" placeholder="输入搜索关键词" />
 				</view>
 			</uni-nav-bar>
 		</view>

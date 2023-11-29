@@ -24,15 +24,15 @@
 			<uni-card :title="item.title" :sub-title="item.publishDate">
 				<view class="card">
 					<view>
-						<uni-icons type="heart-filled"></uni-icons>
+						<uni-icons type="heart"></uni-icons>
 						<text>{{item.likeNum}}</text>
 					</view>
 					<view>
-						<uni-icons type="eye-filled"></uni-icons>
+						<uni-icons type="eye"></uni-icons>
 						<text>{{item.readNum}}</text>
 					</view>
 					<view>
-						<uni-icons type="chat-filled"></uni-icons>
+						<uni-icons type="chat"></uni-icons>
 						<text>{{item.commentNum}}</text>
 					</view>
 				</view>
@@ -145,6 +145,10 @@
 		view {
 			width: 100%;
 			text-align: center;
+
+			text {
+				margin-left: 5rpx;
+			}
 		}
 	}
 </style>
