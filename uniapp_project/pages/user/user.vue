@@ -1,18 +1,47 @@
 <template>
 	<view class="home">
-		<view class="button">
-			<u-button class="custom-style" @click="login()" type="primary" shape="circle">登录</u-button>
-			<u-button class="custom-style" @click="logout()" type="primary" shape="circle" color='#f56c6c'>注销</u-button>
-		</view>
+
+		<uni-card>
+			<uni-card :isFull="true" :title="this.userInfo.nickName" :sub-title="this.userInfo.email"
+				:thumbnail="ip+this.userInfo.avatar" @click="login()">
+				<text>ID ：{{this.userInfo.userId}}</text>
+			</uni-card>
+			<br />
+			<view class="">
+				个人信息
+			</view>
+			<u-divider></u-divider>
+			<view class="">
+				个人信息
+			</view>
+			<u-divider></u-divider>
+			<view class="">
+				个人信息
+			</view>
+			<u-divider></u-divider>
+			<view class="">
+				个人信息
+			</view>
+			<u-divider></u-divider>
+			<view class="">
+				个人信息
+			</view>
+			<u-divider></u-divider>
+			<u-button type="error" text="退出登录" @click="logout()"></u-button>
+		</uni-card>
+
 	</view>
 </template>
 
 <script>
+	import {
+		getUserInfo
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
-
-			};
+				userInfo: {}
+			}
 		},
 		methods: {
 			login() {
@@ -40,26 +69,34 @@
 					})
 				}
 			}
+		},
+		onLoad() {
+			getUserInfo().then(res => {
+				if (res.data === 200) {
+					this.userInfo = res.user
+				} else {
+					this.userInfo = {
+						nickName: "***",
+						email: "***",
+						userId: "********"
+					}
+				}
+			})
+
 		}
 	}
 </script>
 
 <style lang="scss">
-	.home {
+	.list-cell {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-
-		.button {
-			width: 80%;
-
-			.custom-style {
-				margin-top: 25rpx;
-				color: white;
-				font-size: 40rpx;
-				font-family: '苹方-简';
-			}
-		}
+		box-sizing: border-box;
+		width: 100%;
+		padding: 10px 24rpx;
+		overflow: hidden;
+		color: #323233;
+		font-size: 14px;
+		line-height: 24px;
+		background-color: #fff;
 	}
 </style>

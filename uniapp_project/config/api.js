@@ -12,6 +12,8 @@ export const getMenu = (data) => http.get('/ebapi/public_api/index', data)
 //post请求，登录接口验证账号密码，获取登录token
 export const postLogin = (params) => http.post('/prod-api/api/login', params)
 
+// get请求，获取个人信息
+export const getUserInfo = (data) => http.get('/prod-api/api/common/user/getInfo', data)
 
 // get请求，获取首页轮播图
 export const getIndexSwiper = (data) => http.get('/prod-api/api/rotation/list', data)
