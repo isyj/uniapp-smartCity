@@ -12,7 +12,6 @@ module.exports = (vm) => {
 		config.header = {
 			...config.header,
 			Authorization: uni.getStorageSync('token')
-			// 演示拦截器header加参
 		}
 
 
