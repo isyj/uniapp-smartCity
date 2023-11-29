@@ -36,7 +36,11 @@
 	export default {
 		data() {
 			return {
-				userInfo: {}
+				userInfo: {
+					nickName: '未登录',
+					email: 'none',
+					userId: 'none'
+				}
 			}
 		},
 		methods: {
@@ -73,10 +77,6 @@
 			if (uni.getStorageSync('token')) {
 				await getUserInfo().then(res => {
 					this.userInfo = res.user
-				})
-			} else {
-				uni.navigateTo({
-					url: '/pages/user/login'
 				})
 			}
 
