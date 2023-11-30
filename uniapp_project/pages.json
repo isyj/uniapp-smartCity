@@ -78,11 +78,31 @@
 			}
 		},
 		{
-			"path" : "pages/user/userInfo",
-			"style" : 
-			{
-				"navigationBarTitleText" : "个人信息",
-				"enablePullDownRefresh" : false
+			"path": "pages/user/userInfo",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/password",
+			"style": {
+				"navigationBarTitleText": "修改密码",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/allOrder",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈",
+				"enablePullDownRefresh": false
 			}
 		}
 	],

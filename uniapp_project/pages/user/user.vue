@@ -11,19 +11,19 @@
 				个人信息
 			</view>
 			<u-divider></u-divider>
-			<view class="">
+			<view class="" @click="jump('allOrder')">
 				订单列表
 			</view>
 			<u-divider></u-divider>
-			<view class="">
+			<view class="" @click="jump('password')">
 				修改密码
 			</view>
 			<u-divider></u-divider>
-			<view class="">
+			<view class="" @click="jump('feedback')">
 				意见反馈
 			</view>
 			<br />
-			<u-button type="error" text="退出登录" @click="logout()"></u-button>
+			<u-button type=" error" text="退出登录" @click="logout()"></u-button>
 		</uni-card>
 
 	</view>
@@ -53,7 +53,7 @@
 			},
 			logout() {
 				if (Boolean(uni.getStorageSync('token'))) {
-					uni.clearStorage()
+					uni.removeStorageSync('token')
 					uni.showToast({
 						title: '注销成功'
 					})

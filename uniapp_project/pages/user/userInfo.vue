@@ -1,15 +1,19 @@
 <template>
 	<view>
+
 		<uni-card>
 			<u-cell-group>
+
 				<u-cell :disabled="changeState" title="头像">
 					<image :src="ip+this.userInfo.avatar" mode="aspectFill" slot="right-icon" @click="upLoadCover()">
 					</image>
 				</u-cell>
 
+
 				<u-cell :disabled="changeState" title="昵称">
 					<input :disabled="changeState" slot="right-icon" type="text" v-model="userInfo.nickName" />
 				</u-cell>
+
 
 				<u-cell :disabled="changeState" title="性别">
 					<radio-group slot="right-icon" @change="sex()" style="width : 250rpx;">
@@ -18,23 +22,30 @@
 					</radio-group>
 				</u-cell>
 
+
 				<u-cell :disabled="changeState" title="联系电话">
 					<input :disabled="changeState" slot="right-icon" type="text" v-model="phoneNumber"
 						@focus="phoneNumber=userInfo.phonenumber" @blur="blurPhoneNumber()" />
 				</u-cell>
 
+
 				<u-cell :disabled="changeState" title="邮箱地址">
 					<input :disabled="changeState" slot="right-icon" type="text" v-model="userInfo.email" />
 				</u-cell>
 
+
 				<u-cell disabled title="身份证" :value="this.userInfo.idCard.slice(0,-4) + '****'"></u-cell>
 
+
 				<u-cell disabled title="余额" :value="'￥' + this.userInfo.balance"></u-cell>
+
 
 				<u-cell disabled title="积分" :value="this.userInfo.score"></u-cell>
 
 				<br />
-				<button @click="uploadUserInfo()" type="warn">{{changeState?"修改":"保存"}}</button>
+
+				<u-button @click="uploadUserInfo()" type="error">{{changeState?"修改":"保存"}}</u-button>
+
 			</u-cell-group>
 		</uni-card>
 

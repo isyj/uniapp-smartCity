@@ -21,6 +21,15 @@ export const getUserInfo = (data) => http.get('/prod-api/api/common/user/getInfo
 // put请求 上传修改的个人信息
 export const putUserInfo = (params) => http.put('/prod-api/api/common/user', params)
 
+// put请求 修改密码
+export const putUserPassword = (params) => http.put('/prod-api/api/common/user/resetPwd', params)
+
+// get请求，获取订单
+export const getAllOrder = (data) => http.get('/prod-api/api/allorder/list', data)
+
+// get请求，获取订单
+export const postFeekback = (params) => http.post('/prod-api/api/common/feedback', params)
+
 // get请求，获取首页轮播图
 export const getIndexSwiper = (data) => http.get('/prod-api/api/rotation/list', data)
 
