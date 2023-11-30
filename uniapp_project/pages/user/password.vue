@@ -54,7 +54,4 @@
 </script>
 
 <style lang="scss">
-	.home {
-		margin-top: 50rpx;
-	}
 </style>

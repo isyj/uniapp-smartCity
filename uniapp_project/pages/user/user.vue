@@ -2,7 +2,7 @@
 	<view class="home">
 
 		<uni-card>
-			<uni-card :isFull="true" :title="this.userInfo.nickName" :sub-title="this.userInfo.email"
+			<uni-card isFull :title="this.userInfo.nickName" :sub-title="this.userInfo.email"
 				:thumbnail="ip + this.userInfo.avatar" @click="login()">
 				<text>ID ：{{ this.userInfo.userId }}</text>
 			</uni-card>

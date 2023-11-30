@@ -4,7 +4,10 @@
 			<uni-nav-bar rightWidth="50rpx" leftWidth="80rpx" left-icon="back" :title="this.list.title" statusBar
 				@clickLeft="backSearch()"></uni-nav-bar>
 		</view>
-		<u-parse class="content" :content="this.list.content" :domain="this.ip" :tagStyle="style"></u-parse>
+		<uni-card padding="10rpx 0" margin="15rpx">
+			<u-parse class="content" :content="this.list.content" :domain="this.ip" :tagStyle="style"></u-parse>
+		</uni-card>
+
 	</view>
 </template>
 
@@ -35,15 +38,5 @@
 </script>
 
 <style lang="scss">
-	.home {
-		background-color: #f0f0f0;
 
-		.content {
-			background-color: #fff;
-			border-radius: 10px;
-			box-sizing: border-box;
-			padding: 20rpx;
-			margin: 20rpx;
-		}
-	}
 </style>
