@@ -65,8 +65,9 @@
 	}
 
 	.jumpFeedbackList {
-		margin: 20rpx auto;
+		text-align: center;
 		width: 40%;
+		margin: 15rpx auto 0 auto;
 		height: 50rpx;
 		color: #aaa;
 	}

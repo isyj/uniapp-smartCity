@@ -97,7 +97,7 @@
 							uni.setStorageSync('userInfo', res.user)
 						});
 					} else {
-						this.userInfo = uni.getStorageSync('userInfo')
+						this.changeState = !this.changeState
 						uni.showToast({
 							title: '格式有误',
 							icon: 'error'

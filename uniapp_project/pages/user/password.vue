@@ -5,12 +5,13 @@
 
 				<u-cell title="旧密码">
 					<input class="oldPassword" type="password" slot="value" placeholder="请输入旧密码"
-						v-model="oldPassword" />
+						placeholder-style="font-size:25rpx; color:#ccc" v-model="oldPassword" />
 				</u-cell>
 
 
 				<u-cell title="新密码">
-					<input type="password" slot="value" placeholder="请输入新密码" v-model="newPassword" />
+					<input type="password" slot="value" placeholder="请输入新密码"
+						placeholder-style="font-size:25rpx; color:#ccc" v-model="newPassword" />
 				</u-cell>
 
 			</u-cell-group>
