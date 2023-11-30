@@ -1,7 +1,7 @@
 <template>
 	<view>
 
-		<uni-card is-full padding="10rpx">
+		<uni-card>
 
 			<text>标题</text>
 			<uni-easyinput placeholder="请输入标题" v-model="title"></uni-easyinput>
@@ -65,7 +65,7 @@
 	}
 
 	.jumpFeedbackList {
-		margin: 20rpx auto 0 auto;
+		margin: 20rpx auto;
 		width: 40%;
 		height: 50rpx;
 		color: #aaa;
