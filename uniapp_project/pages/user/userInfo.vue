@@ -86,6 +86,7 @@
 							uni.setStorageSync('userInfo', res.user)
 						});
 					} else {
+						this.userInfo = uni.getStorageSync('userInfo')
 						uni.showToast({
 							title: '格式有误',
 							icon: 'error'
@@ -120,6 +121,7 @@
 	}
 
 	input {
-		width: 250rpx;
+		width: 260rpx;
+		font-size: 28rpx
 	}
 </style>
