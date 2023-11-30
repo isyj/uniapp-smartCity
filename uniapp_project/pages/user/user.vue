@@ -7,7 +7,7 @@
 				<text>ID ：{{ this.userInfo.userId }}</text>
 			</uni-card>
 			<br />
-			<view class="">
+			<view class="" @click="jump('userInfo')">
 				个人信息
 			</view>
 			<u-divider></u-divider>
@@ -45,12 +45,7 @@
 		},
 		methods: {
 			login() {
-				if (uni.getStorageSync('token')) {
-					uni.showToast({
-						title: '您已登录',
-						icon: 'error'
-					})
-				} else {
+				if (!uni.getStorageSync('token')) {
 					uni.navigateTo({
 						url: '/pages/user/login'
 					})
@@ -58,7 +53,7 @@
 			},
 			logout() {
 				if (Boolean(uni.getStorageSync('token'))) {
-					uni.clearStorage('token')
+					uni.clearStorage()
 					uni.showToast({
 						title: '注销成功'
 					})
@@ -71,12 +66,18 @@
 						icon: 'error'
 					})
 				}
+			},
+			jump(link) {
+				uni.navigateTo({
+					url: '/pages/user/' + link
+				})
 			}
 		},
 		async onShow() {
 			if (uni.getStorageSync('token')) {
 				await getUserInfo().then(res => {
 					this.userInfo = res.user
+					uni.setStorageSync('userInfo', this.userInfo)
 				})
 			}
 
@@ -85,15 +86,5 @@
 </script>
 
 <style lang="scss">
-	.list-cell {
-		display: flex;
-		box-sizing: border-box;
-		width: 100%;
-		padding: 10px 24rpx;
-		overflow: hidden;
-		color: #323233;
-		font-size: 14px;
-		line-height: 24px;
-		background-color: #fff;
-	}
+
 </style>

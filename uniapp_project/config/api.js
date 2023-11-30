@@ -9,11 +9,17 @@ export const getMenu = (data) => http.get('/ebapi/public_api/index', data)
 */
 
 
+// post请求 文件上传接口
+export const postLoadFile = (params) => http.upload('/prod-api/common/upload', params)
+
 //post请求，登录接口验证账号密码，获取登录token
 export const postLogin = (params) => http.post('/prod-api/api/login', params)
 
 // get请求，获取个人信息
 export const getUserInfo = (data) => http.get('/prod-api/api/common/user/getInfo', data)
+
+// put请求 上传修改的个人信息
+export const putUserInfo = (params) => http.put('/prod-api/api/common/user', params)
 
 // get请求，获取首页轮播图
 export const getIndexSwiper = (data) => http.get('/prod-api/api/rotation/list', data)
