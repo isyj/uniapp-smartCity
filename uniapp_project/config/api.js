@@ -27,8 +27,14 @@ export const putUserPassword = (params) => http.put('/prod-api/api/common/user/r
 // get请求，获取订单
 export const getAllOrder = (data) => http.get('/prod-api/api/allorder/list', data)
 
-// get请求，获取订单
-export const postFeekback = (params) => http.post('/prod-api/api/common/feedback', params)
+// post请求，提交意见反馈信息
+export const postFeedback = (params) => http.post('/prod-api/api/common/feedback', params)
+
+// get请求，获取意见反馈列表
+export const getFeedbackList = (data) => http.get('/prod-api/api/common/feedback/list', data)
+
+// get请求，获取意见反馈详情
+export const getFeedbackDetails = (data, id) => http.get(`/prod-api/api/common/feedback/${id}`, data)
 
 // get请求，获取首页轮播图
 export const getIndexSwiper = (data) => http.get('/prod-api/api/rotation/list', data)

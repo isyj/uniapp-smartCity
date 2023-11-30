@@ -23,7 +23,7 @@
 				意见反馈
 			</view>
 			<br />
-			<u-button type=" error" text="退出登录" @click="logout()"></u-button>
+			<u-button type="error" text="退出登录" @click="logout()"></u-button>
 		</uni-card>
 
 	</view>

@@ -104,6 +104,20 @@
 				"navigationBarTitleText": "意见反馈",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/user/feedbackList",
+			"style": {
+				"navigationBarTitleText": "历史反馈",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/feedbackDetails",
+			"style": {
+				"navigationBarTitleText": "反馈详情",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"globalStyle": {

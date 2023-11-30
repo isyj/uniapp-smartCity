@@ -18,6 +18,10 @@
 
 			<u-button type="primary" @click="submit()">提交</u-button>
 
+			<view class="jumpFeedbackList" @click="jumpFeedbackList()">
+				查询历史反馈信息
+			</view>
+
 		</uni-card>
 
 	</view>
@@ -25,19 +29,18 @@
 
 <script>
 	import {
-		postFeekback
+		postFeedback
 	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
 				title: '',
-				content: ''
+				content: '',
 			};
 		},
 		methods: {
 			submit() {
-				console.log(this.title);
-				postFeekback({
+				postFeedback({
 					title: this.title,
 					content: this.content
 				}).then(res => {
@@ -45,6 +48,12 @@
 						title: res.msg
 					})
 				})
+			},
+			jumpFeedbackList() {
+				uni.navigateTo({
+					url: '/pages/user/feedbackList',
+
+				});
 			}
 		}
 	}
@@ -53,5 +62,12 @@
 <style lang="scss">
 	text {
 		font-size: 35rpx;
+	}
+
+	.jumpFeedbackList {
+		margin: 20rpx auto 0 auto;
+		width: 40%;
+		height: 50rpx;
+		color: #aaa;
 	}
 </style>
