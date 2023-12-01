@@ -132,6 +132,14 @@
 				"navigationBarTitleText": "评论",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path" : "pages/video",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {

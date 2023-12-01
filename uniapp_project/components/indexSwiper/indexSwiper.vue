@@ -19,7 +19,7 @@
 		methods: {
 			jump() {
 				uni.navigateTo({
-					url: '/pages/library/index'
+					url: '/pages/video'
 				});
 			}
 		},
