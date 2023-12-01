@@ -1,7 +1,8 @@
 <template>
 	<view>
-		<!-- 	<uni-nav-bar statusBar left-icon="back" :title="this.list.name" @clickLeft="back()"></uni-nav-bar> -->
+
 		<u-navbar :title="this.list.name" placeholder autoBack bgColor="#f8f8f8"></u-navbar>
+
 		<uni-card :title="this.list.name" :subTitle="this.list.address" :extra="state(this.list.businessState)"
 			note="Tips">
 			<image slot='cover' :src="ip + this.list.imgUrl" mode="aspectFill"></image>
@@ -16,6 +17,7 @@
 
 			<u-button class="btn" type="primary" text="评论" @click="jump(list.id)"></u-button>
 		</uni-card>
+
 	</view>
 </template>
 

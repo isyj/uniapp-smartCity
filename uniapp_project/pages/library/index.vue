@@ -1,9 +1,11 @@
 <template>
 	<view>
+
 		<uni-card :title="item.name" :subTitle="item.address" :extra="state(item.businessState)" note="Tips"
 			v-for="(item,index) in list" :key="index" @click="jump(item.id)">
 			营业时间：{{item.businessHours}}
 		</uni-card>
+
 	</view>
 </template>
 
