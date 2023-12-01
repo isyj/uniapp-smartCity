@@ -71,13 +71,6 @@
 			}
 		},
 		{
-			"path": "pages/library/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
 			"path": "pages/user/userInfo",
 			"style": {
 				"navigationBarTitleText": "个人信息",
@@ -116,6 +109,27 @@
 			"path": "pages/user/feedbackDetails",
 			"style": {
 				"navigationBarTitleText": "反馈详情",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/library/index",
+			"style": {
+				"navigationBarTitleText": "智慧图书馆",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/library/libraryDetails",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/library/libraryComment",
+			"style": {
+				"navigationBarTitleText": "评论",
 				"enablePullDownRefresh": false
 			}
 		}

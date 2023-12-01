@@ -6326,9 +6326,8 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    uniNavBar:
-      __webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 8)
-        .default,
+    uNavbar: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-navbar/u-navbar.vue */ 319)
+      .default,
     uniCard: __webpack_require__(/*! @/uni_modules/uni-card/components/uni-card/uni-card.vue */ 95)
       .default,
     uParse: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-parse/u-parse.vue */ 176)
@@ -6359,25 +6358,11 @@ var render = function () {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
-      _c(
-        "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c("uni-nav-bar", {
-            attrs: { _i: 2 },
-            on: {
-              clickLeft: function ($event) {
-                return _vm.$handleViewEvent($event)
-              },
-            },
-          }),
-        ],
-        1
-      ),
+      _c("u-navbar", { attrs: { _i: 1 } }),
       _c(
         "uni-card",
-        { attrs: { _i: 3 } },
-        [_c("u-parse", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } })],
+        { attrs: { _i: 2 } },
+        [_c("u-parse", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } })],
         1
       ),
     ],

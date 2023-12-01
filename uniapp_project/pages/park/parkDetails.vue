@@ -1,8 +1,7 @@
 <template>
 	<view class="home">
-		<uni-nav-bar :title="this.list.parkName" statusBar leftIcon="back" @clickLeft="backPackIndex()"></uni-nav-bar>
 
-
+		<u-navbar :title="this.list.parkName" placeholder autoBack bgColor="#f8f8f8"></u-navbar>
 		<u-cell-group>
 			<u-cell icon="" title="停车场" :value="this.list.parkName"></u-cell>
 			<u-cell icon="" title="地址" :value="this.list.address"></u-cell>
@@ -32,6 +31,7 @@
 
 			</uni-card>
 		</view>
+
 	</view>
 </template>
 
@@ -54,9 +54,6 @@
 					return '否'
 				}
 			},
-			backPackIndex() {
-				uni.navigateBack()
-			}
 		},
 		onLoad(e) {
 			getParkDetails({}, e.id).then(res => {

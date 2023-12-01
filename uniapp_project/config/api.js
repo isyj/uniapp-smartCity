@@ -36,27 +36,40 @@ export const getFeedbackList = (data) => http.get('/prod-api/api/common/feedback
 // get请求，获取意见反馈详情
 export const getFeedbackDetails = (data, id) => http.get(`/prod-api/api/common/feedback/${id}`, data)
 
+
+
 // get请求，获取首页轮播图
 export const getIndexSwiper = (data) => http.get('/prod-api/api/rotation/list', data)
-
 
 // get请求，获取全部服务
 export const getServe = (data) => http.get('/prod-api/api/service/list', data)
 
 
+
 // get请求，获取新闻列表
 export const getNewsList = (data) => http.get('/prod-api/press/press/list', data)
-
 
 // get请求，获取新闻分类
 export const getNewsCategory = (data) => http.get('/prod-api/press/category/list', data)
 
-
 // get请求，获取新闻详情信息
 export const getNewsDetails = (data, id) => http.get('/prod-api/press/press/' + id, data)
+
+
 
 // get请求，获取停车场列表信息
 export const getParkList = (data) => http.get('/prod-api/api/park/lot/list', data)
 
 // get请求，获取停车场详情信息
 export const getParkDetails = (data, id) => http.get('/prod-api/api/park/lot/' + id, data)
+
+
+
+// get请求，获取图书馆列表
+export const getlLibraryList = (data) => http.get('/prod-api/api/digital-library/library/list', data)
+
+// get请求，获取图书馆详情信息
+export const getlLibraryDetails = (data, id) => http.get(`/prod-api/api/digital-library/library/${id}`, data)
+
+// get请求，获取图书馆评论
+export const getlLibraryComment = (data) => http.get('/prod-api/api/digital-library/library-comment/list', data)

@@ -1,10 +1,9 @@
 <template>
 	<view class="home">
-		<view class="u-content">
-			<uni-nav-bar rightWidth="50rpx" leftWidth="80rpx" left-icon="back" :title="this.list.title" statusBar
-				@clickLeft="backSearch()"></uni-nav-bar>
-		</view>
-		<uni-card padding="10rpx 0" margin="15rpx">
+
+		<u-navbar :title="this.list.title" placeholder autoBack bgColor="#f8f8f8"></u-navbar>
+
+		<uni-card>
 			<u-parse class="content" :content="this.list.content" :domain="this.ip" :tagStyle="style"></u-parse>
 		</uni-card>
 
