@@ -36,6 +36,12 @@ module.exports = (vm) => {
 				}
 
 			},
+			fail(err) {
+				uni.showToast({
+					title: err.errMsg,
+					icon: 'none'
+				})
+			},
 		}
 
 		uni.addInterceptor('navigateTo', intercept)
