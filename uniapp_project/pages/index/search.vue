@@ -45,7 +45,7 @@
 <script>
 	import {
 		getNewsList
-	} from "../../../config/api.js"
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
@@ -89,7 +89,7 @@
 			},
 			jump(id) {
 				uni.navigateTo({
-					url: '/pages/subPages/search/newsDetails?id=' + id,
+					url: '/pages/index/newsDetails?id=' + id,
 				});
 			}
 		}

@@ -61,7 +61,7 @@
 			},
 			jump(id) {
 				uni.navigateTo({
-					url: '/pages/subPages/search/newsDetails?id=' + id,
+					url: '/pages/index/newsDetails?id=' + id,
 				});
 			}
 		},

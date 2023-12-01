@@ -14,7 +14,7 @@
 			}
 		},
 		{
-			"path": "pages/subPages/search/search",
+			"path": "pages/index/search",
 			"style": {
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
@@ -42,7 +42,7 @@
 			}
 		},
 		{
-			"path": "pages/subPages/search/newsDetails",
+			"path": "pages/index/newsDetails",
 			"style": {
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
@@ -134,11 +134,10 @@
 			}
 		},
 		{
-			"path" : "pages/video",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
+			"path": "pages/video",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 		}
 	],

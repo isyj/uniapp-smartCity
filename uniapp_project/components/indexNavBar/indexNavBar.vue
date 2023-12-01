@@ -23,7 +23,7 @@
 		methods: {
 			search() {
 				uni.navigateTo({
-					url: '/pages/subPages/search/search',
+					url: '/pages/index/search',
 					animationType: 'fade-in',
 				})
 			}

@@ -13,7 +13,7 @@
 <script>
 	import {
 		getNewsDetails
-	} from "../../../config/api.js"
+	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
