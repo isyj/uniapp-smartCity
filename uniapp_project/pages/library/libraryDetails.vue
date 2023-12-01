@@ -5,7 +5,8 @@
 
 		<uni-card :title="this.list.name" :subTitle="this.list.address" :extra="state(this.list.businessState)"
 			note="Tips">
-			<image slot='cover' :src="ip + this.list.imgUrl" mode="aspectFill"></image>
+			<image slot='cover' :src="ip + this.list.imgUrl" mode="aspectFill" @click="clickImage(list.imgUrl)">
+			</image>
 			<view class="">
 				营业时间：{{this.list.businessHours}}
 			</view>
@@ -50,6 +51,11 @@
 			jump(id) {
 				uni.navigateTo({
 					url: '/pages/library/libraryComment?id=' + id
+				})
+			},
+			clickImage(imgUrl) {
+				uni.previewImage({
+					urls: [this.ip + imgUrl]
 				})
 			}
 		}

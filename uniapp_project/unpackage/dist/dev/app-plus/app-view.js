@@ -11666,6 +11666,11 @@ var render = function () {
               mode: "aspectFill",
               _i: 3,
             },
+            on: {
+              click: function ($event) {
+                return _vm.$handleViewEvent($event)
+              },
+            },
             slot: "cover",
           }),
           _c("uni-view", { attrs: { _i: 4 } }, [
