@@ -9,6 +9,9 @@
 					</image>
 				</u-cell>
 
+				<u-cell disabled title="用户名" :value="userInfo.userName">
+
+				</u-cell>
 
 				<u-cell :disabled="changeState" title="昵称">
 					<input :disabled="changeState" slot="right-icon" type="text" v-model="userInfo.nickName" />
@@ -34,7 +37,7 @@
 				</u-cell>
 
 
-				<u-cell disabled title="身份证" :value="this.userInfo.idCard.slice(0,-4) + '****'"></u-cell>
+				<u-cell disabled title="身份证" :value="idCard()"></u-cell>
 
 
 				<u-cell disabled title="余额" :value="'￥' + this.userInfo.balance"></u-cell>
@@ -67,6 +70,12 @@
 			}
 		},
 		methods: {
+			idCard() {
+				if (this.userInfo.idCard) {
+					this.userInfo.idCard = this.userInfo.idCard.slice(0, -4) + '****'
+					return this.userInfo.idCard
+				}
+			},
 			sex() {
 				if (this.userInfo.sex == 0) {
 					this.userInfo.sex = 1
@@ -85,8 +94,10 @@
 			async uploadUserInfo() {
 				this.changeState = !this.changeState
 				if (this.changeState) {
-					if (this.$u.test.mobile(this.userInfo.phonenumber) && uni.$u.test.isEmpty(!this.userInfo
-							.nickName) && this.$u.test.email(this.userInfo.email)) {
+					let flag = Boolean(this.$u.test.mobile(this.userInfo.phonenumber) && uni.$u.test.isEmpty(!this
+						.userInfo
+						.nickName) && this.$u.test.email(this.userInfo.email))
+					if (flag) {
 						await putUserInfo(this.userInfo).then(res => {
 							uni.showToast({
 								title: res.msg

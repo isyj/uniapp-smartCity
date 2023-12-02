@@ -7,6 +7,10 @@
 				<input type="text" v-model="username" />
 				<input type="password" v-model="password" />
 				<button @click="submit()">登录</button>
+
+				<view class="register" @click="register()">
+					注册
+				</view>
 			</view>
 		</view>
 	</view>
@@ -20,8 +24,8 @@
 	export default {
 		data() {
 			return {
-				username: 'tb123',
-				password: '123456'
+				username: 'imxiaochen',
+				password: 'imxiaochen0v0'
 			};
 		},
 		methods: {
@@ -45,7 +49,11 @@
 							icon: 'none',
 						})
 					}
-
+				})
+			},
+			register() {
+				uni.navigateTo({
+					url: '/pages/user/register'
 				})
 			}
 		}
@@ -69,7 +77,7 @@
 			flex-direction: column;
 			background-color: black;
 			width: 80%;
-			height: 50%;
+			height: 45%;
 			border-radius: 10px;
 			background-color: #fff;
 			align-items: center;
@@ -84,7 +92,7 @@
 			.input {
 				width: 75%;
 				height: 40%;
-				margin-top: 100rpx;
+				margin-top: 70rpx;
 				color: pink;
 
 				input {
@@ -98,6 +106,12 @@
 					color: white;
 					font-family: '苹方-简';
 					margin-top: 50rpx;
+				}
+
+				.register {
+					margin: 10rpx auto;
+					width: 20%;
+					text-align: center;
 				}
 			}
 

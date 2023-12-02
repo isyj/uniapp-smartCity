@@ -57,6 +57,13 @@
 			}
 		},
 		{
+			"path": "pages/user/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
 			"path": "pages/park/index",
 			"style": {
 				"navigationBarTitleText": "停哪儿",
@@ -140,6 +147,7 @@
 				"enablePullDownRefresh": false
 			}
 		}
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

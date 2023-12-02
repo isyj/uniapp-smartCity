@@ -15,6 +15,9 @@ export const postLoadFile = (params) => http.upload('/prod-api/common/upload', p
 //post请求，登录接口验证账号密码，获取登录token
 export const postLogin = (params) => http.post('/prod-api/api/login', params)
 
+//post请求，登录接口验证账号密码，获取登录token
+export const postRegister = (params) => http.post('/prod-api/api/register', params)
+
 // get请求，获取个人信息
 export const getUserInfo = (data) => http.get('/prod-api/api/common/user/getInfo', data)
 

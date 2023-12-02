@@ -18,6 +18,7 @@ module.exports = (vm) => {
 		//白名单
 		const whiteList = [
 			'/pages/user/login',
+			'/pages/user/register'
 		]
 		//判断是否登录
 		const intercept = {

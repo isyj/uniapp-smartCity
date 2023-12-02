@@ -38,7 +38,6 @@
 			return {
 				userInfo: {
 					nickName: '未登录',
-					email: 'none',
 					userId: 'none'
 				}
 			}
@@ -53,7 +52,7 @@
 			},
 			logout() {
 				if (Boolean(uni.getStorageSync('token'))) {
-					uni.removeStorageSync('token')
+					uni.clearStorage()
 					uni.showToast({
 						title: '注销成功'
 					})
