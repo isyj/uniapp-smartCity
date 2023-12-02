@@ -12658,20 +12658,23 @@ var render = function () {
         ],
         1
       ),
+      _c("uni-view", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }, [
+        _vm._v("人才政策"),
+      ]),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-        _vm._l(_vm._$g(6, "f"), function (item, index, $20, $30) {
+        { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+        _vm._l(_vm._$g(7, "f"), function (item, index, $20, $30) {
           return _c(
             "uni-card",
-            { key: item, attrs: { _i: "6-" + $30 } },
+            { key: item, attrs: { _i: "7-" + $30 } },
             [
               _c("v-uni-image", {
                 attrs: {
                   slot: "cover",
-                  src: _vm._$g("7-" + $30, "a-src"),
+                  src: _vm._$g("8-" + $30, "a-src"),
                   mode: "center",
-                  _i: "7-" + $30,
+                  _i: "8-" + $30,
                 },
                 on: {
                   click: function ($event) {
@@ -12680,8 +12683,8 @@ var render = function () {
                 },
                 slot: "cover",
               }),
-              _c("uni-view", { attrs: { _i: "8-" + $30 } }, [
-                _vm._v(_vm._$g("8-" + $30, "t0-0")),
+              _c("uni-view", { attrs: { _i: "9-" + $30 } }, [
+                _vm._v(_vm._$g("9-" + $30, "t0-0")),
               ]),
             ],
             1
@@ -12689,19 +12692,22 @@ var render = function () {
         }),
         1
       ),
+      _c("uni-view", { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } }, [
+        _vm._v("青年驿站"),
+      ]),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-        _vm._l(_vm._$g(10, "f"), function (item, index, $21, $31) {
+        { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+        _vm._l(_vm._$g(12, "f"), function (item, index, $21, $31) {
           return _c(
             "uni-card",
-            { key: item, attrs: { _i: "10-" + $31 } },
+            { key: item, attrs: { _i: "12-" + $31 } },
             [
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g("11-" + $31, "sc"),
-                  attrs: { slot: "title", _i: "11-" + $31 },
+                  staticClass: _vm._$g("13-" + $31, "sc"),
+                  attrs: { slot: "title", _i: "13-" + $31 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
@@ -12712,31 +12718,31 @@ var render = function () {
                 [
                   _c("v-uni-image", {
                     attrs: {
-                      src: _vm._$g("12-" + $31, "a-src"),
+                      src: _vm._$g("14-" + $31, "a-src"),
                       mode: "aspectFill",
-                      _i: "12-" + $31,
+                      _i: "14-" + $31,
                     },
                   }),
                   _c(
                     "uni-view",
                     {
-                      staticClass: _vm._$g("13-" + $31, "sc"),
-                      attrs: { _i: "13-" + $31 },
+                      staticClass: _vm._$g("15-" + $31, "sc"),
+                      attrs: { _i: "15-" + $31 },
                     },
                     [
-                      _c("uni-view", { attrs: { _i: "14-" + $31 } }, [
-                        _vm._v(_vm._$g("14-" + $31, "t0-0")),
+                      _c("uni-view", { attrs: { _i: "16-" + $31 } }, [
+                        _vm._v(_vm._$g("16-" + $31, "t0-0")),
                       ]),
-                      _c("uni-view", { attrs: { _i: "15-" + $31 } }, [
+                      _c("uni-view", { attrs: { _i: "17-" + $31 } }, [
                         _vm._v(
                           "剩余床位：男" +
-                            _vm._$g("15-" + $31, "t0-0") +
+                            _vm._$g("17-" + $31, "t0-0") +
                             " | 女" +
-                            _vm._$g("15-" + $31, "t0-1")
+                            _vm._$g("17-" + $31, "t0-1")
                         ),
                       ]),
-                      _c("uni-view", { attrs: { _i: "16-" + $31 } }, [
-                        _vm._v("地址 ：" + _vm._$g("16-" + $31, "t0-0")),
+                      _c("uni-view", { attrs: { _i: "18-" + $31 } }, [
+                        _vm._v("地址 ：" + _vm._$g("18-" + $31, "t0-0")),
                       ]),
                     ],
                     1
@@ -12747,21 +12753,21 @@ var render = function () {
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g("17-" + $31, "sc"),
+                  staticClass: _vm._$g("19-" + $31, "sc"),
                   staticStyle: { "margin-top": "15rpx" },
-                  attrs: { _i: "17-" + $31 },
+                  attrs: { _i: "19-" + $31 },
                 },
                 [
                   _c(
                     "u-collapse",
-                    { attrs: { _i: "18-" + $31 } },
+                    { attrs: { _i: "20-" + $31 } },
                     [
                       _c(
                         "u-collapse-item",
-                        { attrs: { _i: "19-" + $31 } },
+                        { attrs: { _i: "21-" + $31 } },
                         [
-                          _c("v-uni-text", { attrs: { _i: "20-" + $31 } }, [
-                            _vm._v(_vm._$g("20-" + $31, "t0-0")),
+                          _c("v-uni-text", { attrs: { _i: "22-" + $31 } }, [
+                            _vm._v(_vm._$g("22-" + $31, "t0-0")),
                           ]),
                         ],
                         1
@@ -13360,7 +13366,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../hbuilderx/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 19);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* uni.scss */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\nuni-image {\r\n  width: 100%;\r\n  margin-top: 20rpx;\r\n  border-radius: 5rpx;\n}\n.areaList {\r\n  display: flex;\n}\n.areaList uni-image {\r\n  height: 200rpx;\r\n  margin: 10rpx 0;\n}\n.areaList uni-view {\r\n  font-size: 20rpx;\r\n  width: 100%;\r\n  text-align: center;\n}\n.card .img {\r\n  display: flex;\r\n  justify-self: center;\r\n  align-items: center;\n}\n.card .img uni-image {\r\n  max-width: 250rpx;\r\n  max-height: 250rpx;\r\n  border-radius: 10px;\n}\n.card .img .txt {\r\n  width: 100%;\r\n  margin: 15rpx;\r\n  font-size: 25rpx;\n}\n.card .img .txt uni-view {\r\n  margin: 15rpx;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* uni.scss */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\nuni-image {\r\n  width: 100%;\r\n  margin-top: 20rpx;\r\n  border-radius: 5rpx;\n}\n.areaList {\r\n  display: flex;\n}\n.areaList uni-image {\r\n  height: 200rpx;\r\n  margin: 10rpx 0;\n}\n.areaList uni-view {\r\n  font-size: 20rpx;\r\n  width: 100%;\r\n  text-align: center;\n}\n.title {\r\n  margin: 40rpx 0 0 30rpx;\r\n  font-size: 35rpx;\r\n  font-weight: bold;\n}\n.title::after {\r\n  content: '';\r\n  width: 10rpx;\r\n  height: 32rpx;\r\n  background-color: #FFC0CB;\r\n  position: absolute;\r\n  margin-left: -155rpx;\r\n  margin-top: 10rpx;\r\n  border-radius: 5px;\n}\n.card .img {\r\n  display: flex;\r\n  justify-self: center;\r\n  align-items: center;\n}\n.card .img uni-image {\r\n  max-width: 250rpx;\r\n  max-height: 250rpx;\r\n  border-radius: 10px;\n}\n.card .img .txt {\r\n  width: 100%;\r\n  margin: 15rpx;\r\n  font-size: 25rpx;\n}\n.card .img .txt uni-view {\r\n  margin: 15rpx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 

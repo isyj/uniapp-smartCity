@@ -9,7 +9,9 @@
 			</uni-card>
 		</view>
 
-
+		<view class="title">
+			人才政策
+		</view>
 		<view class="areaList">
 			<uni-card margin="25rpx 0" padding="10rpx" note="Tips" v-for="(item,index) in areaList" :key="index">
 				<image slot="cover" :src="ip + item.imgUrl" mode="center" @click="jumpTalentPolicy(item.id)"></image>
@@ -19,7 +21,9 @@
 			</uni-card>
 		</view>
 
-
+		<view class="title">
+			青年驿站
+		</view>
 		<view class="card">
 			<uni-card note="Tips" v-for="(item,index) in list" :key="index" padding="0">
 				<view slot="title" class="img" @click="jumpYouthStationDetails(item.id)">
@@ -107,6 +111,25 @@
 			text-align: center;
 		}
 	}
+
+	.title {
+		margin: 40rpx 0 0 30rpx;
+		font-size: 35rpx;
+		font-weight: bold;
+
+	}
+
+	.title::after {
+		content: '';
+		width: 10rpx;
+		height: 32rpx;
+		background-color: #FFC0CB;
+		position: absolute;
+		margin-left: -155rpx;
+		margin-top: 10rpx;
+		border-radius: 5px;
+	}
+
 
 	.card {
 		.img {
