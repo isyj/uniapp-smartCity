@@ -13728,7 +13728,10 @@ var render = function () {
     { attrs: { _i: 0 } },
     [
       _c("u-navbar", { attrs: { _i: 1 } }),
-      _c("u-swiper", { attrs: { _i: 2 } }),
+      _c("u-swiper", {
+        staticStyle: { "margin-top": "15rpx" },
+        attrs: { _i: 2 },
+      }),
       _c(
         "uni-card",
         { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },

@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<u-navbar placeholder :title="this.list.name" :autoBack="true"></u-navbar>
-		<u-swiper :list="banner" previousMargin="10" nextMargin="10" circular :autoplay="true" radius="5" he
-			height="350rpx" Color="#ffffff"></u-swiper>
+		<u-swiper :list="banner" previousMargin="10" nextMargin="10" circular :autoplay="true" radius="5"
+			height="350rpx" style="margin-top: 15rpx;"></u-swiper>
 
 		<uni-card class="card">
 			<view class="txt">
