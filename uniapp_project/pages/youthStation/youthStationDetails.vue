@@ -2,7 +2,7 @@
 	<view>
 		<u-navbar placeholder :title="this.list.name" :autoBack="true"></u-navbar>
 		<u-swiper :list="banner" previousMargin="10" nextMargin="10" circular :autoplay="true" radius="5" duration="500"
-			indicator height="350rpx" style="margin-top: 15rpx;"></u-swiper>
+			bgColor="#fff" indicator height="350rpx" style="margin-top: 15rpx;"></u-swiper>
 
 		<uni-card class="card">
 			<view class="txt">
