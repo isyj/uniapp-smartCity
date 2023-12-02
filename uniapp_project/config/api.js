@@ -88,11 +88,11 @@ export const getYouthStationDetails = (data, id) => http.get('/prod-api/api/yout
 // get请求，获取人才区域列表
 export const getTalentPolicyArea = (data) => http.get('/prod-api/api/youth-inn/talent-policy-area/list', data)
 
-// get请求，获取人才区域详情
+// get请求，获人才区域详情
 export const getTalentPolicy = (data, id) => http.get('/prod-api/api/youth-inn/talent-policy-area/' + id, data)
 
-// get请求，获取指定区域人才区域详情
+// get请求，获取人才区域政策列表
 export const getTalentPolicyDetails = (data) => http.get('/prod-api/api/youth-inn/talent-policy/list', data)
 
-// get请求，获取指定人才区域详情
+// get请求，获取人才区域政策详情
 export const getTalentPolicyDetailsInfo = (data, id) => http.get('/prod-api/api/youth-inn/talent-policy/' + id, data)

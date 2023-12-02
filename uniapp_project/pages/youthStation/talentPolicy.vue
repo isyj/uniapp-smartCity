@@ -41,7 +41,7 @@
 			})
 			await getTalentPolicyDetails({
 				params: {
-					id: e.id
+					areaId: e.id
 				}
 			}).then(res => {
 				this.policyList = res.data
