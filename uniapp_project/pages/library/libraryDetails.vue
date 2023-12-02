@@ -1,7 +1,7 @@
 <template>
 	<view>
 
-		<u-navbar :title="this.list.name" placeholder autoBack bgColor="#f8f8f8"></u-navbar>
+		<u-navbar :title="this.list.name" placeholder autoBack></u-navbar>
 
 		<uni-card :title="this.list.name" :subTitle="this.list.address" :extra="state(this.list.businessState)"
 			note="Tips">
