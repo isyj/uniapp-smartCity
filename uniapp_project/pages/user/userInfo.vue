@@ -99,9 +99,17 @@
 						.nickName) && this.$u.test.email(this.userInfo.email))
 					if (flag) {
 						await putUserInfo(this.userInfo).then(res => {
-							uni.showToast({
-								title: res.msg
-							});
+							if (res.code == 200) {
+								uni.showToast({
+									title: res.msg
+								});
+							} else {
+								console.log(res.msg);
+								uni.showToast({
+									title: res.msg.substring(13, 20),
+									icon: 'error'
+								});
+							}
 						});
 						await getUserInfo().then(res => {
 							this.userInfo = res.user

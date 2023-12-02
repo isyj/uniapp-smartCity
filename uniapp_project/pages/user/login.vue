@@ -36,7 +36,7 @@
 				}).then(res => {
 					if (res.code === 200) {
 						uni.showToast({
-								title: '登录成功',
+								title: res.msg,
 								icon: 'success',
 							}),
 							uni.setStorageSync('token', res.token),
@@ -45,7 +45,7 @@
 							})
 					} else {
 						uni.showToast({
-							title: '用户不存在/密码错误',
+							title: res.msg,
 							icon: 'none',
 						})
 					}

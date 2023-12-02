@@ -99,13 +99,17 @@
 			upLoadRegister() {
 				if (this.test()) {
 					postRegister(this.retisger).then(res => {
-						uni.showToast({
-							title: res.msg,
-							icon: 'none'
-						})
 						if (res.code == 200) {
+							uni.showToast({
+								title: res.msg,
+							})
 							uni.switchTab({
 								url: '/pages/user/user'
+							})
+						} else {
+							uni.showToast({
+								title: res.msg,
+								icon: 'error'
 							})
 						}
 					})
