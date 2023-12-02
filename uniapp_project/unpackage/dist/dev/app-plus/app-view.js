@@ -13478,12 +13478,16 @@ var render = function () {
         "uni-card",
         { attrs: { _i: 2 } },
         [
+          _c("v-uni-image", {
+            attrs: { slot: "cover", src: _vm._$g(3, "a-src"), mode: "", _i: 3 },
+            slot: "cover",
+          }),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+            { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
             [
-              _c("uni-view", { attrs: { _i: 4 } }, [_vm._v("简介")]),
-              _vm._v(_vm._$g(3, "t1-0")),
+              _c("uni-view", { attrs: { _i: 5 } }, [_vm._v("简介")]),
+              _vm._v(_vm._$g(4, "t1-0")),
             ],
             1
           ),
@@ -13492,20 +13496,20 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { attrs: { _i: 5 } },
-        _vm._l(_vm._$g(6, "f"), function (item, index, $20, $30) {
+        { attrs: { _i: 6 } },
+        _vm._l(_vm._$g(7, "f"), function (item, index, $20, $30) {
           return _c(
             "uni-card",
             {
               key: item,
-              attrs: { _i: "6-" + $30 },
+              attrs: { _i: "7-" + $30 },
               on: {
                 click: function ($event) {
                   return _vm.$handleViewEvent($event)
                 },
               },
             },
-            [_vm._v(_vm._$g("6-" + $30, "t0-0"))]
+            [_vm._v(_vm._$g("7-" + $30, "t0-0"))]
           )
         }),
         1

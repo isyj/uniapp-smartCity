@@ -5,7 +5,7 @@
 
 
 		<uni-card note="Tips" padding="0">
-			<!-- <image slot="cover" :src="ip + this.list.imgUrl" mode=""></image> -->
+			<image slot="cover" :src="ip + this.list.imgUrl" mode=""></image>
 			<view class="content">
 				<view>
 					简介
