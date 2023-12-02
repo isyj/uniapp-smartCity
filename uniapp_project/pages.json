@@ -146,6 +146,34 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/youthStation/index",
+			"style": {
+				"navigationBarTitleText": "青年驿站",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/youthStation/talentPolicy",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/youthStation/youthStationDetails",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/youthStation/talentPolicyDetailsInfo",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
 		}
 
 	],

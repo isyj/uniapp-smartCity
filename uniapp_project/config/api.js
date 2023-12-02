@@ -69,10 +69,28 @@ export const getParkDetails = (data, id) => http.get('/prod-api/api/park/lot/' +
 
 
 // get请求，获取图书馆列表
-export const getlLibraryList = (data) => http.get('/prod-api/api/digital-library/library/list', data)
+export const getLibraryList = (data) => http.get('/prod-api/api/digital-library/library/list', data)
 
 // get请求，获取图书馆详情信息
-export const getlLibraryDetails = (data, id) => http.get(`/prod-api/api/digital-library/library/${id}`, data)
+export const getLibraryDetails = (data, id) => http.get(`/prod-api/api/digital-library/library/${id}`, data)
 
 // get请求，获取图书馆评论
-export const getlLibraryComment = (data) => http.get('/prod-api/api/digital-library/library-comment/list', data)
+export const getLibraryComment = (data) => http.get('/prod-api/api/digital-library/library-comment/list', data)
+
+// get请求，获取青年驿站列表
+export const getYouthStationList = (data) => http.get('/prod-api/api/youth-inn/youth-inn/list', data)
+
+// get请求，获取青年驿站详情
+export const getYouthStationDetails = (data, id) => http.get('/prod-api/api/youth-inn/youth-inn/' + id, data)
+
+// get请求，获取人才区域列表
+export const getTalentPolicyArea = (data) => http.get('/prod-api/api/youth-inn/talent-policy-area/list', data)
+
+// get请求，获取人才区域详情
+export const getTalentPolicy = (data, id) => http.get('/prod-api/api/youth-inn/talent-policy-area/' + id, data)
+
+// get请求，获取指定区域人才区域详情
+export const getTalentPolicyDetails = (data) => http.get('/prod-api/api/youth-inn/talent-policy/list', data)
+
+// get请求，获取指定人才区域详情
+export const getTalentPolicyDetailsInfo = (data, id) => http.get('/prod-api/api/youth-inn/talent-policy/' + id, data)

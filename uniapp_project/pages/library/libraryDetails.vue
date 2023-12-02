@@ -24,7 +24,7 @@
 
 <script>
 	import {
-		getlLibraryDetails
+		getLibraryDetails
 	} from "../../config/api.js"
 	export default {
 		data() {
@@ -33,7 +33,7 @@
 			};
 		},
 		onLoad(e) {
-			getlLibraryDetails({}, e.id).then(res => {
+			getLibraryDetails({}, e.id).then(res => {
 				this.list = res.data
 			})
 

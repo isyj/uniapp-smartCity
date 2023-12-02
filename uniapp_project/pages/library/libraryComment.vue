@@ -7,7 +7,7 @@
 
 <script>
 	import {
-		getlLibraryComment
+		getLibraryComment
 	} from "../../config/api.js"
 	export default {
 		data() {
@@ -16,7 +16,7 @@
 			};
 		},
 		onLoad(e) {
-			getlLibraryComment({}, e.id).then(res => {
+			getLibraryComment({}, e.id).then(res => {
 				uni.showToast({
 					title: res.msg
 				})
