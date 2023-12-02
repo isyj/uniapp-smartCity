@@ -22,7 +22,6 @@
 		async onLoad() {
 			await getAllOrder().then(res => {
 				this.list = res.rows
-				console.log(this.list[0].payTime);
 			})
 		},
 		methods: {

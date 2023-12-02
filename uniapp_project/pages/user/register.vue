@@ -2,7 +2,7 @@
 	<view>
 		<uni-card>
 
-			<u-cell-group>
+			<u-cell-group :border="false">
 
 				<u-cell title="头像">
 					<image :src="ip + this.retisger.avatar" mode="aspectFill" slot="right-icon" @click="setImg()">

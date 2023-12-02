@@ -1,8 +1,8 @@
 <template>
 	<view class="home">
 
-		<u-navbar :title="this.list.parkName" placeholder autoBack bgColor="#f8f8f8"></u-navbar>
-		<u-cell-group>
+		<u-navbar :title="this.list.parkName" placeholder autoBack></u-navbar>
+		<u-cell-group :border="false">
 			<u-cell icon="" title="停车场" :value="this.list.parkName"></u-cell>
 			<u-cell icon="" title="地址" :value="this.list.address"></u-cell>
 			<u-cell icon="" title="距离" :value="this.list.distance +'m'"></u-cell>

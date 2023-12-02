@@ -1,7 +1,7 @@
 <template>
 	<view class="home">
 		<uni-card>
-			<u-cell-group>
+			<u-cell-group :border="false">
 
 				<u-cell title="旧密码">
 					<input class="oldPassword" type="password" slot="value" placeholder="请输入旧密码"
