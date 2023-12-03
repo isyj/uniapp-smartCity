@@ -1,15 +1,14 @@
 <template>
 	<view>
 
-		<view class="content">
-			<scroll-view scroll-x="true" class="news">
-				<view class="newsName" v-for="(item, index) in list" :key="index" @click="change(index, item.id)">
-					<view :class="{ btn: count == index }">
-						{{ item.name }}
-					</view>
-				</view>
-			</scroll-view>
-		</view>
+		<u-tabs :list="list" lineWidth="60" lineColor="pink" :activeStyle="{
+		            color: 'pink',
+		            transform: 'scale(1.15)'
+		        }" :inactiveStyle="{
+		            color: '#606266',
+		            transform: 'scale(1.1)'
+		        }" itemStyle="margin-top:20rpx; padding-left: 15px; padding-right: 15px; height: 40px;" @click="change">
+		</u-tabs>
 
 
 		<view class="uCard" v-for="(item, index) in newsList" :key="index" @click="jump(item.id)">
@@ -44,16 +43,14 @@
 		data() {
 			return {
 				list: [],
-				count: 0,
-				newsList: []
+				newsList: [],
 			};
 		},
 		methods: {
-			change(index, id) {
-				this.count = index
+			change(item) {
 				getNewsList({
 					params: {
-						type: id
+						type: item.id
 					}
 				}).then(res => {
 					this.newsList = res.rows
@@ -67,8 +64,12 @@
 		},
 		async mounted() {
 			await getNewsCategory().then(res => {
-				this.list = res.data
+				this.list = res.data.map(e => ({
+					id: e.id,
+					name: e.name
+				}))
 			});
+
 			await getNewsList({
 				params: {
 					type: this.list[0].id
@@ -81,47 +82,6 @@
 </script>
 
 <style lang="scss">
-	/deep/::-webkit-scrollbar {
-		display: none;
-		width: 0;
-		height: 0;
-	}
-
-	.content {
-		border-top: 1px #eee solid;
-		padding: 15rpx 25rpx 0 25rpx;
-		margin: 25rpx 0 20rpx 0;
-
-		.news {
-			white-space: nowrap;
-			width: 100%;
-
-			.newsName {
-				display: inline-block;
-				width: 30%;
-				height: 50rpx;
-				line-height: 50rpx;
-				padding: 5rpx;
-
-				.btn {
-					color: #FFC0CB;
-				}
-
-				.btn::after {
-					content: '';
-					width: 125rpx;
-					height: 5rpx;
-					background-color: #FFC0CB;
-					position: absolute;
-					bottom: 0;
-					margin-left: -125rpx;
-
-				}
-			}
-
-		}
-	}
-
 	.uCard {
 		.card {
 			display: flex;
