@@ -24,6 +24,12 @@
 			return {
 
 			};
+		},
+		onPullDownRefresh() {
+			uni.reLaunch({
+				url: '/pages/index/index'
+			})
+			uni.stopPullDownRefresh()
 		}
 	}
 </script>
