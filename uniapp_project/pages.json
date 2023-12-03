@@ -28,9 +28,9 @@
 			}
 		},
 		{
-			"path": "pages/shuJuFenXi/shuJuFenXi",
+			"path": "pages/dataAnalysis/dataAnalysis",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "数据分析",
 				"enablePullDownRefresh": false
 			}
 		},
@@ -208,7 +208,7 @@
 				"text": "智慧环保"
 			},
 			{
-				"pagePath": "pages/shuJuFenXi/shuJuFenXi",
+				"pagePath": "pages/dataAnalysis/dataAnalysis",
 				"iconPath": "static/tabBarImg/shujvfenxi.png",
 				"selectedIconPath": "static/tabBarImg/shujvfenxi2.png",
 				"text": "数据分析"
