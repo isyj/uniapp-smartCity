@@ -96,7 +96,3 @@ export const getTalentPolicyDetails = (data) => http.get('/prod-api/api/youth-in
 
 // get请求，获取人才区域政策详情
 export const getTalentPolicyDetailsInfo = (data, id) => http.get('/prod-api/api/youth-inn/talent-policy/' + id, data)
-
-
-// get请求，获取7天天气信息
-export const getWeather = (data) => http.get('/prod-api/api/common/weather', data)

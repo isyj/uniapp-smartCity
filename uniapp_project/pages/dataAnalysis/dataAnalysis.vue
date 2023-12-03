@@ -1,15 +1,15 @@
 <template>
 	<view>
 		<view class="content">
-			近七天温度
+			新闻数据
 		</view>
-		<qiun-data-charts type="column" :opts="opts" :chartData="chartData" />
+		<qiun-data-charts type="column" :opts="opts" :chartData="chartData" :ontouch="true" />
 	</view>
 </template>
 
 <script>
 	import {
-		getWeather
+		getNewsList
 	} from "../../config/api.js"
 	export default {
 		data() {
@@ -20,10 +20,12 @@
 						"#ea7ccc"
 					],
 					padding: [15, 15, 0, 5],
-					enableScroll: false,
+					enableScroll: true,
 					legend: {},
 					xAxis: {
-						disableGrid: true
+						disableGrid: true,
+						scrollShow: true,
+						itemCount: 4
 					},
 					yAxis: {
 						data: [{
@@ -33,7 +35,7 @@
 					extra: {
 						column: {
 							type: "group",
-							width: 20,
+							width: 30,
 							activeBgColor: "#000000",
 							activeBgOpacity: 0.08,
 							linearType: "custom",
@@ -49,22 +51,25 @@
 			}
 		},
 		onLoad() {
-			getWeather().then(res => {
-				let dayList = []
-				let weatherListMax = []
-				let weatherListMin = []
-				dayList = res.data.weatherList.map(e => e.day.slice(0, 2) + '.' + e.day.slice(3, 5))
-				weatherListMax = res.data.weatherList.map(e => e.minTemperature)
-				weatherListMin = res.data.weatherList.map(e => e.maxTemperature)
+			//新闻数据
+			getNewsList().then(res => {
+				let idList = []
+				let commentNumList = []
+				let likeNumList = []
+
+				idList = res.rows.map(e => 'id: ' + e.id)
+				commentNumList = res.rows.map(e => e.commentNum)
+				likeNumList = res.rows.map(e => e.likeNum)
+
 				this.chartData = {
-					categories: dayList,
+					categories: idList,
 					series: [{
-							name: "最高温度",
-							data: weatherListMax
+							name: "评论",
+							data: commentNumList
 						},
 						{
-							name: "最低温度",
-							data: weatherListMin
+							name: "点赞",
+							data: likeNumList
 						}
 					]
 				}
@@ -86,7 +91,7 @@
 		height: 32rpx;
 		background-color: #FFC0CB;
 		position: absolute;
-		margin-left: -185rpx;
+		margin-left: -155rpx;
 		margin-top: 10rpx;
 		border-radius: 5px;
 	}
