@@ -101,7 +101,6 @@
 				width: 30%;
 				height: 50rpx;
 				line-height: 50rpx;
-				font-size: 32rpx;
 				padding: 5rpx;
 
 				.btn {
@@ -111,7 +110,7 @@
 				.btn::after {
 					content: '';
 					width: 125rpx;
-					height: 3px;
+					height: 5rpx;
 					background-color: #FFC0CB;
 					position: absolute;
 					bottom: 0;
