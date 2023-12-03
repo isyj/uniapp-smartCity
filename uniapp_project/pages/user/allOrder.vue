@@ -4,13 +4,14 @@
 		<view>
 			<u-tabs :list="list4" lineWidth="60" lineColor="pink" :activeStyle="{
 	            color: 'pink',
-	            transform: 'scale(1.2)'
+	            transform: 'scale(1.15)'
 	        }" :inactiveStyle="{
 	            color: '#606266',
 	            transform: 'scale(1.1)'
 	        }" itemStyle="padding: 0; height: 40px; width: 50%" @click="click">
 			</u-tabs>
 		</view>
+
 
 		<view>
 			<uni-card :title=" item.name" :sub-title="item.orderNo" :extra="item.orderTypeName"
