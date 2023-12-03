@@ -1,12 +1,15 @@
 <template>
 	<view>
 
-		<view class="orders">
-			<view class="content" v-for="(item,index) in orderClassify" :key="index" @click="click(index)">
-				<view :class="{btn:count == index}">
-					{{item}}
-				</view>
-			</view>
+		<view>
+			<u-tabs :list="list4" lineWidth="60" lineColor="pink" :activeStyle="{
+	            color: 'pink',
+	            transform: 'scale(1.2)'
+	        }" :inactiveStyle="{
+	            color: '#606266',
+	            transform: 'scale(1.1)'
+	        }" itemStyle="padding: 0; height: 40px; width: 50%" @click="click">
+			</u-tabs>
 		</view>
 
 		<view>
@@ -26,9 +29,13 @@
 	export default {
 		data() {
 			return {
-				count: 0,
 				list: [],
-				orderClassify: ['全部订单', '订单分类']
+				list4: [{
+					name: '全部订单'
+				}, {
+					name: '订单分类'
+				}],
+
 			};
 		},
 		async onLoad() {
@@ -37,35 +44,13 @@
 			})
 		},
 		methods: {
-			click(index) {
-				this.count = index
+			click(item) {
+				console.log(item);
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-	.orders {
-		display: flex;
-		margin: 25rpx 0;
 
-		.content {
-			width: 50%;
-			text-align: center;
-		}
-
-		.btn {
-			color: pink;
-		}
-
-		.btn::after {
-			content: '';
-			width: 125rpx;
-			height: 5rpx;
-			background-color: pink;
-			position: absolute;
-			margin-top: 50rpx;
-			margin-left: -126rpx;
-		}
-	}
 </style>
