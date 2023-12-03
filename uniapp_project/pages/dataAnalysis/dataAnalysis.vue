@@ -50,9 +50,10 @@
 		},
 		onLoad() {
 			getWeather().then(res => {
-				let dayList = ['12.1', '12.2', '12.3', '12.4', '12.5', '12.6', '12.7']
+				let dayList = []
 				let weatherListMax = []
 				let weatherListMin = []
+				dayList = res.data.weatherList.map(e => e.day.slice(0, 2) + '.' + e.day.slice(3, 5))
 				weatherListMax = res.data.weatherList.map(e => e.minTemperature)
 				weatherListMin = res.data.weatherList.map(e => e.maxTemperature)
 				this.chartData = {
