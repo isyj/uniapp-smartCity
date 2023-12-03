@@ -74,6 +74,12 @@
 					]
 				}
 			})
+		},
+		onPullDownRefresh() {
+			uni.reLaunch({
+				url: '/pages/dataAnalysis/dataAnalysis'
+			})
+			uni.stopPullDownRefresh()
 		}
 	}
 </script>
