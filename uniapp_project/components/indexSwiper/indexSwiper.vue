@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<u-swiper :list="list" autoplay circular duration="500" previousMargin="10" nextMargin="10" bgColor="#fff"
+		<u-swiper :list="list" autoplay circular duration="1000" previousMargin="10" nextMargin="10" bgColor="#fff"
 			height="350rpx" @click="jump"></u-swiper>
 	</view>
 </template>
