@@ -168,6 +168,20 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/activity/index",
+			"style": {
+				"navigationBarTitleText": "活动",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/activity/activityDetails",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
 		}
 
 	],

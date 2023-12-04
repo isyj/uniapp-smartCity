@@ -96,3 +96,23 @@ export const getTalentPolicyDetails = (data) => http.get('/prod-api/api/youth-in
 
 // get请求，获取人才区域政策详情
 export const getTalentPolicyDetailsInfo = (data, id) => http.get('/prod-api/api/youth-inn/talent-policy/' + id, data)
+
+
+
+// get请求，获取活动轮播图
+export const getActivitySwiper = (data) => http.get('/prod-api/api/activity/rotation/list', data)
+
+// get请求，获取活动详情
+export const getActivityDetails = (data, id) => http.get('/prod-api/api/activity/activity/' + id, data, id)
+
+// get请求，获取活动分类
+export const getActivityCategory = (data, id) => http.get('/prod-api/api/activity/category/list', data)
+
+// get请求，获取活动分类
+export const getActivityList = (data, id) => http.get('/prod-api/api/activity/activity/list', data)
+
+// get请求，获取活动评论列表
+export const getActivityCommonList = (data, id) => http.get('/prod-api/api/activity/comment/list', data, id)
+
+// post请求，发表评论
+export const postActivityCommon = (data) => http.get('/prod-api/api/activity/comment', data)
