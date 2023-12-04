@@ -34,6 +34,7 @@
 				})
 			},
 			jump(link) {
+				console.log(link);
 				uni.navigateTo({
 					url: '/pages/' + link
 				})
