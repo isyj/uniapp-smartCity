@@ -10,6 +10,10 @@
 	            transform: 'scale(1.1)'
 	        }" itemStyle="padding: 0; height: 40px; width: 50%" @click="click">
 			</u-tabs>
+			<view>
+				<u-picker closeOnClickOverlay :show="show" :columns="columns" @cancel="cancel" @close="cancel"
+					@confirm="confirm"></u-picker>
+			</view>
 		</view>
 
 
@@ -30,12 +34,16 @@
 	export default {
 		data() {
 			return {
+				show: false,
 				list: [],
 				list4: [{
 					name: '全部订单'
 				}, {
 					name: '订单分类'
 				}],
+				columns: [
+					['外卖订餐', '电影']
+				],
 
 			};
 		},
@@ -45,8 +53,33 @@
 			})
 		},
 		methods: {
+			// 点击订单分类
 			click(item) {
-				console.log(item);
+				if (item.index == 1) {
+					this.show = true
+				}
+			},
+			// 关闭选择器
+			cancel(item) {
+				this.show = false
+			},
+			// 点击确定
+			confirm(item) {
+				this.show = false
+				let orderType = item.value
+				if (item.value == "外卖订餐") {
+					orderType = 'takeout'
+				} else if (item.value == "电影") {
+					orderType = 'movie'
+				}
+				getAllOrder({
+					params: {
+						orderType: orderType
+					}
+				}).then(res => {
+					this.list = res.rows
+				})
+
 			}
 		}
 	}
