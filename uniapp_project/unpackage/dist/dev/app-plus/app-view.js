@@ -27642,19 +27642,34 @@ var render = function () {
             { attrs: { _i: 15 } },
             _vm._l(_vm._$g(16, "f"), function (item, index, $21, $31) {
               return _c(
-                "uni-card",
-                { key: item, attrs: { _i: "16-" + $31 } },
-                [
-                  _c("v-uni-image", {
-                    attrs: {
-                      slot: "title",
-                      src: _vm._$g("17-" + $31, "a-src"),
-                      mode: "",
-                      _i: "17-" + $31,
+                "uni-view",
+                {
+                  key: item,
+                  attrs: { _i: "16-" + $31 },
+                  on: {
+                    click: function ($event) {
+                      return _vm.$handleViewEvent($event)
                     },
-                    slot: "title",
-                  }),
-                  _vm._v(_vm._$g("16-" + $31, "t1-0")),
+                  },
+                },
+                [
+                  _c(
+                    "uni-card",
+                    { attrs: { _i: "17-" + $31 } },
+                    [
+                      _c("v-uni-image", {
+                        attrs: {
+                          slot: "title",
+                          src: _vm._$g("18-" + $31, "a-src"),
+                          mode: "",
+                          _i: "18-" + $31,
+                        },
+                        slot: "title",
+                      }),
+                      _vm._v(_vm._$g("17-" + $31, "t1-0")),
+                    ],
+                    1
+                  ),
                 ],
                 1
               )

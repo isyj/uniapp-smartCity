@@ -40,9 +40,11 @@
 
 		<!-- 活动推荐 -->
 		<view v-if="this.count==2">
-			<uni-card note="Tips" v-for="(item,index) in recommendList" :key="index">
-				<image slot="title" :src="ip+item.imgUrl" mode=""></image>{{item.name}}
-			</uni-card>
+			<view @click="jump(item.id)" v-for="(item,index) in recommendList" :key="index">
+				<uni-card>
+					<image slot="title" :src="ip+item.imgUrl" mode=""></image>{{item.name}}
+				</uni-card>
+			</view>
 		</view>
 
 	</view>
@@ -78,7 +80,7 @@
 			}
 		},
 		methods: {
-			//报名活动
+			/* 报名活动 */
 			async signup() {
 				// 发起报名请求
 				await postActivitySignup({
@@ -98,11 +100,11 @@
 					this.signupCheck = res.isSignup
 				})
 			},
-			//点击tabs
+			/* 点击tabs */
 			clickTabs(item) {
 				this.count = item.index
 			},
-			//发表评论
+			/* 发表评论 */
 			clickBtn() {
 				//发起评论请求
 				postActivityCommon({
@@ -129,15 +131,20 @@
 					this.commonList = res.rows.slice(0, 20)
 				})
 			},
-			//报名按钮样式
+			/* 报名按钮样式 */
 			btn() {
 				if (this.signupCheck == true) {
 					return 'error'
 				} else {
 					return 'primary'
 				}
+			},
+			/* 点击推荐活动卡片 */
+			jump(id) {
+				uni.navigateTo({
+					url: '/pages/activity/activityDetails?id=' + id
+				})
 			}
-
 
 		},
 		onLoad(e) {
