@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<!-- 轮播图 -->
 		<view class="swiper">
 			<u-swiper :list="this.swiperList" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000"
 				circular nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" indicator
@@ -8,6 +9,7 @@
 		</view>
 
 
+		<!-- tabs -->
 		<view class="tabs">
 			<u-tabs :list="categoryList" @click="clickTabs" lineColor="pink" :activeStyle="{ transform:'scale(1.15)',
 			color:'pink'}" :inactiveStyle="{
@@ -16,6 +18,8 @@
     }" itemStyle="padding:25rpx; width:10%"></u-tabs>
 		</view>
 
+
+		<!-- 活动列表 -->
 		<view class="list" v-for="(item,index) in activityList" :key="index" @click="jump(item.id)">
 			<uni-card :title="item.name" note="Tips">
 				<image slot="cover" :src="ip + item.imgUrl" mode="aspectFill"></image>
@@ -45,18 +49,21 @@
 			};
 		},
 		async onLoad() {
+			//获取轮播图
 			await getActivitySwiper().then(res => {
 				this.swiperList = res.rows.map(e => ({
 					url: this.ip + e.advImg,
 					id: e.targetId
 				}))
 			})
+			//获取活动分类
 			await getActivityCategory().then(res => {
 				this.categoryList = res.data.map(e => ({
 					name: e.name,
 					id: e.id
 				}))
 			})
+			//分类获取活动列表
 			await getActivityList({
 				params: {
 					categoryId: this.categoryList[0].id
@@ -66,11 +73,13 @@
 			})
 		},
 		methods: {
+			// 点击轮播图
 			clickSwiper(item) {
 				uni.navigateTo({
 					url: '/pages/activity/activityDetails?id=' + this.swiperList[item].id
 				})
 			},
+			// 点击tabs
 			clickTabs(item) {
 				getActivityList({
 					params: {
@@ -80,6 +89,7 @@
 					this.activityList = res.rows
 				})
 			},
+			// 点击活动卡片
 			jump(id) {
 				uni.navigateTo({
 					url: '/pages/activity/activityDetails?id=' + id

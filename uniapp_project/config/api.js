@@ -108,11 +108,17 @@ export const getActivityDetails = (data, id) => http.get('/prod-api/api/activity
 // get请求，获取活动分类
 export const getActivityCategory = (data, id) => http.get('/prod-api/api/activity/category/list', data)
 
-// get请求，获取活动分类
-export const getActivityList = (data, id) => http.get('/prod-api/api/activity/activity/list', data)
+// get请求，获取活动列表
+export const getActivityList = (data) => http.get('/prod-api/api/activity/activity/list', data)
 
 // get请求，获取活动评论列表
 export const getActivityCommonList = (data, id) => http.get('/prod-api/api/activity/comment/list', data, id)
 
 // post请求，发表评论
-export const postActivityCommon = (data) => http.get('/prod-api/api/activity/comment', data)
+export const postActivityCommon = (data) => http.post('/prod-api/api/activity/comment', data)
+
+// post请求，报名活动
+export const postActivitySignup = (data) => http.post('/prod-api/api/activity/signup', data)
+
+// post请求，判断是否报名
+export const postActivitySignupCheck = (data) => http.get('/prod-api/api/activity/signup/check', data)

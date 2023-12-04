@@ -1,37 +1,49 @@
 <template>
 	<view>
 
-		<u-navbar autoBack :title="this.list.name" placeholder=""></u-navbar>
+		<u-navbar autoBack :title="list.name" placeholder=""></u-navbar>
 
+		<!-- 活动内容 -->
+		<view class="content">
+			<uni-card>
+				<u-parse :content="this.list.content"></u-parse>
+			</uni-card>
+		</view>
+
+		<!-- tabs -->
 		<u-tabs :list="classify" @click="clickTabs" :activeStyle="{transform: 'scale(1.15)',color:'pink'}"
 			:inactiveStyle="{
 			transform: 'scale(1.1)' }" itemStyle="width:27%; height:75rpx" lineWidth="100rpx" lineColor="pink"></u-tabs>
 
-		<!-- 	<view class="content">
+
+		<!-- 评论 -->
+		<view v-if="this.count==0">
 			<uni-card>
-				<u-parse :content="this.list.content"></u-parse>
+				<u--textarea v-model="common" placeholder="请输入内容" count height="120"></u--textarea>
+				<br />
+				<u-button type="primary" text="发表评论" @click="clickBtn()"></u-button>
 			</uni-card>
-		</view> -->
-
-
-
-		<view>
-			<view class="common" style="font-size: 25rpx; color: #ccc;" v-if="showCommon == true">
-				<u-button type="primary" text="发表评论" v-if="showCommon == true" @click="show=true"></u-button>
-				共计：{{this.commonList.length}}条评论
-			</view>
-
-			<uni-card :title="item.nickName" note="Tips" v-for="(item,index) in commonList" :key="index">
+			<uni-card :title="item.nickName" thumbnail="" extra="额外信息" note="Tips" v-for="(item,index) in commonList"
+				:key="index">
 				{{item.content}}
 			</uni-card>
 		</view>
 
-		<u-popup :show="show" @close="close" :safeAreaInsetTop="true">
+
+		<!-- 参加活动 -->
+		<view v-if="this.count==1">
 			<uni-card>
-				<u--textarea placeholder="请输入内容" count v-model="commonUpLoad"></u--textarea>
-				<u-button type="primary" text="发表评论" @click="clickCommon()"></u-button>
+				<u-button :type="btn()" @click="signup()">{{signupCheck==true?"已报名":"报名"}}</u-button>
 			</uni-card>
-		</u-popup>
+		</view>
+
+
+		<!-- 活动推荐 -->
+		<view v-if="this.count==2">
+			<uni-card note="Tips" v-for="(item,index) in recommendList" :key="index">
+				<image slot="title" :src="ip+item.imgUrl" mode=""></image>{{item.name}}
+			</uni-card>
+		</view>
 
 	</view>
 </template>
@@ -39,7 +51,11 @@
 <script>
 	import {
 		getActivityDetails,
-		getActivityCommonList
+		getActivityCommonList,
+		postActivityCommon,
+		getActivityList,
+		postActivitySignup,
+		postActivitySignupCheck
 	} from "../../config/api.js"
 	export default {
 		data() {
@@ -47,43 +63,112 @@
 				list: [],
 				commonList: [],
 				classify: [{
-					name: '活动推荐'
-				}, {
 					name: '查看评论'
 				}, {
 					name: '参加活动'
+				}, {
+					name: '活动推荐'
 				}],
 				show: false,
-				showCommon: false,
+				count: 0,
+				common: '',
 				activityId: '',
-				commonUpLoad: ''
+				recommendList: '',
+				signupCheck: ''
 			}
 		},
 		methods: {
-			close(item) {
-				this.show = false
+			//报名活动
+			async signup() {
+				// 发起报名请求
+				await postActivitySignup({
+					activityId: this.activityId
+				}).then(res => {
+					uni.showToast({
+						title: res.msg,
+						icon: 'none'
+					})
+				})
+				// 检查是否报名活动
+				await postActivitySignupCheck({
+					params: {
+						activityId: this.activityId
+					}
+				}).then(res => {
+					this.signupCheck = res.isSignup
+				})
 			},
+			//点击tabs
 			clickTabs(item) {
-				this.showCommon = false
+				this.count = item.index
 			},
-			clickComkon() {
-				this.show = true
-				console.log(this.commonUpLoad);
+			//发表评论
+			clickBtn() {
+				//发起评论请求
+				postActivityCommon({
+					activityId: this.activityId,
+					content: this.common
+				}).then(res => {
+					if (res.code == 200) {
+						uni.showToast({
+							title: res.msg
+						})
+					} else {
+						uni.showToast({
+							title: res.msg,
+							icon: 'none'
+						})
+					}
+				})
+				//重新获取评论列表
+				getActivityCommonList({
+					params: {
+						activityId: this.activityId
+					}
+				}).then(res => {
+					this.commonList = res.rows.slice(0, 20)
+				})
+			},
+			//报名按钮样式
+			btn() {
+				if (this.signupCheck == true) {
+					return 'error'
+				} else {
+					return 'primary'
+				}
 			}
+
+
 		},
 		onLoad(e) {
 			this.activityId = e.id
-
-			getActivityDetails({}, e.id).then(res => {
+			//获取活动详情
+			getActivityDetails({}, this.activityId).then(res => {
 				this.list = res.data
 			})
-
+			//获取活动列表
 			getActivityCommonList({
 				params: {
-					activityId: e.id
+					activityId: this.activityId
 				}
 			}).then(res => {
 				this.commonList = res.rows.slice(0, 20)
+			})
+			//获取推荐活动列表
+			getActivityList({
+				params: {
+					recommend: 'Y'
+				}
+			}).then(res => {
+				this.recommendList = res.rows
+			})
+			// 检查是否报名活动
+			postActivitySignupCheck({
+				params: {
+					activityId: this.activityId
+				}
+			}).then(res => {
+				this.signupCheck = res.isSignup
 			})
 
 		}
@@ -91,8 +176,9 @@
 </script>
 
 <style lang="scss">
-	.common {
-		width: 80%;
-		margin: 25rpx auto;
+	image {
+		width: 100%;
+		margin: 20rpx 0 0 0;
+		border-radius: 5px;
 	}
 </style>
