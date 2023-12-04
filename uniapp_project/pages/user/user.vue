@@ -33,6 +33,7 @@
 	import {
 		getUserInfo
 	} from "../../config/api.js"
+import { onLoad } from "../../uni_modules/uview-ui/libs/mixin/mixin.js"
 	export default {
 		data() {
 			return {
@@ -73,6 +74,12 @@
 			}
 		},
 		async onShow() {
+			if (!uni.getStorageSync('user')) {
+				uni.setStorageSync('user', {
+					username: '',
+					password: ''
+				})
+			}
 			if (uni.getStorageSync('token')) {
 				await getUserInfo().then(res => {
 					this.userInfo = res.user

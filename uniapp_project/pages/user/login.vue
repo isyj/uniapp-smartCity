@@ -27,14 +27,6 @@
 				user: uni.getStorageSync('user')
 			};
 		},
-		onLoad() {
-			if (!uni.getStorageSync('user')) {
-				uni.setStorageSync('user', {
-					username: '',
-					password: ''
-				})
-			}
-		},
 		methods: {
 			async submit() {
 				await postLogin(this.user).then(res => {
