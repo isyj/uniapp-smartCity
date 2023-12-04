@@ -8,7 +8,7 @@
 	        }" :inactiveStyle="{
 	            color: '#606266',
 	            transform: 'scale(1.1)'
-	        }" itemStyle="padding: 0; height: 40px; width: 50%" @click="click">
+	        }" itemStyle="padding: 0; height: 40px; width: 50%" @click="clickClassify">
 			</u-tabs>
 			<view>
 				<u-picker closeOnClickOverlay :show="show" :columns="columns" @cancel="cancel" @close="cancel"
@@ -54,7 +54,7 @@
 		},
 		methods: {
 			// 点击订单分类
-			click(item) {
+			clickClassify(item) {
 				if (item.index == 1) {
 					this.show = true
 				}
