@@ -24,14 +24,16 @@
 	export default {
 		data() {
 			return {
-				user: {
-					username: '',
-					password: ''
-				}
+				user: uni.getStorageSync('user')
 			};
 		},
 		onLoad() {
-			this.user = uni.getStorageSync('user')
+			if (!uni.getStorageSync('user')) {
+				uni.setStorageSync('user', {
+					username: '',
+					password: ''
+				})
+			}
 		},
 		methods: {
 			async submit() {
