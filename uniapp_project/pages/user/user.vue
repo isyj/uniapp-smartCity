@@ -52,7 +52,7 @@
 			},
 			logout() {
 				if (Boolean(uni.getStorageSync('token'))) {
-					uni.clearStorage()
+					uni.removeStorageSync('token')
 					uni.showToast({
 						title: '注销成功'
 					})

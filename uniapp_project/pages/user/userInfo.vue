@@ -104,7 +104,6 @@
 									title: res.msg
 								});
 							} else {
-								console.log(res.msg);
 								uni.showToast({
 									title: res.msg.substring(13, 20),
 									icon: 'error'

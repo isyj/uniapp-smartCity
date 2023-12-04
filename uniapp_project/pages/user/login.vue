@@ -4,8 +4,8 @@
 		<view class="login">
 			<view class="txt">登录</view>
 			<view class="input">
-				<input type="text" v-model="username" />
-				<input type="password" v-model="password" />
+				<input type="text" v-model="user.username" />
+				<input type="password" v-model="user.password" />
 				<button @click="submit()">登录</button>
 
 				<view class="register" @click="register()">
@@ -24,17 +24,15 @@
 	export default {
 		data() {
 			return {
-				username: 'imxiaochen',
-				password: 'imxiaochen0v0'
+				user: uni.getStorageSync('user')
 			};
 		},
 		methods: {
 			async submit() {
-				await postLogin({
-					username: this.username,
-					password: this.password
-				}).then(res => {
+
+				await postLogin(this.user).then(res => {
 					if (res.code === 200) {
+						uni.setStorageSync('user', this.user)
 						uni.showToast({
 								title: res.msg,
 								icon: 'success',
