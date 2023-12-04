@@ -24,12 +24,17 @@
 	export default {
 		data() {
 			return {
-				user: uni.getStorageSync('user')
+				user: {
+					username: '',
+					password: ''
+				}
 			};
+		},
+		onLoad() {
+			this.user = uni.getStorageSync('user')
 		},
 		methods: {
 			async submit() {
-
 				await postLogin(this.user).then(res => {
 					if (res.code === 200) {
 						uni.setStorageSync('user', this.user)
