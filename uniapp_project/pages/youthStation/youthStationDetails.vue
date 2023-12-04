@@ -69,10 +69,7 @@
 		onLoad(e) {
 			getYouthStationDetails({}, e.id).then(res => {
 				this.list = res.data
-				for (var i = 0; i < this.list.imageUrlList.length; i++) {
-					this.banner.push(this.ip + this.list.imageUrlList[i])
-				}
-
+				this.banner = this.list.imageUrlList.map(e => this.ip + e)
 			})
 		}
 	}
