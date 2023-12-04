@@ -142,13 +142,6 @@
 			}
 		},
 		{
-			"path": "pages/video",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
 			"path": "pages/youthStation/index",
 			"style": {
 				"navigationBarTitleText": "青年驿站",

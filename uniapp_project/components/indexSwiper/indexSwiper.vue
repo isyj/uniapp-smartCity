@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<u-swiper :list="list" autoplay circular duration="500" previousMargin="10" nextMargin="10" bgColor="#fff"
-			height="350rpx" @click="jump()"></u-swiper>
+			height="350rpx" @click="jump"></u-swiper>
 	</view>
 </template>
 
@@ -14,12 +14,13 @@
 		data() {
 			return {
 				list: [],
+
 			};
 		},
 		methods: {
-			jump() {
+			jump(item) {
 				uni.navigateTo({
-					url: '/pages/video'
+					url: '/pages/index/newsDetails?id=' + this.list[item].id
 				});
 			}
 		},
@@ -29,9 +30,10 @@
 				pageSize: 8,
 				type: 2
 			}).then(res => {
-				for (let i = 0; i < res.rows.length; i++) {
-					this.list.push(this.ip + res.rows[i].advImg)
-				}
+				this.list = res.rows.map(e => ({
+					url: this.ip + e.advImg,
+					id: e.targetId
+				}))
 			})
 		}
 
