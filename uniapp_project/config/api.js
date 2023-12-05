@@ -122,3 +122,21 @@ export const postActivitySignup = (data) => http.post('/prod-api/api/activity/si
 
 // post请求，判断是否报名
 export const postActivitySignupCheck = (data) => http.get('/prod-api/api/activity/signup/check', data)
+
+
+
+// get请求，获取爱心捐赠轮播图
+export const getWelfareBannerList = (data) => http.get('/prod-api/api/public-welfare/ad-banner/list', data)
+
+// get请求，获取公益分类
+export const getWelfareClassifyList = (data) => http.get('/prod-api/api/public-welfare/public-welfare-type/list', data)
+
+// get请求，分类获取公益活动
+export const getWelfareActivityList = (data, id) => http.get(
+	'/prod-api/api/public-welfare/public-welfare-activity/list',
+	data, id)
+
+// get请求，获取推荐公益活动
+export const getWelfareRecommendActivityList = (data) => http.get(
+	'/prod-api/api/public-welfare/public-welfare-activity/recommend-list',
+	data)
