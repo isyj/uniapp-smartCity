@@ -28324,26 +28324,29 @@ var render = function () {
             },
           }),
           _c("u-swiper", {
-            staticStyle: { margin: "20rpx 0 0 0" },
+            staticStyle: { margin: "20rpx 0 20rpx 0" },
             attrs: { _i: 4 },
           }),
+          _c("uni-view", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }, [
+            _vm._v("公益分类"),
+          ]),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
             [
               _c(
                 "uni-card",
-                { attrs: { _i: 6 } },
+                { attrs: { _i: 7 } },
                 [
                   _c(
                     "u-grid",
-                    { attrs: { _i: 7 } },
-                    _vm._l(_vm._$g(8, "f"), function (item, index, $20, $30) {
+                    { attrs: { _i: 8 } },
+                    _vm._l(_vm._$g(9, "f"), function (item, index, $20, $30) {
                       return _c(
                         "u-grid-item",
                         {
                           key: item,
-                          attrs: { _i: "8-" + $30 },
+                          attrs: { _i: "9-" + $30 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -28353,18 +28356,18 @@ var render = function () {
                         [
                           _c("v-uni-image", {
                             attrs: {
-                              src: _vm._$g("9-" + $30, "a-src"),
+                              src: _vm._$g("10-" + $30, "a-src"),
                               mode: "widthFix",
-                              _i: "9-" + $30,
+                              _i: "10-" + $30,
                             },
                           }),
                           _c(
                             "v-uni-text",
                             {
-                              staticClass: _vm._$g("10-" + $30, "sc"),
-                              attrs: { _i: "10-" + $30 },
+                              staticClass: _vm._$g("11-" + $30, "sc"),
+                              attrs: { _i: "11-" + $30 },
                             },
-                            [_vm._v(_vm._$g("10-" + $30, "t0-0"))]
+                            [_vm._v(_vm._$g("11-" + $30, "t0-0"))]
                           ),
                         ],
                         1
@@ -28380,26 +28383,31 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
-            _vm._l(_vm._$g(12, "f"), function (item, index, $21, $31) {
+            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+            [_vm._v("推荐公益")]
+          ),
+          _c(
+            "uni-view",
+            { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+            _vm._l(_vm._$g(14, "f"), function (item, index, $21, $31) {
               return _c(
                 "uni-card",
-                { key: item, attrs: { _i: "12-" + $31 } },
+                { key: item, attrs: { _i: "14-" + $31 } },
                 [
                   _c("v-uni-image", {
                     attrs: {
                       slot: "cover",
-                      src: _vm._$g("13-" + $31, "a-src"),
+                      src: _vm._$g("15-" + $31, "a-src"),
                       mode: "aspectFill",
-                      _i: "13-" + $31,
+                      _i: "15-" + $31,
                     },
                     slot: "cover",
                   }),
-                  _c("uni-view", { attrs: { _i: "14-" + $31 } }, [
-                    _vm._v("捐赠人数：" + _vm._$g("14-" + $31, "t0-0")),
+                  _c("uni-view", { attrs: { _i: "16-" + $31 } }, [
+                    _vm._v("捐赠人数：" + _vm._$g("16-" + $31, "t0-0")),
                   ]),
-                  _c("uni-view", { attrs: { _i: "15-" + $31 } }, [
-                    _vm._v("已筹善款：" + _vm._$g("15-" + $31, "t0-0") + " 元"),
+                  _c("uni-view", { attrs: { _i: "17-" + $31 } }, [
+                    _vm._v("已筹善款：" + _vm._$g("17-" + $31, "t0-0") + " 元"),
                   ]),
                 ],
                 1
@@ -29222,7 +29230,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../hbuilderx/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 19);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* uni.scss */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.grid uni-image {\r\n  width: 50%;\n}\n.grid uni-text {\r\n  font-size: 25rpx;\n}\n.recommend uni-image {\r\n  width: 100%;\r\n  height: 350rpx;\r\n  margin: 20rpx 0 0 0;\r\n  border-radius: 5px;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* uni.scss */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.title {\r\n  padding: 0 25rpx;\r\n  font-size: 35rpx;\n}\n.grid uni-image {\r\n  width: 50%;\n}\n.grid uni-text {\r\n  font-size: 25rpx;\n}\n.recommend uni-image {\r\n  width: 100%;\r\n  height: 350rpx;\r\n  margin: 20rpx 0 0 0;\r\n  border-radius: 5px;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -8,13 +8,16 @@
 
 			<!-- 轮播图 -->
 			<u-swiper :list="bannerList" indicator :autoplay="true" :interval="3000" :duration="1000" circular
-				nextMargin="10" previousMargin="10" height="350rpx" style="margin: 20rpx 0 0 0;">
+				nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" style="margin: 20rpx 0 20rpx 0;">
 			</u-swiper>
 
 
 			<!-- 公益分类 -->
+			<view class="title">
+				公益分类
+			</view>
 			<view class="grid">
-				<uni-card margin="20rpx 0">
+				<uni-card margin="20rpx 0" shadow="0 0" :border="false">
 					<u-grid :border="false" col="4">
 						<u-grid-item v-for="(item,index) in classifyList" :key="index" @click="clickGrid(item)">
 							<image :src="ip+item.imgUrl" mode="widthFix"></image>
@@ -26,6 +29,9 @@
 
 
 			<!-- 推荐公益 -->
+			<view class="title">
+				推荐公益
+			</view>
 			<view class="recommend">
 				<uni-card :title="item.name" thumbnail="" :extra="item.author" note="Tips"
 					v-for="(item,index) in recommendActivityList" :key="index">
@@ -96,6 +102,11 @@
 </script>
 
 <style lang="scss">
+	.title {
+		padding: 0 25rpx;
+		font-size: 35rpx
+	}
+
 	.grid {
 		image {
 			width: 50%;
