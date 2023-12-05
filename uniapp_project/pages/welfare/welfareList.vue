@@ -4,9 +4,8 @@
 		<u-search v-model="keyword" style="margin-bottom: 15rpx;" placeholder="请输入内容" height="20rpx" @search="search()"
 			@custom="search()" focus></u-search>
 
-		<view class="card">
-			<uni-card :title="item.name" :subTitle="item.createTime" thumbnail="" :extra="item.author" note="Tips"
-				v-for="(item,index) in searchList" :key="index">
+		<view class="card" v-for="(item,index) in searchList" :key="index" @click="demo(item)">
+			<uni-card :title="item.name" :subTitle="item.createTime" thumbnail="" :extra="item.author" note="Tips">
 				<image slot="cover" :src="ip + item.imgUrl" mode="aspectFill"></image>
 				<view class="">
 					捐赠人数：{{item.donateCount}}
@@ -41,6 +40,12 @@
 			})
 		},
 		methods: {
+			demo(item) {
+				console.log(item);
+				uni.navigateTo({
+					url: '/pages/welfare/welfareActivity'
+				})
+			},
 			// 搜索
 			search() {
 				if (!this.keyword) {
