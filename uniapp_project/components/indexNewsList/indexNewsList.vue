@@ -7,7 +7,7 @@
 		        }" :inactiveStyle="{
 		            color: '#606266',
 		            transform: 'scale(1.1)'
-		        }" itemStyle="margin-top:20rpx; padding-left: 15px; padding-right: 15px; height: 40px;" @click="change">
+		        }" itemStyle="margin-top:20rpx; padding-left: 15px; padding-right: 15px; height: 40px;" @change="change">
 		</u-tabs>
 
 
