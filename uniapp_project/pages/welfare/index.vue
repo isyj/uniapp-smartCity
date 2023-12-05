@@ -8,7 +8,7 @@
 
 			<!-- 轮播图 -->
 			<u-swiper :list="bannerList" indicator :autoplay="true" :interval="3000" :duration="1000" circular
-				nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" style="margin: 20rpx 0 20rpx 0;">
+				nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" style="margin: 20rpx 0 50rpx 0;">
 			</u-swiper>
 
 
@@ -104,7 +104,8 @@
 <style lang="scss">
 	.title {
 		padding: 0 25rpx;
-		font-size: 35rpx
+		font-size: 35rpx;
+		color: #777;
 	}
 
 	.grid {
