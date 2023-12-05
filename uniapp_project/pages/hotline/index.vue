@@ -79,7 +79,6 @@
 			// 获取我的诉求
 			await getHotlineMyList().then(res => {
 				this.myList = res.rows.reverse()
-				console.log(this.myList);
 			})
 		},
 		methods: {
