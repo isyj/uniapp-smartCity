@@ -214,7 +214,7 @@
 		{
 			"path": "pages/hotline/hotlineCategory",
 			"style": {
-				"navigationBarTitleText": "1",
+				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
 		}

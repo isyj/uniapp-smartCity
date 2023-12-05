@@ -15,7 +15,7 @@
 					<uni-card isFull="" padding="15rpx 0" shadow="0 0" :border="false">
 						<u-grid col="4">
 							<u-grid-item v-for="(item,index) in classifyList.slice(0,8)" :key="index"
-								@click="jump(item.id)">
+								@click="jump(item)">
 								<image :src="item.imgUrl" mode="widthFix"></image>
 								<text>{{item.name}}</text>
 							</u-grid-item>
@@ -39,7 +39,7 @@
 
 		<!-- 我的诉求 -->
 		<view class="my">
-			<uni-card :title="item.title" :subTitle="item.createTime" :extra="item.undertaker" note="Tips"
+			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
 				v-for="(item,index) in myList" :key="index">
 				处理情况：{{item.detailResult?'tem.detailResult':'暂无'}}
 			</uni-card>
@@ -78,14 +78,14 @@
 			})
 			// 获取我的诉求
 			await getHotlineMyList().then(res => {
-				this.myList = res.rows
+				this.myList = res.rows.reverse()
 				console.log(this.myList);
 			})
 		},
 		methods: {
-			jump(id) {
+			jump(item) {
 				uni.navigateTo({
-					url: "/pages/hotline/hotlineCategory?id=" + id
+					url: "/pages/hotline/hotlineCategory?id=" + item.id + '&name=' + item.name
 				})
 			}
 		}

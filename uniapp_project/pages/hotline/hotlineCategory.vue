@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="upLoad">
+		<!-- <view class="upLoad">
 			<uni-card>
 				<u--textarea v-model="undertaker" placeholder="请输入承办单位" autoHeight class="txt"></u--textarea>
 
@@ -9,13 +9,13 @@
 				<u--textarea v-model="content" count placeholder="请输入内容" class="txt"></u--textarea>
 				<u-button type="primary" text="提交" @click="upLoad()"></u-button>
 			</uni-card>
-		</view>
+		</view> -->
 
-
+		<u-navbar autoBack="" placeholder="" :title="this.name"></u-navbar>
 
 		<!-- 诉求列表 -->
 		<view class="">
-			<uni-card :title="item.title" :subTitle="item.createTime" :extra="item.undertaker" note="Tips"
+			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
 				v-for="(item,index) in list" :key="index">
 				处理情况：{{item.detailResult?item.detailResult:'暂无'}}
 			</uni-card>
@@ -31,6 +31,7 @@
 	export default {
 		data() {
 			return {
+				name: '',
 				list: [],
 				appealCategoryId: '',
 				undertaker: '',
@@ -40,6 +41,7 @@
 			};
 		},
 		async onLoad(e) {
+			this.name = e.name
 			//诉求分类id
 			this.appealCategoryId = e.id
 			//获取该分类诉求列表
@@ -48,7 +50,7 @@
 					appealCategoryId: e.id
 				}
 			}).then(res => {
-				this.list = res.rows
+				this.list = res.rows.reverse().slice(0, 25)
 			})
 		},
 		methods: {
