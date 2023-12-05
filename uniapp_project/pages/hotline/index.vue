@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 轮播图 -->
-		<view class="swiper" style="margin: 10rpx 0;">
+		<view class="swiper" style="margin: 20rpx 0 50rpx 0;">
 			<u-swiper :list="swiperList" indicator :autoplay="true" :interval="3000" :duration="1000" circular=""
 				height="350rpx" nextMargin="10" previousMargin="10">
 			</u-swiper>
@@ -130,6 +130,7 @@
 
 	.title {
 		padding: 0 25rpx;
-		font-size: 35rpx
+		font-size: 35rpx;
+		color: #777;
 	}
 </style>
