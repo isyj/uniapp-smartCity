@@ -9,13 +9,16 @@
 
 
 		<!-- 市民诉求分类 -->
+		<view class="title">
+			诉求分类
+		</view>
 		<view class="classify">
 			<swiper :indicator-dots="true" :duration="500">
 				<swiper-item>
 					<uni-card isFull="" padding="15rpx 0" shadow="0 0" :border="false">
 						<u-grid col="4">
 							<u-grid-item v-for="(item,index) in classifyList.slice(0,8)" :key="index"
-								@click="jump(item)">
+								@click="jumpList(item)">
 								<image :src="item.imgUrl" mode="widthFix"></image>
 								<text>{{item.name}}</text>
 							</u-grid-item>
@@ -26,7 +29,7 @@
 					<uni-card isFull="" padding="15rpx 0" shadow="0 0" :border="false">
 						<u-grid col="4">
 							<u-grid-item v-for="(item,index) in classifyList.slice(8,16)" :key="index"
-								@click="jump(item.id)">
+								@click="jumpList(item)">
 								<image :src="item.imgUrl" mode="widthFix"></image>
 								<text>{{item.name}}</text>
 							</u-grid-item>
@@ -38,10 +41,15 @@
 
 
 		<!-- 我的诉求 -->
+		<view class="title">
+			我的诉求
+		</view>
 		<view class="my">
 			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
-				v-for="(item,index) in myList" :key="index">
-				处理情况：{{item.detailResult?'tem.detailResult':'暂无'}}
+				v-for="(item,index) in myList" :key="index" @click="jumpDetails(item)">
+				处理状态：{{statusList[item.state]}}
+				<br />
+				处理结果：{{item.detailResult?item.detailResult:'暂无'}}
 			</uni-card>
 		</view>
 	</view>
@@ -51,14 +59,16 @@
 	import {
 		getHotlineSwiper,
 		getHotlineCategoryList,
-		getHotlineMyList
+		getHotlineMyList,
+		getDataType
 	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
 				swiperList: [],
 				classifyList: [],
-				myList: []
+				myList: [],
+				statusList: []
 			};
 		},
 		async onLoad() {
@@ -80,12 +90,24 @@
 			await getHotlineMyList().then(res => {
 				this.myList = res.rows.reverse()
 			})
+			//获取处理状态字典
+			await getDataType({}, 'gsh_appeal_state').then(res => {
+				this.statusList = res.data.map(e => e.dictLabel)
+			})
 		},
 		methods: {
-			jump(item) {
+			//点击分类图标
+			jumpList(item) {
 				uni.navigateTo({
 					url: "/pages/hotline/hotlineCategory?id=" + item.id + '&name=' + item.name
+
 				})
+			},
+			//点击我的诉求卡片
+			jumpDetails(item) {
+				uni.navigateTo({
+					url: '/pages/hotline/hotlineAppealDetails?id=' + item.id,
+				});
 			}
 		}
 	}
@@ -104,5 +126,10 @@
 		text {
 			font-size: 25rpx
 		}
+	}
+
+	.title {
+		padding: 0 25rpx;
+		font-size: 35rpx
 	}
 </style>

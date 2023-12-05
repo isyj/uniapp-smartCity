@@ -1,32 +1,26 @@
 <template>
 	<view>
-		<!-- <view class="upLoad">
-			<uni-card>
-				<u--textarea v-model="undertaker" placeholder="请输入承办单位" autoHeight class="txt"></u--textarea>
 
-				<u--textarea v-model="title" placeholder="请输入标题" autoHeight class="txt"></u--textarea>
-
-				<u--textarea v-model="content" count placeholder="请输入内容" class="txt"></u--textarea>
-				<u-button type="primary" text="提交" @click="upLoad()"></u-button>
-			</uni-card>
-		</view> -->
 
 		<u-navbar autoBack="" placeholder="" :title="this.name"></u-navbar>
 
 		<!-- 诉求列表 -->
 		<view class="">
 			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
-				v-for="(item,index) in list" :key="index">
+				v-for="(item,index) in list" :key="index" @click="jumpDetails(item)">
+				处理状态：{{statusList[item.state]}}
+				<br />
 				处理情况：{{item.detailResult?item.detailResult:'暂无'}}
 			</uni-card>
 		</view>
+		<u-button type="error" style="position: fixed; bottom: 0; z-index: 999;" @click="jumpAppeal()">发布诉求</u-button>
 	</view>
 </template>
 
 <script>
 	import {
 		getHotlineCategoryDetails,
-		postHotlineAppeal
+		getDataType
 	} from "../../config/api.js"
 	export default {
 		data() {
@@ -34,13 +28,11 @@
 				name: '',
 				list: [],
 				appealCategoryId: '',
-				undertaker: '',
-				title: '',
-				content: '',
-				imgUrl: ''
+				statusList: []
 			};
 		},
 		async onLoad(e) {
+			//诉求分类名称
 			this.name = e.name
 			//诉求分类id
 			this.appealCategoryId = e.id
@@ -52,17 +44,20 @@
 			}).then(res => {
 				this.list = res.rows.reverse().slice(0, 25)
 			})
+			//获取处理状态字典
+			await getDataType({}, 'gsh_appeal_state').then(res => {
+				this.statusList = res.data.map(e => e.dictLabel)
+			})
 		},
 		methods: {
-			upLoad() {
-				postHotlineAppeal({
-					appealCategoryId: this.appealCategoryId,
-					undertaker: this.undertaker,
-					title: this.title,
-					content: this.content,
-					imgUrl: this.imgUrl
-				}).then(res => {
-					console.log(res);
+			jumpAppeal() {
+				uni.navigateTo({
+					url: '/pages/hotline/hotlineAppeal?appealCategoryId=' + this.appealCategoryId
+				})
+			},
+			jumpDetails(item) {
+				uni.navigateTo({
+					url: '/pages/hotline/hotlineAppealDetails?id=' + item.id
 				})
 			}
 		}
@@ -70,9 +65,5 @@
 </script>
 
 <style lang="scss">
-	.upLoad {
-		.txt {
-			margin: 10rpx;
-		}
-	}
+
 </style>

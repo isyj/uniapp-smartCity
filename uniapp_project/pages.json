@@ -217,6 +217,20 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/hotline/hotlineAppeal",
+			"style": {
+				"navigationBarTitleText": "诉求列表",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/hotline/hotlineAppealDetails",
+			"style": {
+				"navigationBarTitleText": "诉求详情",
+				"enablePullDownRefresh": false
+			}
 		}
 
 	],

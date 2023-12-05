@@ -9,6 +9,11 @@ export const getMenu = (data) => http.get('/ebapi/public_api/index', data)
 */
 
 
+// get请求，获取字典
+export const getDataType = (data, dictType) => http.get('/prod-api/system/dict/data/type/' + dictType, data)
+
+
+
 // post请求 文件上传接口
 export const postLoadFile = (params) => http.upload('/prod-api/common/upload', params)
 
@@ -115,13 +120,13 @@ export const getActivityList = (data) => http.get('/prod-api/api/activity/activi
 export const getActivityCommonList = (data, id) => http.get('/prod-api/api/activity/comment/list', data, id)
 
 // post请求，发表评论
-export const postActivityCommon = (data) => http.post('/prod-api/api/activity/comment', data)
+export const postActivityCommon = (params) => http.post('/prod-api/api/activity/comment', params)
 
 // post请求，报名活动
-export const postActivitySignup = (data) => http.post('/prod-api/api/activity/signup', data)
+export const postActivitySignup = (params) => http.post('/prod-api/api/activity/signup', params)
 
 // post请求，判断是否报名
-export const postActivitySignupCheck = (data) => http.get('/prod-api/api/activity/signup/check', data)
+export const postActivitySignupCheck = (params) => http.get('/prod-api/api/activity/signup/check', params)
 
 
 
@@ -140,7 +145,7 @@ export const getWelfareRecommendActivityList = (data) => http.get(
 	'/prod-api/api/public-welfare/public-welfare-activity/recommend-list', data)
 
 // post请求，发起捐款
-export const getWelfareDonateRecord = (data) => http.post('/prod-api/api/public-welfare/donate-record', data)
+export const getWelfareDonateRecord = (params) => http.post('/prod-api/api/public-welfare/donate-record', params)
 
 
 
@@ -150,11 +155,14 @@ export const getHotlineSwiper = (data) => http.get('/prod-api/api/gov-service-ho
 // get请求，获取政府服务分类
 export const getHotlineCategoryList = (data) => http.get('/prod-api/api/gov-service-hotline/appeal-category/list', data)
 
-// get请求，获取政府服务分类详情
+// get请求，获取政府服务分类诉求列表
 export const getHotlineCategoryDetails = (data) => http.get('/prod-api/api/gov-service-hotline/appeal/list', data)
 
 // get请求，获取政府服务分类详情
 export const getHotlineMyList = (data) => http.get('/prod-api/api/gov-service-hotline/appeal/my-list', data)
 
-// post请求，获取政府服务分类详情
-export const postHotlineAppeal = (data) => http.post('/prod-api/api/gov-service-hotline/appeal', data)
+// get请求，获取政府服务分类详情
+export const getHotlineAppealDetails = (data, id) => http.get('/prod-api/api/gov-service-hotline/appeal/' + id, data)
+
+// post请求，发起诉求
+export const postHotlineAppeal = (params) => http.post('/prod-api/api/gov-service-hotline/appeal', params)
