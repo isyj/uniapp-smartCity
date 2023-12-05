@@ -15,37 +15,16 @@ module.exports = (vm) => {
 		}
 
 
-		//白名单
-		const whiteList = [
-			'/pages/user/login',
-			'/pages/user/register'
-		]
-		//判断是否登录
-		const intercept = {
-			invoke(options) {
-				if (Boolean(uni.getStorageSync('token')) || whiteList.indexOf(options.url) >= 0) {
-					return true
-				} else {
-					uni.showToast({
-						title: '请登录',
-						icon: 'error'
-					})
-					uni.switchTab({
-						url: '/pages/user/user',
-					})
-					return false
-				}
-
-			},
-			fail(err) {
-				uni.showToast({
-					title: err.errMsg,
-					icon: 'none'
-				})
-			},
-		}
-
-		uni.addInterceptor('navigateTo', intercept)
+		// 根据custom参数中配置的是否需要token，添加对应的请求头
+		// config.header['cookie'] = uni.getStorageSync('cookie')
+		// if (uni.getStorageSync('token')) {
+		// 	// 可以在此通过vm引用vuex中的变量，具体值在vm.$store.state中
+		// } else {
+		// 	uni.reLaunch({
+		// 		url: '/pages/user/user'
+		// 	})
+		// }
+		// console.log(config);
 		return config
 
 	}, config => { // 可使用async await 做异步操作
@@ -57,13 +36,17 @@ module.exports = (vm) => {
 		/* 对响应成功做点什么 可使用async await 做异步操作*/
 		const data = response.data
 
-		// // 自定义参数
-		// const custom = response.config?.custom
-		// if (data.code !== 200) {
-		// 	// 如果没有显式定义custom的toast参数为false的话，默认对报错进行toast弹出提示
-		// 	if (custom.toast !== false) {
-		// 		uni.$u.toast(data.message)
-		// 	}
+		// 自定义参数
+		const custom = response.config?.custom
+		if (data.code == 401) {
+			uni.switchTab({
+				url: '/pages/user/user'
+			})
+			uni.showToast({
+				title: '请登录',
+				icon: 'error'
+			})
+		}
 
 		// 	// 如果需要catch返回，则进行reject
 		// 	if (custom?.catch) {
