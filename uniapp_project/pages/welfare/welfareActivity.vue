@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<u-navbar :title="navTitle" autoBack="" placeholder=""></u-navbar>
-
+		<u-search style="margin-bottom: 15rpx;" placeholder="请输入内容" :showAction="false" @focus="jump" height="20rpx"
+			focus></u-search>
 
 		<!-- 弹出层面 -->
 		<u-popup :show="show" closeOnClickOverlay @close="close">
@@ -13,7 +14,7 @@
 		</u-popup>
 
 
-		<!-- 活动信息卡片 -->
+		<!-- 公益活动信息卡片 -->
 		<view class=" card">
 			<uni-card :title="item.name" :subTitle="item.createTime" thumbnail="" :extra="item.author" note="Tips"
 				v-for="(item,index) in list" :key="index">
@@ -101,6 +102,12 @@
 				this.show = true
 				// 活动id
 				this.activityId = id
+			},
+			jump() {
+				uni.navigateTo({
+					url: '/pages/welfare/welfareList',
+					animationType: 'fade-in'
+				})
 			}
 		}
 	}

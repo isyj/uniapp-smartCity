@@ -2,12 +2,13 @@
 	<view>
 		<view class="navBar">
 			<u-navbar title="爱心捐赠" placeholder="" autoBack=""></u-navbar>
-			<u-search placeholder="请输入内容" :showAction="false"></u-search>
+			<u-search style="margin-bottom: 15rpx;" placeholder="请输入内容" :showAction="false" @focus="jump"
+				height="20rpx"></u-search>
 
 
 			<!-- 轮播图 -->
-			<u-swiper :list="bannerList" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000"
-				circular nextMargin="10" previousMargin="10" height="350rpx">
+			<u-swiper :list="bannerList" indicator :autoplay="true" :interval="3000" :duration="1000" circular
+				nextMargin="10" previousMargin="10" height="350rpx" style="margin: 20rpx 0 0 0;">
 			</u-swiper>
 
 
@@ -81,6 +82,12 @@
 			clickGrid(item) {
 				uni.navigateTo({
 					url: '/pages/welfare/welfareActivity?id=' + item.id
+				})
+			},
+			jump() {
+				uni.navigateTo({
+					url: '/pages/welfare/welfareList',
+					animationType: 'fade-in'
 				})
 			}
 		}
