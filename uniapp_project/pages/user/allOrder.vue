@@ -11,8 +11,8 @@
 	        }" itemStyle="padding: 0; height: 40px; width: 50%" @click="clickClassify">
 			</u-tabs>
 			<view>
-				<u-picker closeOnClickOverlay :show="show" :columns="columns" @cancel="cancel" @close="cancel"
-					@confirm="confirm"></u-picker>
+				<u-picker closeOnClickOverlay :show="show" keyName="ladel" :columns="columns" @cancel="cancel"
+					@close="cancel" @confirm="confirm"></u-picker>
 			</view>
 		</view>
 
@@ -42,7 +42,13 @@
 					name: '订单分类'
 				}],
 				columns: [
-					['外卖订餐', '电影']
+					[{
+						ladel: '外卖订餐',
+						orderType: 'takeout'
+					}, {
+						ladel: '电影',
+						orderType: 'movie'
+					}]
 				],
 
 			};
@@ -66,15 +72,10 @@
 			// 点击确定
 			confirm(item) {
 				this.show = false
-				let orderType = item.value
-				if (item.value == "外卖订餐") {
-					orderType = 'takeout'
-				} else if (item.value == "电影") {
-					orderType = 'movie'
-				}
+				this.list4[1].name = item.value[0].ladel
 				getAllOrder({
 					params: {
-						orderType: orderType
+						orderType: item.value[0].orderType
 					}
 				}).then(res => {
 					this.list = res.rows
