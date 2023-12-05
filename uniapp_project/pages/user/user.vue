@@ -76,9 +76,10 @@ import { onLoad } from "../../uni_modules/uview-ui/libs/mixin/mixin.js"
 		async onShow() {
 			if (!uni.getStorageSync('user')) {
 				uni.setStorageSync('user', {
-					username: '',
-					password: ''
+					username: 'imxiaochen',
+					password: 'imxiaochen0v0'
 				})
+					
 			}
 			if (uni.getStorageSync('token')) {
 				await getUserInfo().then(res => {
@@ -86,7 +87,6 @@ import { onLoad } from "../../uni_modules/uview-ui/libs/mixin/mixin.js"
 					uni.setStorageSync('userInfo', this.userInfo)
 				})
 			}
-
 		}
 	}
 </script>
