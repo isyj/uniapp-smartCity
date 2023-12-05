@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="navBar">
-			<u-navbar title="爱心捐赠" placeholder=""></u-navbar>
+			<u-navbar title="爱心捐赠" placeholder="" autoBack=""></u-navbar>
 			<u-search placeholder="请输入内容" :showAction="false"></u-search>
 
 
@@ -73,7 +73,6 @@
 			})
 			/* 获取推荐公益活动 */
 			getWelfareRecommendActivityList().then(res => {
-				console.log(res);
 				this.recommendActivityList = res.rows
 			})
 		},

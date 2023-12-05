@@ -140,3 +140,8 @@ export const getWelfareActivityList = (data, id) => http.get(
 export const getWelfareRecommendActivityList = (data) => http.get(
 	'/prod-api/api/public-welfare/public-welfare-activity/recommend-list',
 	data)
+
+// post请求，发起捐款
+export const getWelfareDonateRecord = (data) => http.post(
+	'/prod-api/api/public-welfare/donate-record',
+	data)
