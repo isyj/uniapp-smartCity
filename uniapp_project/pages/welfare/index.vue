@@ -14,7 +14,7 @@
 
 			<!-- 公益分类 -->
 			<view class="grid">
-				<uni-card margin="5">
+				<uni-card margin="20rpx 0">
 					<u-grid :border="false" col="4">
 						<u-grid-item v-for="(item,index) in classifyList" :key="index" @click="clickGrid(item)">
 							<image :src="ip+item.imgUrl" mode="widthFix"></image>
@@ -98,7 +98,7 @@
 <style lang="scss">
 	.grid {
 		image {
-			width: 40%;
+			width: 50%;
 
 		}
 
