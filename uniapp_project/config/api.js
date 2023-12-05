@@ -133,15 +133,28 @@ export const getWelfareClassifyList = (data) => http.get('/prod-api/api/public-w
 
 // get请求，分类获取公益活动
 export const getWelfareActivityList = (data, id) => http.get(
-	'/prod-api/api/public-welfare/public-welfare-activity/list',
-	data, id)
+	'/prod-api/api/public-welfare/public-welfare-activity/list', data, id)
 
 // get请求，获取推荐公益活动
 export const getWelfareRecommendActivityList = (data) => http.get(
-	'/prod-api/api/public-welfare/public-welfare-activity/recommend-list',
-	data)
+	'/prod-api/api/public-welfare/public-welfare-activity/recommend-list', data)
 
 // post请求，发起捐款
-export const getWelfareDonateRecord = (data) => http.post(
-	'/prod-api/api/public-welfare/donate-record',
-	data)
+export const getWelfareDonateRecord = (data) => http.post('/prod-api/api/public-welfare/donate-record', data)
+
+
+
+// get请求，获取政府服务热线轮播图
+export const getHotlineSwiper = (data) => http.get('/prod-api/api/gov-service-hotline/ad-banner/list', data)
+
+// get请求，获取政府服务分类
+export const getHotlineCategoryList = (data) => http.get('/prod-api/api/gov-service-hotline/appeal-category/list', data)
+
+// get请求，获取政府服务分类详情
+export const getHotlineCategoryDetails = (data) => http.get('/prod-api/api/gov-service-hotline/appeal/list', data)
+
+// get请求，获取政府服务分类详情
+export const getHotlineMyList = (data) => http.get('/prod-api/api/gov-service-hotline/appeal/my-list', data)
+
+// post请求，获取政府服务分类详情
+export const postHotlineAppeal = (data) => http.post('/prod-api/api/gov-service-hotline/appeal', data)

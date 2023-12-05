@@ -203,6 +203,20 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/hotline/index",
+			"style": {
+				"navigationBarTitleText": "政府服务热线",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/hotline/hotlineCategory",
+			"style": {
+				"navigationBarTitleText": "1",
+				"enablePullDownRefresh": false
+			}
 		}
 
 	],
