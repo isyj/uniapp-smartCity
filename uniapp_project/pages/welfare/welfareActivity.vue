@@ -51,6 +51,7 @@
 			};
 		},
 		onLoad(e) {
+			this.navTitle = e.name
 			//活动分类id
 			this.typeId = e.id
 			// 分类获取活动数据
@@ -60,7 +61,6 @@
 				}
 			}).then(res => {
 				this.list = res.rows
-				this.navTitle = res.rows[0].type.name
 			})
 
 		},
