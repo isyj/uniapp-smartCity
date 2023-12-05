@@ -198,7 +198,7 @@
 			}
 		},
 		{
-			"path": "pages/welfare/welfareList",
+			"path": "pages/welfare/welfareSeachList",
 			"style": {
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false

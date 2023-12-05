@@ -1,10 +1,10 @@
 <template>
 	<view>
 		<u-navbar :title="navTitle" autoBack="" placeholder=""></u-navbar>
-		<u-search style="margin-bottom: 15rpx;" placeholder="请输入内容" :showAction="false" @focus="jump" height="20rpx"
-			focus></u-search>
+		<u-search style="margin-bottom: 15rpx;" placeholder="请输入内容" :showAction="false" height="20rpx"
+			@focus="jump"></u-search>
 
-		<!-- 弹出层面 -->
+		<!-- 弹出层 -->
 		<u-popup :show="show" closeOnClickOverlay @close="close">
 			<uni-card>
 				<u--input placeholder="请输入金额" border="surround" v-model="donateMoney"></u--input>
@@ -65,13 +65,14 @@
 
 		},
 		methods: {
-			// 关闭弹出层面
+			// 关闭弹出层
 			close() {
 				this.show = false
 			},
 			//点击弹出层按钮
 			async clickBtn() {
 				this.show = false
+				// 发起对应活动捐款
 				await getWelfareDonateRecord({
 					activityId: this.activityId,
 					donateMoney: this.donateMoney
@@ -87,6 +88,7 @@
 						})
 					}
 				})
+				// 捐款后重新获取该分类活动数据列表
 				await getWelfareActivityList({
 					params: {
 						typeId: this.typeId
@@ -103,9 +105,10 @@
 				// 活动id
 				this.activityId = id
 			},
+			// 点击搜索框
 			jump() {
 				uni.navigateTo({
-					url: '/pages/welfare/welfareList',
+					url: '/pages/welfare/welfareSeachList',
 					animationType: 'fade-in'
 				})
 			}

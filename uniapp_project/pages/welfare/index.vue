@@ -84,9 +84,10 @@
 					url: '/pages/welfare/welfareActivity?id=' + item.id
 				})
 			},
+			// 点击搜索框
 			jump() {
 				uni.navigateTo({
-					url: '/pages/welfare/welfareList',
+					url: '/pages/welfare/welfareSeachList',
 					animationType: 'fade-in'
 				})
 			}
