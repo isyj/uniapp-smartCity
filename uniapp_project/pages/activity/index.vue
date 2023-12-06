@@ -15,7 +15,7 @@
 			color:'pink'}" :inactiveStyle="{
         color: '#606266',
         transform: 'scale(1.1)'
-    }" itemStyle="padding:25rpx; width:10%"></u-tabs>
+    }" itemStyle="padding:35rpx 0 0 0; width:16.66%; height:40px"></u-tabs>
 		</view>
 
 
