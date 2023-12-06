@@ -16,7 +16,7 @@
 					<uni-card isFull="" padding="15rpx 0" shadow="0 0" :border="false">
 						<u-grid col="4">
 							<u-grid-item v-for="(item,index) in classifyList.slice(0,8)" :key="index"
-								@click="jumpList(item)">
+								@click="jumpList(item)" style="margin: 0 0 15rpx 0;">
 								<image :src="item.imgUrl" mode="widthFix"></image>
 								<text>{{item.name}}</text>
 							</u-grid-item>
@@ -27,7 +27,7 @@
 					<uni-card isFull="" padding="15rpx 0" shadow="0 0" :border="false">
 						<u-grid col="4">
 							<u-grid-item v-for="(item,index) in classifyList.slice(8,16)" :key="index"
-								@click="jumpList(item)">
+								@click="jumpList(item)" style="margin: 0 0 15rpx 0;">
 								<image :src="item.imgUrl" mode="widthFix"></image>
 								<text>{{item.name}}</text>
 							</u-grid-item>
@@ -116,7 +116,7 @@
 <style lang="scss">
 	.classify {
 		swiper {
-			height: 320rpx;
+			height: 330rpx;
 
 			image {
 				width: 50%;

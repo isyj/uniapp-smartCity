@@ -17,7 +17,8 @@
 			<view class="grid">
 				<uni-card margin="20rpx 0" shadow="0 0" :border="false">
 					<u-grid :border="false" col="4">
-						<u-grid-item v-for="(item,index) in classifyList" :key="index" @click="clickGrid(item)">
+						<u-grid-item v-for="(item,index) in classifyList" :key="index" @click="clickGrid(item)"
+							style="margin: 0 0 15rpx 0;">
 							<image :src="ip+item.imgUrl" mode="widthFix"></image>
 							<text class="grid-text">{{item.name}}</text>
 						</u-grid-item>
