@@ -221,7 +221,7 @@
 		{
 			"path": "pages/hotline/hotlineAppeal",
 			"style": {
-				"navigationBarTitleText": "诉求列表",
+				"navigationBarTitleText": "诉求",
 				"enablePullDownRefresh": false
 			}
 		},
@@ -232,7 +232,6 @@
 				"enablePullDownRefresh": false
 			}
 		}
-
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

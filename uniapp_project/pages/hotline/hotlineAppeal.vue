@@ -2,6 +2,11 @@
 	<view>
 		<view class="upLoad">
 			<uni-card>
+				<view class="" style="width: 90%;margin: 0 auto;">
+					<uni-data-select v-model="value" :localdata="classify" @change="change"
+						:clear="false"></uni-data-select>
+				</view>
+
 				<u--textarea v-model="appeal.title" placeholder="请输入标题" autoHeight class="txt"></u--textarea>
 
 				<u--textarea v-model="appeal.undertaker" placeholder="请输入承办单位" autoHeight class="txt"></u--textarea>
@@ -22,11 +27,14 @@
 <script>
 	import {
 		postHotlineAppeal,
-		postLoadFile
+		postLoadFile,
+		getHotlineCategoryList
 	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
+				value: 0,
+				classify: [],
 				fileList1: [],
 				appeal: {
 					appealCategoryId: '',
@@ -38,10 +46,19 @@
 			};
 		},
 		onLoad(e) {
-			//诉求分类id
-			this.appeal.appealCategoryId = e.appealCategoryId
+			getHotlineCategoryList().then(res => {
+				this.classify = res.rows.map(e => ({
+					value: e.id,
+					text: e.name
+				}))
+			})
 		},
 		methods: {
+			// 选择诉求分类
+			change(e) {
+				//诉求分类id
+				this.appeal.appealCategoryId = e
+			},
 			// 删除图片
 			deletePic(event) {
 				this[`fileList${event.name}`].splice(event.index, 1)
@@ -95,7 +112,7 @@
 						})
 					} else {
 						uni.showToast({
-							title: res.msg,
+							title: '请选择分类',
 							icon: 'error'
 						})
 					}

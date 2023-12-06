@@ -28,21 +28,31 @@
 				name: '',
 				list: [],
 				appealCategoryId: '',
-				statusList: []
+				statusList: [],
+				total: 0
 			};
 		},
 		async onLoad(e) {
 			//诉求分类名称
 			this.name = e.name
-			//诉求分类id
-			this.appealCategoryId = e.id
 			//获取该分类诉求列表
 			await getHotlineCategoryDetails({
 				params: {
-					appealCategoryId: e.id
+					appealCategoryId: e.id,
+					pageSize: '0',
+					pageNum: 2
 				}
 			}).then(res => {
-				this.list = res.rows.reverse().slice(0, 25)
+				this.total = res.total
+			})
+			await getHotlineCategoryDetails({
+				params: {
+					appealCategoryId: e.id,
+					pageSize: '100',
+					pageNum: (this.total)
+				}
+			}).then(res => {
+				this.list = res.rows.reverse()
 			})
 			//获取处理状态字典
 			await getDataType({}, 'gsh_appeal_state').then(res => {
@@ -52,7 +62,7 @@
 		methods: {
 			jumpAppeal() {
 				uni.navigateTo({
-					url: '/pages/hotline/hotlineAppeal?appealCategoryId=' + this.appealCategoryId
+					url: '/pages/hotline/hotlineAppeal'
 				})
 			},
 			jumpDetails(item) {
