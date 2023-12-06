@@ -126,7 +126,7 @@
 				getActivityCommonList({
 					params: {
 						activityId: this.activityId,
-						pageSize: '20',
+						pageSize: '50',
 						pageNum: 1
 					}
 				}).then(res => {
