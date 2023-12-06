@@ -8,12 +8,12 @@
 
 			<!-- 轮播图 -->
 			<u-swiper :list="bannerList" indicator :autoplay="true" :interval="3000" :duration="1000" circular
-				nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" style="margin: 20rpx 0 50rpx 0;">
+				nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" style="margin: 20rpx 0;">
 			</u-swiper>
 
 
 			<!-- 公益分类 -->
-			<uni-section title="公益分类" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
+			<uni-section title="公益分类" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
 			<view class="grid">
 				<uni-card margin="20rpx 0" shadow="0 0" :border="false">
 					<u-grid :border="false" col="4">
@@ -27,7 +27,7 @@
 
 
 			<!-- 推荐公益 -->
-			<uni-section title="推荐公益" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
+			<uni-section title="推荐公益" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
 			<view class="recommend">
 				<uni-card :title="item.name" thumbnail="" :extra="item.author" note="Tips"
 					v-for="(item,index) in recommendActivityList" :key="index">
