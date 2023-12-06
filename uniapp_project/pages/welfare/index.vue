@@ -14,6 +14,7 @@
 
 			<!-- 公益分类 -->
 			<uni-section title="公益分类" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
+
 			<view class="grid">
 				<uni-card margin="20rpx 0" shadow="0 0" :border="false">
 					<u-grid :border="false" col="4">
@@ -29,9 +30,9 @@
 
 			<!-- 推荐公益 -->
 			<uni-section title="推荐公益" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
-			<view class="recommend">
-				<uni-card :title="item.name" thumbnail="" :extra="item.author" note="Tips"
-					v-for="(item,index) in recommendActivityList" :key="index">
+
+			<view class="recommend" @click="clickCard(item)" v-for="(item,index) in recommendActivityList" :key="index">
+				<uni-card :title="item.name" thumbnail="" :extra="item.author" note="Tips">
 					<image slot="cover" :src="ip+item.imgUrl" mode="aspectFill"></image>
 					<view class="">
 						捐赠人数：{{item.donateCount}}
@@ -85,6 +86,12 @@
 			clickGrid(item) {
 				uni.navigateTo({
 					url: '/pages/welfare/welfareActivity?typeId=' + item.id + '&name=' + item.name
+				})
+			},
+			//点击推荐公益卡片
+			clickCard(item) {
+				uni.navigateTo({
+					url: '/pages/welfare/welfareActivity?typeId=' + item.typeId + '&name=' + item.type.name
 				})
 			},
 			// 点击搜索框
