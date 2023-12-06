@@ -1,8 +1,8 @@
 <template>
 	<view>
 
-
 		<u-navbar autoBack="" placeholder="" :title="this.name"></u-navbar>
+
 
 		<!-- 诉求列表 -->
 		<view class="">
@@ -13,7 +13,13 @@
 				处理情况：{{item.detailResult?item.detailResult:'暂无'}}
 			</uni-card>
 		</view>
+
+
 		<u-button type="error" style="position: fixed; bottom: 0; z-index: 999;" @click="jumpAppeal()">发布诉求</u-button>
+
+
+		<u-loadmore @loadmore="loadMore" :status="status" style="padding-bottom: 120rpx;" fontSize="30rpx"
+			color="#bbb" />
 	</view>
 </template>
 
@@ -25,6 +31,7 @@
 	export default {
 		data() {
 			return {
+				status: 'loadmore',
 				name: '',
 				list: [],
 				appealCategoryId: '',
@@ -42,16 +49,16 @@
 				params: {
 					appealCategoryId: uni.getStorageSync('appealCategoryId'),
 					pageSize: '0',
-					pageNum: 2
+					pageNum: 1
 				}
 			}).then(res => {
-				this.total = res.total
+				this.total = Math.ceil((res.total / 10))
 			})
 			await getHotlineCategoryDetails({
 				params: {
 					appealCategoryId: uni.getStorageSync('appealCategoryId'),
-					pageSize: '100',
-					pageNum: (this.total)
+					pageSize: '10',
+					pageNum: this.total
 				}
 			}).then(res => {
 				this.list = res.rows.reverse()
@@ -62,11 +69,35 @@
 			})
 		},
 		methods: {
+			//加载更多
+			loadMore() {
+				this.status = 'loading'
+				this.total -= 1
+				setTimeout(() => {
+					getHotlineCategoryDetails({
+						params: {
+							appealCategoryId: uni.getStorageSync('appealCategoryId'),
+							pageSize: '10',
+							pageNum: this.total
+						}
+					}).then(res => {
+						this.list = this.list.concat(res.rows.reverse())
+						if (res.rows) {
+							this.status = 'loadmore'
+						} else {
+							this.status = 'nomore'
+						}
+					})
+
+				}, 500)
+			},
+			//点击提交诉求按钮
 			jumpAppeal() {
 				uni.navigateTo({
 					url: '/pages/hotline/hotlineAppeal'
 				})
 			},
+			//点击诉求列表卡片
 			jumpDetails(item) {
 				uni.navigateTo({
 					url: '/pages/hotline/hotlineAppealDetails?id=' + item.id

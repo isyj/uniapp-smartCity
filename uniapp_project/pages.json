@@ -231,6 +231,14 @@
 				"navigationBarTitleText": "诉求详情",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path" : "pages/house/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "找房子",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {

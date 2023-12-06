@@ -166,3 +166,8 @@ export const getHotlineAppealDetails = (data, id) => http.get('/prod-api/api/gov
 
 // post请求，发起诉求
 export const postHotlineAppeal = (params) => http.post('/prod-api/api/gov-service-hotline/appeal', params)
+
+
+
+// get请求，获取房源列表
+export const getHomeList = (data) => http.get('/prod-api/api/house/housing/list', data)
