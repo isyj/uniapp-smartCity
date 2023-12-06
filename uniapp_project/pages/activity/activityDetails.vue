@@ -23,7 +23,7 @@
 				<br />
 				<u-button type="primary" text="发表评论" @click="clickBtn()"></u-button>
 			</uni-card>
-			<uni-card :title="item.nickName" thumbnail="" extra="额外信息" note="Tips" v-for="(item,index) in commonList"
+			<uni-card :title="item.nickName" :subTitle="item.commentTime" note="Tips" v-for="(item,index) in commonList"
 				:key="index">
 				{{item.content}}
 			</uni-card>
@@ -125,10 +125,12 @@
 				//重新获取评论列表
 				getActivityCommonList({
 					params: {
-						activityId: this.activityId
+						activityId: this.activityId,
+						pageSize: '20',
+						pageNum: 1
 					}
 				}).then(res => {
-					this.commonList = res.rows.slice(0, 20)
+					this.commonList = res.rows
 				})
 			},
 			/* 报名按钮样式 */
@@ -153,13 +155,15 @@
 			getActivityDetails({}, this.activityId).then(res => {
 				this.list = res.data
 			})
-			//获取活动列表
+			//获取评论列表
 			getActivityCommonList({
 				params: {
-					activityId: this.activityId
+					activityId: this.activityId,
+					pageSize: '50',
+					pageNum: 1
 				}
 			}).then(res => {
-				this.commonList = res.rows.slice(0, 20)
+				this.commonList = res.rows
 			})
 			//获取推荐活动列表
 			getActivityList({
