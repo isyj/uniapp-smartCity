@@ -53,11 +53,11 @@
 		onLoad(e) {
 			this.navTitle = e.name
 			//活动分类id
-			this.typeId = e.id
+			this.typeId = e.typeId
 			// 分类获取活动数据
 			getWelfareActivityList({
 				params: {
-					typeId: e.id
+					typeId: e.typeId
 				}
 			}).then(res => {
 				this.list = res.rows
@@ -108,7 +108,7 @@
 			// 点击搜索框
 			jump() {
 				uni.navigateTo({
-					url: '/pages/welfare/welfareSeachList',
+					url: '/pages/welfare/welfareSeachList?typeId=' + this.typeId,
 					animationType: 'fade-in'
 				})
 			}

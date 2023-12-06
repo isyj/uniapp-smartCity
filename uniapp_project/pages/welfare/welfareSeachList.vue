@@ -7,7 +7,7 @@
 
 		<!-- 弹出层 -->
 		<u-popup :show="show" closeOnClickOverlay @close="close">
-			<uni-card>
+			<uni-card padding="100rpx">
 				<u--input placeholder="请输入金额" border="surround" v-model="donateMoney"></u--input>
 				<br />
 				<u-button type="error" @click="clickBtn()">捐款</u-button>
@@ -46,14 +46,23 @@
 				keyword: '',
 				donateMoney: '',
 				activityId: '',
-				show: false
+				show: false,
+				typeId: ''
 			};
+		},
+		onLoad(e) {
+			this.typeId = e.typeId
 		},
 		methods: {
 			// 搜索
 			search() {
-				// 获取全部活动数据列表
-				getWelfareActivityList().then(res => {
+				// 获取全部该分类公益活动数据列表
+				getWelfareActivityList({
+					params: {
+						typeId: this.typeId,
+						name: this.keyword
+					}
+				}).then(res => {
 					if (!this.keyword) {
 						uni.showToast({
 							title: "请输入内容",
@@ -63,12 +72,7 @@
 					}
 					//清空展示的数据
 					this.searchList = []
-					for (var i = 0; i < res.rows.length; i++) {
-						// 判断输入内容是否包含于全部活动内容标题
-						if (res.rows[i].name.indexOf(this.keyword) >= 0) {
-							this.searchList.push(res.rows[i])
-						}
-					}
+					this.searchList = res.rows
 				})
 			},
 
@@ -99,15 +103,14 @@
 					}
 				})
 				// 捐款后重新获取全部活动数据列表
-				await getWelfareActivityList().then(res => {
-					this.list = res.rows
-					this.searchList = []
-					for (var i = 0; i < res.rows.length; i++) {
-						// 判断输入内容是否包含于全部活动内容标题
-						if (res.rows[i].name.indexOf(this.keyword) >= 0) {
-							this.searchList.push(res.rows[i])
-						}
+				await getWelfareActivityList({
+					params: {
+						typeId: this.typeId,
+						name: this.keyword
 					}
+				}).then(res => {
+					this.searchList = res.rows
+
 				})
 			},
 

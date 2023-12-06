@@ -84,7 +84,7 @@
 			/* 点击grid  */
 			clickGrid(item) {
 				uni.navigateTo({
-					url: '/pages/welfare/welfareActivity?id=' + item.id + '&name=' + item.name
+					url: '/pages/welfare/welfareActivity?typeId=' + item.id + '&name=' + item.name
 				})
 			},
 			// 点击搜索框

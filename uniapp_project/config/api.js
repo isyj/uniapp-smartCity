@@ -137,8 +137,8 @@ export const getWelfareBannerList = (data) => http.get('/prod-api/api/public-wel
 export const getWelfareClassifyList = (data) => http.get('/prod-api/api/public-welfare/public-welfare-type/list', data)
 
 // get请求，分类获取公益活动
-export const getWelfareActivityList = (data, id) => http.get(
-	'/prod-api/api/public-welfare/public-welfare-activity/list', data, id)
+export const getWelfareActivityList = (data) => http.get(
+	'/prod-api/api/public-welfare/public-welfare-activity/list', data)
 
 // get请求，获取推荐公益活动
 export const getWelfareRecommendActivityList = (data) => http.get(
