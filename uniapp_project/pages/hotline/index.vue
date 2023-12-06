@@ -9,9 +9,7 @@
 
 
 		<!-- 市民诉求分类 -->
-		<view class="title">
-			诉求分类
-		</view>
+		<uni-section title="诉求分类" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
 		<view class="classify">
 			<swiper :indicator-dots="true" :duration="500">
 				<swiper-item>
@@ -41,9 +39,7 @@
 
 
 		<!-- 我的诉求 -->
-		<view class="title">
-			我的诉求
-		</view>
+		<uni-section title="我的诉求" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
 		<view class="my">
 			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
 				v-for="(item,index) in myList" :key="index" @click="jumpDetails(item)">
@@ -126,11 +122,5 @@
 		text {
 			font-size: 25rpx
 		}
-	}
-
-	.title {
-		padding: 0 25rpx;
-		font-size: 35rpx;
-		color: #777;
 	}
 </style>
