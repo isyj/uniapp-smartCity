@@ -54,9 +54,8 @@
 			this.typeId = e.typeId
 		},
 		methods: {
-			// 搜索
+			// 搜索 	获取该分类与搜索内容符合的公益活动数据列表
 			search() {
-				// 获取全部该分类公益活动数据列表
 				getWelfareActivityList({
 					params: {
 						typeId: this.typeId,
@@ -70,8 +69,6 @@
 						})
 						return
 					}
-					//清空展示的数据
-					this.searchList = []
 					this.searchList = res.rows
 				})
 			},
