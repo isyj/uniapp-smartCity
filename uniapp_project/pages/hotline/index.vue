@@ -88,7 +88,7 @@
 			})
 			// 获取我的诉求
 			await getHotlineMyList().then(res => {
-				this.myList = res.rows.reverse()
+				this.myList = res.rows.reverse().slice(0, 10)
 			})
 			//获取处理状态字典
 			await getDataType({}, 'gsh_appeal_state').then(res => {

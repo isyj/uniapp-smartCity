@@ -39,11 +39,31 @@
 				total: 0
 			};
 		},
-		onLoad(e) {
+		async onPullDownRefresh() {
+			//刷新该分类诉求列表
+			await getHotlineCategoryDetails({
+				params: {
+					appealCategoryId: uni.getStorageSync('appealCategoryId'),
+					pageSize: '0',
+					pageNum: 1
+				}
+			}).then(res => {
+				this.total = Math.ceil((res.total / 10))
+			})
+			await getHotlineCategoryDetails({
+				params: {
+					appealCategoryId: uni.getStorageSync('appealCategoryId'),
+					pageSize: '10',
+					pageNum: this.total
+				}
+			}).then(res => {
+				this.list = res.rows.reverse()
+			})
+			uni.stopPullDownRefresh();
+		},
+		async onLoad(e) {
 			//诉求分类名称
 			this.name = e.name
-		},
-		async onShow() {
 			//获取该分类诉求列表
 			await getHotlineCategoryDetails({
 				params: {

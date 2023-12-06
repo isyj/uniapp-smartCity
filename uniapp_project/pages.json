@@ -215,7 +215,7 @@
 			"path": "pages/hotline/hotlineCategory",
 			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -233,11 +233,10 @@
 			}
 		},
 		{
-			"path" : "pages/house/index",
-			"style" : 
-			{
-				"navigationBarTitleText" : "找房子",
-				"enablePullDownRefresh" : false
+			"path": "pages/house/index",
+			"style": {
+				"navigationBarTitleText": "找房子",
+				"enablePullDownRefresh": false
 			}
 		}
 	],
