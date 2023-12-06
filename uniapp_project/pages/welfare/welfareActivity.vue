@@ -6,7 +6,7 @@
 
 		<!-- 弹出层 -->
 		<u-popup :show="show" closeOnClickOverlay @close="close">
-			<uni-card>
+			<uni-card margin="25rpx 25rpx 100rpx 25rpx">
 				<u--input placeholder="请输入金额" border="surround" v-model="donateMoney"></u--input>
 				<br />
 				<u-button type="error" @click="clickBtn()">捐款</u-button>
