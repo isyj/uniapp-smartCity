@@ -73,23 +73,22 @@
 			loadMore() {
 				this.status = 'loading'
 				this.total -= 1
-				setTimeout(() => {
-					getHotlineCategoryDetails({
-						params: {
-							appealCategoryId: uni.getStorageSync('appealCategoryId'),
-							pageSize: '10',
-							pageNum: this.total
-						}
-					}).then(res => {
-						this.list = this.list.concat(res.rows.reverse())
-						if (res.rows) {
-							this.status = 'loadmore'
-						} else {
-							this.status = 'nomore'
-						}
-					})
+				//获取更多诉求列表
+				getHotlineCategoryDetails({
+					params: {
+						appealCategoryId: uni.getStorageSync('appealCategoryId'),
+						pageSize: '10',
+						pageNum: this.total
+					}
+				}).then(res => {
+					this.list = this.list.concat(res.rows.reverse())
 
-				}, 500)
+					if (this.list.length < res.total) {
+						this.status = 'loadmore'
+					} else {
+						this.status = 'nomore'
+					}
+				})
 			},
 			//点击发布诉求按钮
 			jumpAppeal() {
