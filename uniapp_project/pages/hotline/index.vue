@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 轮播图 -->
-		<view class="swiper" style="margin: 20rpx 0 50rpx 0;">
+		<view class="swiper" style="margin: 20rpx 0;">
 			<u-swiper :list="swiperList" indicator :autoplay="true" :interval="3000" :duration="1000" circular=""
 				height="350rpx" nextMargin="10" previousMargin="10">
 			</u-swiper>
@@ -9,7 +9,7 @@
 
 
 		<!-- 市民诉求分类 -->
-		<uni-section title="诉求分类" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
+		<uni-section title="诉求分类" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
 		<view class="classify">
 			<swiper :indicator-dots="true" :duration="500">
 				<swiper-item>
@@ -39,7 +39,7 @@
 
 
 		<!-- 我的诉求 -->
-		<uni-section title="我的诉求" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
+		<uni-section title="我的诉求" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
 		<view class="my">
 			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
 				v-for="(item,index) in myList" :key="index" @click="jumpDetails(item)">
