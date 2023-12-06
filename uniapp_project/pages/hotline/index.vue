@@ -67,7 +67,9 @@
 				statusList: []
 			};
 		},
-		async onLoad() {
+		async onShow() {
+			// 删除上次点击图标保存的分类id
+			uni.removeStorageSync('appealCategoryId')
 			//获取轮播图
 			await getHotlineSwiper().then(res => {
 				this.swiperList = res.data.map(e => ({
@@ -94,8 +96,10 @@
 		methods: {
 			//点击分类图标
 			jumpList(item) {
+				//保存点击图标的分类id到本地
+				uni.setStorageSync('appealCategoryId', item.id)
 				uni.navigateTo({
-					url: "/pages/hotline/hotlineCategory?id=" + item.id + '&name=' + item.name
+					url: "/pages/hotline/hotlineCategory?name=" + item.name
 
 				})
 			},

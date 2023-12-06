@@ -32,13 +32,15 @@
 				total: 0
 			};
 		},
-		async onLoad(e) {
+		onLoad(e) {
 			//诉求分类名称
 			this.name = e.name
+		},
+		async onShow() {
 			//获取该分类诉求列表
 			await getHotlineCategoryDetails({
 				params: {
-					appealCategoryId: e.id,
+					appealCategoryId: uni.getStorageSync('appealCategoryId'),
 					pageSize: '0',
 					pageNum: 2
 				}
@@ -47,7 +49,7 @@
 			})
 			await getHotlineCategoryDetails({
 				params: {
-					appealCategoryId: e.id,
+					appealCategoryId: uni.getStorageSync('appealCategoryId'),
 					pageSize: '100',
 					pageNum: (this.total)
 				}
