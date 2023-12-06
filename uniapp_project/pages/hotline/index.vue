@@ -41,8 +41,10 @@
 		<!-- 我的诉求 -->
 		<uni-section title="我的诉求" sub-title="" type="line" titleFontSize="35rpx"></uni-section>
 		<view class="my">
-			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
-				v-for="(item,index) in myList" :key="index" @click="jumpDetails(item)">
+			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.appealCategoryName"
+				note="Tips" v-for="(item,index) in myList" :key="index" @click="jumpDetails(item)">
+				承办单位：{{item.undertaker}}
+				<br />
 				处理状态：{{statusList[item.state]}}
 				<br />
 				处理结果：{{item.detailResult?item.detailResult:'暂无'}}

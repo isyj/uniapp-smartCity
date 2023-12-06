@@ -10,8 +10,8 @@
 
 		<!-- 诉求列表 -->
 		<view class="">
-			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="item.undertaker" note="Tips"
-				v-for="(item,index) in list" :key="index" @click="jumpDetails(item)">
+			<uni-card :title="item.title" :subTitle="'提交时间：'+item.createTime" :extra="'承办单位：'+item.undertaker"
+				note="Tips" v-for="(item,index) in list" :key="index" @click="jumpDetails(item)">
 				处理状态：{{statusList[item.state]}}
 				<br />
 				处理情况：{{item.detailResult?item.detailResult:'暂无'}}
