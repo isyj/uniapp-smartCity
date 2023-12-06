@@ -27,13 +27,14 @@
 				:key="index">
 				{{item.content}}
 			</uni-card>
+			<u-loadmore @loadmore="loadMore" :status="status" fontSize="30rpx" color="#bbb" />
 		</view>
 
 
 		<!-- 参加活动 -->
 		<view v-if="this.count==1">
-			<uni-card>
-				<u-button :type="btn()" @click="signup()">{{signupCheck==true?"已报名":"报名"}}</u-button>
+			<uni-card padding="0 0 200rpx 0" :border="false" shadow="0 0">
+				<u-button size="large" :type="btn()" @click="signup()">{{signupCheck==true?"已报名":"报名"}}</u-button>
 			</uni-card>
 		</view>
 
@@ -76,7 +77,9 @@
 				common: '',
 				activityId: '',
 				recommendList: '',
-				signupCheck: ''
+				signupCheck: '',
+				pageNum: 1,
+				status: 'loadmore'
 			}
 		},
 		methods: {
@@ -126,7 +129,7 @@
 				getActivityCommonList({
 					params: {
 						activityId: this.activityId,
-						pageSize: '50',
+						pageSize: '10',
 						pageNum: 1
 					}
 				}).then(res => {
@@ -146,6 +149,26 @@
 				uni.navigateTo({
 					url: '/pages/activity/activityDetails?id=' + id
 				})
+			},
+			//加载更多评论
+			loadMore() {
+				this.status = 'loading'
+				this.pageNum += 1
+				//获取更多评论列表
+				getActivityCommonList({
+					params: {
+						activityId: this.activityId,
+						pageSize: '10',
+						pageNum: this.pageNum
+					}
+				}).then(res => {
+					if (this.commonList.length < res.total) {
+						this.commonList = this.commonList.concat(res.rows)
+						this.status = 'loadmore'
+					} else {
+						this.status = 'nomore'
+					}
+				})
 			}
 
 		},
@@ -159,8 +182,8 @@
 			getActivityCommonList({
 				params: {
 					activityId: this.activityId,
-					pageSize: '50',
-					pageNum: 1
+					pageSize: '10',
+					pageNum: this.pageNum
 				}
 			}).then(res => {
 				this.commonList = res.rows
