@@ -13,9 +13,7 @@
 
 
 			<!-- 公益分类 -->
-			<view class="title">
-				公益分类
-			</view>
+			<uni-section title="公益分类" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
 			<view class="grid">
 				<uni-card margin="20rpx 0" shadow="0 0" :border="false">
 					<u-grid :border="false" col="4">
@@ -29,9 +27,7 @@
 
 
 			<!-- 推荐公益 -->
-			<view class="title">
-				推荐公益
-			</view>
+			<uni-section title="推荐公益" sub-title="" type="line" titleFontSize="30rpx"></uni-section>
 			<view class="recommend">
 				<uni-card :title="item.name" thumbnail="" :extra="item.author" note="Tips"
 					v-for="(item,index) in recommendActivityList" :key="index">
@@ -102,12 +98,6 @@
 </script>
 
 <style lang="scss">
-	.title {
-		padding: 0 25rpx;
-		font-size: 35rpx;
-		color: #777;
-	}
-
 	.grid {
 		image {
 			width: 50%;
