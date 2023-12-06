@@ -51,15 +51,7 @@
 			return {
 				keyword: '',
 				searchList: [],
-				allSearchList: []
 			}
-		},
-		mounted() {
-			//向后台发送请求，拿到所有的数据然后赋值给allSearchList
-			getNewsList().then(res => {
-				this.allSearchList = res.rows
-			})
-
 		},
 		methods: {
 			backIndex() {
@@ -67,6 +59,7 @@
 					animationType: 'fade-out'
 				});
 			},
+			//搜索 获取输入内容对应新闻数据
 			confirm() {
 				if (!this.keyword) {
 					uni.showToast({
@@ -75,16 +68,14 @@
 					});
 					this.searchList = []
 				} else {
-					//先清空展示的数据
-					this.searchList = []
-					//然后开始循环全部数据
-					for (var i = 0; i < this.allSearchList.length; i++) {
-						//判断数据里面是否有符合输入的内容  不符合返回-1 只需要大于或等于0就是符合
-						//符合的数据赋值给searchList
-						if (this.allSearchList[i].title.toLowerCase().indexOf(this.keyword.toLowerCase()) >= 0) {
-							this.searchList.push(this.allSearchList[i]);
+					getNewsList({
+						params: {
+							title: this.keyword
 						}
-					}
+					}).then(res => {
+						this.searchList = res.rows
+					})
+
 				}
 			},
 			jump(id) {
