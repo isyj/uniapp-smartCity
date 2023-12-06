@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<u-navbar title="爱心捐赠" placeholder="" autoBack=""></u-navbar>
+		<u-navbar :title="navTitle" placeholder="" autoBack=""></u-navbar>
 		<u-search v-model="keyword" style="margin-bottom: 15rpx;" placeholder="请输入内容" height="20rpx" @search="search()"
 			@custom="search()" focus></u-search>
 
@@ -47,11 +47,16 @@
 				donateMoney: '',
 				activityId: '',
 				show: false,
-				typeId: ''
+				typeId: '',
+				navTitle: ''
 			};
 		},
 		onLoad(e) {
 			this.typeId = e.typeId
+			this.navTitle = e.navTitle
+			if (!this.navTitle) {
+				this.navTitle = '爱心捐赠'
+			}
 		},
 		methods: {
 			// 搜索 	获取该分类与搜索内容符合的公益活动数据列表

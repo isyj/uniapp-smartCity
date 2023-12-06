@@ -28399,37 +28399,50 @@ var render = function () {
             1
           ),
           _c("uni-section", { attrs: { _i: 12 } }),
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-            _vm._l(_vm._$g(14, "f"), function (item, index, $21, $31) {
-              return _c(
-                "uni-card",
-                { key: item, attrs: { _i: "14-" + $31 } },
-                [
-                  _c("v-uni-image", {
-                    attrs: {
+          _vm._l(_vm._$g(13, "f"), function (item, index, $21, $31) {
+            return _c(
+              "uni-view",
+              {
+                key: item,
+                staticClass: _vm._$g("13-" + $31, "sc"),
+                attrs: { _i: "13-" + $31 },
+                on: {
+                  click: function ($event) {
+                    return _vm.$handleViewEvent($event)
+                  },
+                },
+              },
+              [
+                _c(
+                  "uni-card",
+                  { attrs: { _i: "14-" + $31 } },
+                  [
+                    _c("v-uni-image", {
+                      attrs: {
+                        slot: "cover",
+                        src: _vm._$g("15-" + $31, "a-src"),
+                        mode: "aspectFill",
+                        _i: "15-" + $31,
+                      },
                       slot: "cover",
-                      src: _vm._$g("15-" + $31, "a-src"),
-                      mode: "aspectFill",
-                      _i: "15-" + $31,
-                    },
-                    slot: "cover",
-                  }),
-                  _c("uni-view", { attrs: { _i: "16-" + $31 } }, [
-                    _vm._v("捐赠人数：" + _vm._$g("16-" + $31, "t0-0")),
-                  ]),
-                  _c("uni-view", { attrs: { _i: "17-" + $31 } }, [
-                    _vm._v("已筹善款：" + _vm._$g("17-" + $31, "t0-0") + " 元"),
-                  ]),
-                ],
-                1
-              )
-            }),
-            1
-          ),
+                    }),
+                    _c("uni-view", { attrs: { _i: "16-" + $31 } }, [
+                      _vm._v("捐赠人数：" + _vm._$g("16-" + $31, "t0-0")),
+                    ]),
+                    _c("uni-view", { attrs: { _i: "17-" + $31 } }, [
+                      _vm._v(
+                        "已筹善款：" + _vm._$g("17-" + $31, "t0-0") + " 元"
+                      ),
+                    ]),
+                  ],
+                  1
+                ),
+              ],
+              1
+            )
+          }),
         ],
-        1
+        2
       ),
     ],
     1
@@ -32930,25 +32943,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "uni-view",
-    { attrs: { _i: 0 } },
-    [
-      _c(
-        "v-uni-button",
-        {
-          attrs: { _i: 1 },
-          on: {
-            click: function ($event) {
-              return _vm.$handleViewEvent($event)
-            },
-          },
-        },
-        [_vm._v("下一页")]
-      ),
-    ],
-    1
-  )
+  return _c("uni-view", { attrs: { _i: 0 } })
 }
 var recyclableRender = false
 var staticRenderFns = []

@@ -108,7 +108,7 @@
 			// 点击搜索框
 			jump() {
 				uni.navigateTo({
-					url: '/pages/welfare/welfareSeachList?typeId=' + this.typeId,
+					url: '/pages/welfare/welfareSeachList?typeId=' + this.typeId + '&navTitle=' + this.navTitle,
 					animationType: 'fade-in'
 				})
 			}
