@@ -1,7 +1,11 @@
 <template>
 	<view>
 
-		<u-navbar autoBack="" placeholder="" :title="this.name"></u-navbar>
+		<u-navbar autoBack="" placeholder="" :title="this.name" @rightClick="jumpAppeal()">
+			<view class="appeal" slot="right">
+				发布诉求
+			</view>
+		</u-navbar>
 
 
 		<!-- 诉求列表 -->
@@ -15,11 +19,7 @@
 		</view>
 
 
-		<u-button type="error" style="position: fixed; bottom: 0; z-index: 999;" @click="jumpAppeal()">发布诉求</u-button>
-
-
-		<u-loadmore @loadmore="loadMore" :status="status" style="padding-bottom: 120rpx;" fontSize="30rpx"
-			color="#bbb" />
+		<u-loadmore @loadmore="loadMore" :status="status" fontSize="30rpx" color="#bbb" />
 	</view>
 </template>
 
@@ -91,7 +91,7 @@
 
 				}, 500)
 			},
-			//点击提交诉求按钮
+			//点击发布诉求按钮
 			jumpAppeal() {
 				uni.navigateTo({
 					url: '/pages/hotline/hotlineAppeal'
@@ -108,5 +108,8 @@
 </script>
 
 <style lang="scss">
-
+	.appeal {
+		font-size: 25rpx;
+		color: #bbb;
+	}
 </style>
