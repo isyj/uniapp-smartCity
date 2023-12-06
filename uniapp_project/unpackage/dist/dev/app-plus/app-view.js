@@ -31633,6 +31633,8 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uNavbar: __webpack_require__(/*! @/uni_modules/uview-ui/components/u-navbar/u-navbar.vue */ 269)
+      .default,
     uniCard: __webpack_require__(/*! @/uni_modules/uni-card/components/uni-card/uni-card.vue */ 111)
       .default,
     uniDataSelect:
@@ -31671,30 +31673,31 @@ var render = function () {
     "uni-view",
     { attrs: { _i: 0 } },
     [
+      _c("u-navbar", { attrs: { _i: 1 } }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c(
             "uni-card",
-            { attrs: { _i: 2 } },
+            { attrs: { _i: 3 } },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { width: "90%", margin: "0 auto" },
-                  attrs: { _i: 3 },
+                  attrs: { _i: 4 },
                 },
                 [
                   _c("uni-data-select", {
-                    attrs: { _i: 4 },
+                    attrs: { _i: 5 },
                     on: {
                       change: function ($event) {
                         return _vm.$handleViewEvent($event)
                       },
                     },
                     model: {
-                      value: _vm._$g(4, "v-model"),
+                      value: _vm._$g(5, "v-model"),
                       callback: function () {},
                       expression: "value",
                     },
@@ -31703,38 +31706,38 @@ var render = function () {
                 1
               ),
               _c("u--textarea", {
-                staticClass: _vm._$g(5, "sc"),
-                attrs: { _i: 5 },
-                model: {
-                  value: _vm._$g(5, "v-model"),
-                  callback: function () {},
-                  expression: "appeal.title",
-                },
-              }),
-              _c("u--textarea", {
                 staticClass: _vm._$g(6, "sc"),
                 attrs: { _i: 6 },
                 model: {
                   value: _vm._$g(6, "v-model"),
                   callback: function () {},
-                  expression: "appeal.undertaker",
+                  expression: "appeal.title",
                 },
               }),
               _c("u--textarea", {
                 staticClass: _vm._$g(7, "sc"),
                 attrs: { _i: 7 },
+                model: {
+                  value: _vm._$g(7, "v-model"),
+                  callback: function () {},
+                  expression: "appeal.undertaker",
+                },
               }),
               _c("u--textarea", {
                 staticClass: _vm._$g(8, "sc"),
                 attrs: { _i: 8 },
+              }),
+              _c("u--textarea", {
+                staticClass: _vm._$g(9, "sc"),
+                attrs: { _i: 9 },
                 model: {
-                  value: _vm._$g(8, "v-model"),
+                  value: _vm._$g(9, "v-model"),
                   callback: function () {},
                   expression: "appeal.content",
                 },
               }),
               _c("u-upload", {
-                attrs: { _i: 9 },
+                attrs: { _i: 10 },
                 on: {
                   afterRead: function ($event) {
                     return _vm.$handleViewEvent($event)
@@ -31745,7 +31748,7 @@ var render = function () {
                 },
               }),
               _c("u-button", {
-                attrs: { _i: 10 },
+                attrs: { _i: 11 },
                 on: {
                   click: function ($event) {
                     return _vm.$handleViewEvent($event)

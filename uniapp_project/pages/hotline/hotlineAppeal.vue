@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<u-navbar placeholder="" title="发布诉求" autoBack="">
+
+		</u-navbar>
 		<view class="upLoad">
 			<uni-card>
 				<view class="" style="width: 90%;margin: 0 auto;">
