@@ -13,8 +13,8 @@
 			人才政策
 		</view>
 		<view class="areaList">
-			<uni-card margin="25rpx 0" padding="10rpx" note="Tips" v-for="(item,index) in areaList" :key="index">
-				<image slot="cover" :src="ip + item.imgUrl" mode="center" @click="jumpTalentPolicy(item.id)"></image>
+			<uni-card margin="25rpx 0" padding="0" note="Tips" v-for="(item,index) in areaList" :key="index">
+				<image slot="cover" :src="ip + item.imgUrl" mode="" @click="jumpTalentPolicy(item.id)"></image>
 				<view>
 					{{item.name}}
 				</view>
@@ -37,7 +37,7 @@
 
 				<view class="content" style="margin-top: 15rpx;">
 					<u-collapse :border="false">
-						<u-collapse-item title="驿站介绍" name="Docs guide">
+						<u-collapse-item title="驿站介绍">
 							<text>{{item.introduce}}</text>
 						</u-collapse-item>
 					</u-collapse>
@@ -94,7 +94,7 @@
 	image {
 		width: 100%;
 		margin-top: 20rpx;
-		border-radius: 5rpx;
+		border-radius: 5px;
 	}
 
 	.areaList {
@@ -102,7 +102,8 @@
 
 		image {
 			height: 200rpx;
-			margin: 10rpx 0;
+			margin: 15rpx 0;
+			border-radius: 5px;
 		}
 
 		view {
@@ -138,7 +139,7 @@
 			align-items: center;
 
 			image {
-				max-width: 250rpx;
+				width: 100%;
 				max-height: 250rpx;
 				border-radius: 10px;
 			}
