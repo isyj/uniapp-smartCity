@@ -238,6 +238,13 @@
 				"navigationBarTitleText": "找房子",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/house/houseDetails",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"globalStyle": {
