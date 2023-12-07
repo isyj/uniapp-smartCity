@@ -52,6 +52,7 @@
 				}
 			}).then(res => {
 				this.list = res.rows
+				this.dictLabel = this.houseType[0].dictLabel
 			})
 		},
 		methods: {
