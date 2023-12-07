@@ -2,7 +2,7 @@
 	<view>
 		<view class="navBar">
 			<u-navbar title="爱心捐赠" placeholder="" autoBack=""></u-navbar>
-			<u-search style="margin: 10rpx 0;" placeholder="请输入内容" :showAction="false" @focus="jump"
+			<u-search style="margin: 15rpx;" placeholder="请输入内容" :showAction="false" @focus="jump"
 				height="50rpx"></u-search>
 
 

@@ -2,7 +2,7 @@
 	<view>
 
 		<view>
-			<uni-card isFull note="Tips">
+			<uni-card note="Tips">
 				<image slot="cover" :src="ip +this.banner.coverImgUrl" mode=""
 					@click="jumpYouthStationDetails(banner.id)"></image>
 				<u-text :text="this.banner.introduce" lines="3"></u-text>

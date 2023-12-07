@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 轮播图 -->
-		<view class="swiper" style="margin: 20rpx 0;">
+		<view class="swiper">
 			<u-swiper :list="swiperList" indicator :autoplay="true" :interval="3000" :duration="1000" circular=""
 				height="350rpx" nextMargin="10" previousMargin="10" bgColor="#ffffff">
 			</u-swiper>
@@ -116,6 +116,10 @@
 </script>
 
 <style lang="scss">
+	.swiper {
+		margin: 15rpx 0;
+	}
+
 	.classify {
 		swiper {
 			height: 330rpx;

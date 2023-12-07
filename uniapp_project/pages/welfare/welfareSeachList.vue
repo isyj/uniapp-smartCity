@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<u-navbar :title="navTitle" placeholder="" autoBack=""></u-navbar>
-		<u-search v-model="keyword" style="margin-bottom: 15rpx;" placeholder="请输入内容" height="20rpx" @search="search()"
+		<u-search v-model="keyword" style="margin: 15rpx;" placeholder="请输入内容" height="50rpx" @search="search()"
 			@custom="search()" focus></u-search>
 
 

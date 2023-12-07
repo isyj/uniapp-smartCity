@@ -2,7 +2,7 @@
 	<view>
 		<!-- 轮播图 -->
 		<view class="swiper">
-			<u-swiper :list="this.swiperList" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000"
+			<u-swiper :list="swiperList" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000"
 				circular nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff" indicator
 				@click="clickSwiper">
 			</u-swiper>
@@ -20,7 +20,7 @@
 
 
 		<!-- 活动列表 -->
-		<view class="list" v-for="(item,index) in activityList" :key="index" @click="jump(item.id)">
+		<view class="card" v-for="(item,index) in activityList" :key="index" @click="jump(item.id)">
 			<uni-card :title="item.name" note="Tips">
 				<image slot="cover" :src="ip + item.imgUrl" mode="aspectFill"></image>
 				<view class="">
@@ -100,11 +100,16 @@
 </script>
 
 <style lang="scss">
-	image {
-		width: 100%;
-		height: 350rpx;
-		margin: 20rpx 0 0 0;
-		border-radius: 5px;
+	.swiper {
+		margin: 15rpx 0;
+	}
 
+	.card {
+		image {
+			width: 100%;
+			height: 350rpx;
+			margin: 20rpx 0 0 0;
+			border-radius: 5px;
+		}
 	}
 </style>
