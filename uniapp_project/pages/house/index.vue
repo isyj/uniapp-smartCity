@@ -62,16 +62,11 @@
 					params: {
 						houseType: this.dictLabel,
 						sourceName: this.keyword,
+						pageNum: 1,
+						pageSize: '50'
 					}
 				}).then(res => {
-					if (this.keyword) {
-						this.list = res.rows
-					} else {
-						uni.showToast({
-							title: '请输入内容',
-							icon: 'error'
-						})
-					}
+					this.list = res.rows
 				})
 			},
 			// 点击tabs
@@ -88,6 +83,7 @@
 					this.list = res.rows
 				})
 			},
+			//点击房子卡片
 			clickCard(item) {
 				uni.navigateTo({
 					url: '/pages/house/houseDetails?id=' + item.id
