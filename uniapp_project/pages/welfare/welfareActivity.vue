@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<u-navbar :title="navTitle" autoBack="" placeholder=""></u-navbar>
-		<u-search style="margin-bottom: 15rpx;" placeholder="请输入内容" :showAction="false" height="20rpx"
+		<u-search style="margin-bottom: 15rpx;" placeholder="请输入内容" :showAction="false" height="50rpx"
 			@focus="jump"></u-search>
 
 		<!-- 弹出层 -->
