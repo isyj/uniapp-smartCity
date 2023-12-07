@@ -3,7 +3,7 @@
 		<!-- 轮播图 -->
 		<view class="swiper" style="margin: 20rpx 0;">
 			<u-swiper :list="swiperList" indicator :autoplay="true" :interval="3000" :duration="1000" circular=""
-				height="350rpx" nextMargin="10" previousMargin="10">
+				height="350rpx" nextMargin="10" previousMargin="10" bgColor="#ffffff">
 			</u-swiper>
 		</view>
 
