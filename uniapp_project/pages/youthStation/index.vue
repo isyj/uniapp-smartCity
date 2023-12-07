@@ -14,7 +14,8 @@
 		</view>
 		<view class="areaList">
 			<uni-card margin="25rpx 0" padding="0" note="Tips" v-for="(item,index) in areaList" :key="index">
-				<image slot="cover" :src="ip + item.imgUrl" mode="" @click="jumpTalentPolicy(item.id)"></image>
+				<image slot="cover" :src="ip + item.imgUrl" mode="aspectFill" @click="jumpTalentPolicy(item.id)">
+				</image>
 				<view>
 					{{item.name}}
 				</view>
@@ -35,7 +36,7 @@
 					</view>
 				</view>
 
-				<view class="content" style="margin-top: 15rpx;">
+				<view class="content" style="margin: 15rpx 0;">
 					<u-collapse :border="false">
 						<u-collapse-item title="驿站介绍">
 							<text>{{item.introduce}}</text>

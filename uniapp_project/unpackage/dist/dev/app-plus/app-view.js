@@ -25716,7 +25716,7 @@ var render = function () {
                 attrs: {
                   slot: "cover",
                   src: _vm._$g(3, "a-src"),
-                  mode: "",
+                  mode: "aspectFill",
                   _i: 3,
                 },
                 on: {
@@ -25748,7 +25748,7 @@ var render = function () {
                 attrs: {
                   slot: "cover",
                   src: _vm._$g("8-" + $30, "a-src"),
-                  mode: "",
+                  mode: "aspectFill",
                   _i: "8-" + $30,
                 },
                 on: {
@@ -25829,7 +25829,7 @@ var render = function () {
                 "uni-view",
                 {
                   staticClass: _vm._$g("19-" + $31, "sc"),
-                  staticStyle: { "margin-top": "15rpx" },
+                  staticStyle: { margin: "15rpx 0" },
                   attrs: { _i: "19-" + $31 },
                 },
                 [
