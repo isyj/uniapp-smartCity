@@ -39,52 +39,21 @@
 				total: 0
 			};
 		},
-		async onPullDownRefresh() {
-			//刷新该分类诉求列表
-			await getHotlineCategoryDetails({
-				params: {
-					appealCategoryId: uni.getStorageSync('appealCategoryId'),
-					pageSize: '0',
-					pageNum: 1
-				}
-			}).then(res => {
-				this.total = Math.ceil((res.total / 10))
-			})
-			await getHotlineCategoryDetails({
-				params: {
-					appealCategoryId: uni.getStorageSync('appealCategoryId'),
-					pageSize: '10',
-					pageNum: this.total
-				}
-			}).then(res => {
-				this.list = res.rows.reverse()
-			})
-			uni.stopPullDownRefresh();
+		onShow() {
+			//提交诉求后刷新该页面数据
+			if (uni.getStorageSync('appeal')) {
+				this.getData()
+			}
+			uni.removeStorageSync('appeal')
 		},
 		async onLoad(e) {
 			//诉求分类名称
 			this.name = e.name
-			//获取该分类诉求列表
-			await getHotlineCategoryDetails({
-				params: {
-					appealCategoryId: uni.getStorageSync('appealCategoryId'),
-					pageSize: '0',
-					pageNum: 1
-				}
-			}).then(res => {
-				this.total = Math.ceil((res.total / 10))
-			})
-			await getHotlineCategoryDetails({
-				params: {
-					appealCategoryId: uni.getStorageSync('appealCategoryId'),
-					pageSize: '10',
-					pageNum: this.total
-				}
-			}).then(res => {
-				this.list = res.rows.reverse()
-			})
+			// 获取该分类最新一页诉求列表
+			await this.getData()
 			//获取处理状态字典
 			await getDataType({}, 'gsh_appeal_state').then(res => {
+
 				this.statusList = res.data.map(e => e.dictLabel)
 			})
 		},
@@ -121,8 +90,30 @@
 				uni.navigateTo({
 					url: '/pages/hotline/hotlineAppealDetails?id=' + item.id
 				})
+			},
+			async getData() {
+				//获取该分类最新一页诉求列表
+				await getHotlineCategoryDetails({
+					params: {
+						appealCategoryId: uni.getStorageSync('appealCategoryId'),
+						pageSize: '0',
+						pageNum: 1
+					}
+				}).then(res => {
+					this.total = Math.ceil((res.total / 10))
+				})
+				await getHotlineCategoryDetails({
+					params: {
+						appealCategoryId: uni.getStorageSync('appealCategoryId'),
+						pageSize: '10',
+						pageNum: this.total
+					}
+				}).then(res => {
+					this.list = res.rows.reverse()
+				})
 			}
-		}
+		},
+
 	}
 </script>
 

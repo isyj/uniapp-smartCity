@@ -49,6 +49,7 @@
 			};
 		},
 		onLoad(e) {
+			// 获取诉求分类
 			getHotlineCategoryList().then(res => {
 				this.classify = res.rows.map(e => ({
 					value: e.id,
@@ -108,6 +109,7 @@
 			},
 			//点击提交按钮 上传诉求
 			upLoad() {
+				uni.setStorageSync('appeal', 'appeal')
 				postHotlineAppeal(this.appeal).then(res => {
 					if (res.code == 200) {
 						uni.showToast({

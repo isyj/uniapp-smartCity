@@ -215,7 +215,7 @@
 			"path": "pages/hotline/hotlineCategory",
 			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh": true
+				"enablePullDownRefresh": false
 			}
 		},
 		{
