@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<u-navbar placeholder="" :title="this.list.sourceName"></u-navbar>
+		<u-navbar autoBack="" placeholder="" :title="this.list.sourceName"></u-navbar>
 
 
 		<view class="card">
