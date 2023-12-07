@@ -100,10 +100,6 @@
 </script>
 
 <style lang="scss">
-	.swiper {
-		margin: 15rpx 0 0 0;
-	}
-
 	image {
 		width: 100%;
 		height: 350rpx;
