@@ -3,7 +3,7 @@
 
 		<view>
 			<uni-card note="Tips">
-				<image slot="cover" :src="ip +this.banner.coverImgUrl" mode=""
+				<image slot="cover" :src="ip +this.banner.coverImgUrl" mode="aspectFill"
 					@click="jumpYouthStationDetails(banner.id)"></image>
 				<u-text :text="this.banner.introduce" lines="3"></u-text>
 			</uni-card>
