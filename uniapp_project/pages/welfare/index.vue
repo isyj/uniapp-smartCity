@@ -60,7 +60,7 @@
 				recommendActivityList: []
 			};
 		},
-		onLoad() {
+		onShow() {
 			/* 获取轮播图数据 */
 			getWelfareBannerList().then(res => {
 				this.bannerList = res.data.map(e => ({
