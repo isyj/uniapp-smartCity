@@ -32,7 +32,7 @@
 			"path": "pages/dataAnalysis/dataAnalysis",
 			"style": {
 				"navigationBarTitleText": "数据分析",
-				"enablePullDownRefresh": true
+				"enablePullDownRefresh": false
 			}
 		},
 		{
