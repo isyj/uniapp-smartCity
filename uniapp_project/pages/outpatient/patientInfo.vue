@@ -57,7 +57,6 @@
 			//获取用户个人信息
 			await getUserInfo().then(res => {
 				this.myCard.cardId = res.user.idCard
-				this.myCard.name = res.user.nickName
 				this.myCard.tel = res.user.phonenumber
 				this.myCard.sex = res.user.sex
 			})
@@ -70,7 +69,8 @@
 			submit() {
 				//判断输入就诊信息是否正确
 				let flag = Boolean(this.myCard.address != '' && uni.$u.test.date(this.myCard.birthday) && uni.$u.test
-					.mobile(this.myCard.tel))
+					.mobile(this.myCard.tel) && uni.$u.test
+					.chinese(this.myCard.name))
 				if (flag) {
 					//提交就诊信息
 					postPatientInfo(this.myCard).then(res => {
