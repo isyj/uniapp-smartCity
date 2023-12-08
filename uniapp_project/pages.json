@@ -280,6 +280,20 @@
 				"navigationBarTitleText": "预约",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/classification/index",
+			"style": {
+				"navigationBarTitleText": "垃圾分类",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/classification/newsDetalis",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"globalStyle": {

@@ -154,3 +154,14 @@ export const postPatientInfo = (params) => http.post('/prod-api/api/hospital/pat
 export const getHospitalCategory = (data) => http.get('/prod-api/api/hospital/category/list', data)
 // post请求，上传用户预约信息
 export const postReservation = (params) => http.post('/prod-api/api/hospital', params)
+
+
+
+// get请求，获取垃圾分类轮播图
+export const getGarbageSwiper = (data) => http.get('/prod-api/api/garbage-classification/ad-banner/list', data)
+// get请求，获取垃圾分类新闻分类
+export const getGarbageNewsType = (data) => http.get('/prod-api/api/garbage-classification/news-type/list', data)
+// get请求，获取垃圾分类某个分类新闻列表
+export const getGarbageNewsList = (data) => http.get('/prod-api/api/garbage-classification/news/list', data)
+// get请求，获取垃圾分类某个分类新闻列表
+export const getGarbageNewsDetalis = (data, id) => http.get('/prod-api/api/garbage-classification/news/' + id, data)
