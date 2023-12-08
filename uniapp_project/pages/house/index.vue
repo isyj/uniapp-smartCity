@@ -1,7 +1,6 @@
 <template>
 	<view>
-		<u-search style="margin: 10rpx 0;" height="50rpx" v-model="keyword" @custom="search"
-			@search="search"></u-search>
+		<u-search style="margin: 15rpx;" height="50rpx" v-model="keyword" @custom="search" @search="search"></u-search>
 
 
 		<!-- tabs -->
