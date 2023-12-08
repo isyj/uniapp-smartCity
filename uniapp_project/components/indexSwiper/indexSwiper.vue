@@ -26,8 +26,6 @@
 		},
 		async mounted() {
 			await getIndexSwiper({
-				pageNum: 1,
-				pageSize: 8,
 				type: 2
 			}).then(res => {
 				this.list = res.rows.map(e => ({
