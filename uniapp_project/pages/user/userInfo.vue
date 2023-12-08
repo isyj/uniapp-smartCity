@@ -66,14 +66,15 @@
 			return {
 				userInfo: uni.getStorageSync('userInfo'),
 				phoneNumber: uni.getStorageSync('userInfo').phonenumber.slice(0, -4) + '****',
+				MyIdCard: '',
 				changeState: true
 			}
 		},
 		methods: {
 			idCard() {
 				if (this.userInfo.idCard) {
-					this.userInfo.idCard = this.userInfo.idCard.slice(0, -4) + '****'
-					return this.userInfo.idCard
+					this.MyIdCard = this.userInfo.idCard.slice(0, -4) + '****'
+					return this.MyIdCard
 				}
 			},
 			sex() {

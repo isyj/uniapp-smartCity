@@ -245,6 +245,41 @@
 				"navigationStyle": "custom",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/outpatient/hospitalList",
+			"style": {
+				"navigationBarTitleText": "门诊预约",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/outpatient/hospitalDetalis",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/outpatient/patientInfo",
+			"style": {
+				"navigationBarTitleText": "就诊",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/outpatient/hospitalCategory",
+			"style": {
+				"navigationBarTitleText": "科室分类",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/outpatient/hospitalReservation",
+			"style": {
+				"navigationBarTitleText": "预约",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"globalStyle": {

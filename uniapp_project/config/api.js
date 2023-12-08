@@ -137,3 +137,20 @@ export const postHotlineAppeal = (params) => http.post('/prod-api/api/gov-servic
 export const getHomeList = (data) => http.get('/prod-api/api/house/housing/list', data)
 // get请求，获取房源详情
 export const getHomeDetails = (data, id) => http.get('/prod-api/api/house/housing/' + id, data)
+
+
+
+// get请求，获取医院列表
+export const getHospitalList = (data) => http.get('/prod-api/api/hospital/hospital/list', data)
+// get请求，获取医院详情轮播图
+export const getHospitalSwiper = (data) => http.get('/prod-api/api/hospital/banner/list', data)
+// get请求，获取医院详情
+export const getHospitaDetalis = (data, id) => http.get('/prod-api/api/hospital/hospital/' + id, data)
+// get请求，获取当前用户就诊信息
+export const getPatientInfo = (data) => http.get('/prod-api/api/hospital/patient/list', data)
+// post请求，上传用户就诊信息
+export const postPatientInfo = (params) => http.post('/prod-api/api/hospital/patient', params)
+// get请求，获取科室分类
+export const getHospitalCategory = (data) => http.get('/prod-api/api/hospital/category/list', data)
+// post请求，上传用户预约信息
+export const postReservation = (params) => http.post('/prod-api/api/hospital', params)
