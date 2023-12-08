@@ -1,9 +1,5 @@
 <template>
 	<view>
-
-
-
-
 		<view class="card" v-for="(item,index) in list" :key="index" @click="jump(item)">
 			<uni-card :title="item.hospitalName" thumbnail="" :extra="String(item.level)+'星'" note="Tips">
 				<image slot="cover" :src="ip + item.imgUrl" mode="aspectFill"></image>

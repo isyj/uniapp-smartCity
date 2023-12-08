@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<view class="swiper">
-			<u-swiper :list="swiperList" indicator="" circular="" duration="1000" height="400rpx" next-margin="10"
-				previousMargin="10"></u-swiper>
+			<u-swiper :list="swiperList" indicator="" circular="" duration="1000" height="350rpx" next-margin="10"
+				previousMargin="10" bgColor="#ffffff"></u-swiper>
 		</view>
 
 		<view class="card">

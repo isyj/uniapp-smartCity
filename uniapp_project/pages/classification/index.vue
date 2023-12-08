@@ -2,7 +2,7 @@
 	<view>
 		<view class="swiper">
 			<u-swiper :list="swiperList" indicator="" circular="" :autoplay="true" :interval="3000" :duration="1000"
-				nextMargin="10" previousMargin="10" height="400rpx">
+				nextMargin="10" previousMargin="10" height="350rpx" bgColor="#ffffff">
 			</u-swiper>
 		</view>
 
