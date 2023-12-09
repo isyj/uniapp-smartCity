@@ -1,23 +1,23 @@
 <template>
 	<view>
 		<view class="card">
-			<uni-card :title="item.name" @click="" v-for="(item, index) in list" :key="index">
-				<image slot="cover" :src="ip + item.imgUrl" mode="" />
+			<uni-card :title="list.name">
+				<image slot="cover" :src="ip + list.imgUrl" mode="" />
 				<view>
 					<text> 介绍:</text><br>
-					{{ item.introduce }}
+					{{ list.introduce }}
 				</view>
 
 				<u-grid col="4">
 					<u-grid-item v-for="(item, index) in category" :key="index" name="gridName">
 						<image :src="ip + item.imgUrl" mode="" style="width: 100%; height: 100rpx;" />
-						<text style="font-size: 15rpx;">{{ item.name }}</text>
+						<text style="font-size: 20rpx;">{{ item.name }}</text>
 					</u-grid-item>
 				</u-grid>
 
 				<view>
 					<text> 投放指导：</text><br>
-					{{ item.guide }}
+					{{ list.guide }}
 				</view>
 			</uni-card>
 		</view>
@@ -34,7 +34,6 @@ export default {
 		return {
 			list: [],
 			category: [],
-			appealCategoryId: ''
 		}
 	},
 	async onLoad(options) {
@@ -47,12 +46,11 @@ export default {
 				name: options.keyword
 			}
 		}).then((result) => {
-			this.list = result.rows;
-			this.appealCategoryId = result.rows[0].id;
+			this.list = result.rows[0];
 		})
 		await getGarClassifyInfo({
 			params: {
-				type: this.appealCategoryId
+				type: this.list.id
 			}
 		}).then((result) => {
 			this.category = result.rows.slice(0, 12);
