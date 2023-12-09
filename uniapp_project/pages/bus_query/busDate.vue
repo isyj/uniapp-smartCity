@@ -30,7 +30,6 @@
 		methods: {
 			confirm(item) {
 				this.time = uni.$u.timeFormat(String(item.value), 'yyyy-mm-dd hh:MM')
-				console.log(this.time);
 				this.show = false
 			}
 		}
