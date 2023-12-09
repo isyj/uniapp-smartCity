@@ -312,6 +312,30 @@
 			"style": {
 				"navigationBarTitleText": "classificationClassify"
 			}
+		},
+		{
+			"path" : "pages/bus_query/custom_shuttle",
+			"style" : 
+			{
+				"navigationBarTitleText" : "智慧巴士",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/bus_query/busLineDetails",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/bus_query/busDate",
+			"style" : 
+			{
+				"navigationBarTitleText" : "选择日期",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
