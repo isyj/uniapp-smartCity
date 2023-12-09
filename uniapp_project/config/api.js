@@ -165,3 +165,13 @@ export const getGarbageNewsType = (data) => http.get('/prod-api/api/garbage-clas
 export const getGarbageNewsList = (data) => http.get('/prod-api/api/garbage-classification/news/list', data)
 // get请求，获取垃圾分类某个分类新闻列表
 export const getGarbageNewsDetalis = (data, id) => http.get('/prod-api/api/garbage-classification/news/' + id, data)
+// post请求，提交垃圾分类某个分类新闻评论
+export const postGarbageNewsComment = (params) => http.post('/prod-api/api/garbage-classification/news-comment', params)
+// get请求，获取垃圾分类宣传海报图
+export const getGarbagePosterList = (data) => http.get('/prod-api/api/garbage-classification/poster/list', data)
+// get请求，获取所有垃圾分类
+export const getGarClassify = (data) => http.get('/prod-api/api/garbage-classification/garbage-classification/list', data)
+// get请求，获取某个垃圾分类下方的所有举例
+export const getGarClassifyInfo = (data) => http.get('/prod-api/api/garbage-classification/garbage-example/list', data)
+// get请求，获取所有垃圾分类搜索热词
+export const getGarHotList = (data) => http.get('/prod-api/api/garbage-classification/garbage-classification/hot/list', data)

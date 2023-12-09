@@ -294,6 +294,24 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/classification/classificationSearch",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/classification/searchDetalis",
+			"style": {
+				"navigationBarTitleText": "searchDetalis"
+			}
+		},
+		{
+			"path": "pages/classification/classificationClassify",
+			"style": {
+				"navigationBarTitleText": "classificationClassify"
+			}
 		}
 	],
 	"globalStyle": {
