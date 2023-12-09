@@ -325,8 +325,7 @@
 		"selectedColor": "#FFC0CB",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/index/index",
 				"iconPath": "static/tabBarImg/index.png",
 				"selectedIconPath": "static/tabBarImg/index2.png",

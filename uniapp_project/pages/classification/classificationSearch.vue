@@ -14,7 +14,8 @@
 					热门搜索
 				</view>
 				<u-grid col="3">
-					<u-grid-item @click="jump(item)" v-for="(item, index) in hotList" :key="index" style="margin: 15rpx 0;">
+					<u-grid-item @click="jump(item)" v-for="(item, index) in hotList" :key="index"
+						style="margin: 15rpx 0;">
 						{{ item.keyword }}
 					</u-grid-item>
 				</u-grid>
@@ -24,58 +25,56 @@
 </template>
 
 <script>
-import {
-	getGarbagePosterList,
-	getGarHotList
-} from "../../config/api.js";
-export default {
-	data() {
-		return {
-			list: [],
-			keyword: '',
-			hotList: []
-		}
-	},
-	onLoad() {
-		//获取垃圾分类轮播图
-		getGarbagePosterList().then((res) => {
-			this.list = res.data.map(e => ({
-				url: this.ip + e.imgUrl
-			}));
-		})
-		//获取所有垃圾分类搜索热词
-		getGarHotList({
-			params: {
-				pageNum: 1,
-				pageSize: '21'
+	import {
+		getGarbagePosterList,
+		getGarHotList
+	} from "../../config/api.js";
+	export default {
+		data() {
+			return {
+				list: [],
+				keyword: '',
+				hotList: []
 			}
-		}).then((result) => {
-			console.log(result);
-			this.hotList = result.data.map(e => ({
-				keyword: e.keyword,
-			}));
-			console.log(this.hotList);
-		})
-	},
-	methods: {
-		// 搜索
-		search() {
-			uni.navigateTo({
-				url: '/pages/classification/searchDetalis?keyword=' + this.keyword
+		},
+		onLoad() {
+			//获取垃圾分类轮播图
+			getGarbagePosterList().then((res) => {
+				this.list = res.data.map(e => ({
+					url: this.ip + e.imgUrl
+				}));
+			})
+			//获取所有垃圾分类搜索热词
+			getGarHotList({
+				params: {
+					pageNum: 1,
+					pageSize: '21'
+				}
+			}).then((result) => {
+				this.hotList = result.data.map(e => ({
+					keyword: e.keyword,
+				}));
 			})
 		},
-		jump(item) {
-			uni.navigateTo({
-				url: '/pages/classification/searchDetalis?keyword=' + item.keyword
-			})
-		}
-	},
+		methods: {
+			// 搜索
+			search() {
+				uni.navigateTo({
+					url: '/pages/classification/searchDetalis?keyword=' + this.keyword
+				})
+			},
+			jump(item) {
+				uni.navigateTo({
+					url: '/pages/classification/searchDetalis?keyword=' + item.keyword
+				})
+			}
+		},
 
-} 
+	}
 </script>
 
 <style lang="scss">
-.swiper {
-	margin: 15rpx 0;
-}
+	.swiper {
+		margin: 15rpx 0;
+	}
 </style>
