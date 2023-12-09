@@ -113,5 +113,6 @@
 
 	.txt {
 		width: 300rpx;
+		font-size: 30rpx
 	}
 </style>
