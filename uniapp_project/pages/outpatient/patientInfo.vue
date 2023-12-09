@@ -75,7 +75,6 @@
 			confirm(item) {
 				this.show = false
 				this.myCard.birthday = uni.$u.timeFormat(item.value, 'yyyy-mm-dd')
-				console.log(item);
 			},
 			submit() {
 				//判断输入就诊信息是否正确
