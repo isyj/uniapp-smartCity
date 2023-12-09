@@ -9,10 +9,10 @@
 
 		<view class="card">
 			<uni-card :border="false" @click="jumpSearch()" style="background-color: #3c9cff;">
-				<u-button type="primary" text="搜索"></u-button>
+				<text>搜索</text>
 			</uni-card>
 			<uni-card :border="false" @click="jumpClassify()" style="background-color: #f56c6c;">
-				<u-button type="error" text="分类"></u-button>
+				<text>分类</text>
 			</uni-card>
 		</view>
 
@@ -121,6 +121,12 @@ export default {
 
 .card {
 	display: flex;
+	text-align: center;
+
+	text {
+		color: white;
+		font-size: 35rpx;
+	}
 }
 
 .news {

@@ -11,6 +11,7 @@
 		<view>
 			<uni-card>
 				<u--textarea maxlength="30" v-model="content" placeholder="请输入内容" count></u--textarea>
+				<br>
 				<u-button type="error" @click="submit()">提交</u-button>
 			</uni-card>
 		</view>
