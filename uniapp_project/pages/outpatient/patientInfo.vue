@@ -1,6 +1,9 @@
 <template>
 	<view>
-		<view class="card">
+		<u-datetime-picker closeOnClickOverlay :show="show" v-model="value1" mode="date" @cancel="show = false"
+			@close="show = false" @confirm="confirm"></u-datetime-picker>
+
+		<view class=" card">
 			<uni-card>
 				<uni-icons type="right" @click="jump()" style="float: right;"></uni-icons>
 				<u-cell-group :border="false" style="margin-top: 50rpx;">
@@ -8,7 +11,7 @@
 						<input slot="right-icon" type="text" placeholder="请输入家庭住址" v-model="myCard.address" />
 					</u-cell>
 					<u-cell title="出生年月日">
-						<input slot="right-icon" type="text" placeholder="请输入年-月-日" v-model="myCard.birthday" />
+						<text class="txt" slot="right-icon" @click="show = true">{{myCard.birthday}}</text>
 					</u-cell>
 					<u-cell title="身份证">
 						<input slot="right-icon" type="text" placeholder="请输入身份证" v-model="myCard.cardId" />
@@ -43,9 +46,11 @@
 		data() {
 			return {
 				userInfo: {},
+				show: false,
+				value1: Number(new Date()),
 				myCard: {
 					address: '',
-					birthday: '',
+					birthday: '请选择出生日期',
 					cardId: '',
 					name: '',
 					sex: '',
@@ -66,9 +71,15 @@
 			change(item) {
 				this.sex = item
 			},
+			//选择出生日期
+			confirm(item) {
+				this.show = false
+				this.myCard.birthday = uni.$u.timeFormat(item.value, 'yyyy-mm-dd')
+				console.log(item);
+			},
 			submit() {
 				//判断输入就诊信息是否正确
-				let flag = Boolean(this.myCard.address != '' && uni.$u.test.date(this.myCard.birthday) && uni.$u.test
+				let flag = Boolean(this.myCard.address != '' && uni.$u.test
 					.mobile(this.myCard.tel) && uni.$u.test
 					.chinese(this.myCard.name))
 				if (flag) {
@@ -98,5 +109,9 @@
 	input {
 		width: 300rpx;
 		font-size: 30rpx
+	}
+
+	.txt {
+		width: 300rpx;
 	}
 </style>
