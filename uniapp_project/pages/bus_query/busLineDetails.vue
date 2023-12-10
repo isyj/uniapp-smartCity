@@ -28,7 +28,6 @@
 		},
 		onLoad(e) {
 			getBusLineDetails({}, e.id).then(res => {
-				console.log(res);
 				this.data = res.data
 			})
 		},
