@@ -186,3 +186,9 @@ export const getBusLine = (data) => http.get('/prod-api/api/bus/line/list', data
 export const getBusLineDetails = (data, id) => http.get('/prod-api/api/bus/line/' + id, data)
 // get请求，获取巴士路线站点
 export const getBusLineStop = (data) => http.get('/prod-api/api/bus/stop/list', data)
+// get请求，获取巴士订单详情
+export const getBusOrderList = (data) => http.get('/prod-api/api/bus/order/list', data)
+// post请求，提交巴士订单
+export const postBusOrder = (params) => http.post('/prod-api/api/bus/order', params)
+// post请求，支付巴士订单
+export const postPayBusOrder = (params) => http.post('/prod-api/api/bus/pay', params)

@@ -18,9 +18,24 @@
 
 
 		<view>
-			<uni-card :title=" item.name" :sub-title="item.orderNo" :extra="item.orderTypeName"
+			<uni-card :title="item.name" :sub-title="item.orderNo" :extra="item.orderTypeName"
 				v-for="(item,index) in list" :key="index">
 				<text>{{item.orderStatus}}</text>
+			</uni-card>
+			<uni-card :title="item.path" :sub-title="item.orderNum" :extra="item.paymentType"
+				v-for="(item,index) in busList" :key="index">
+				<view class="">
+					上车点：{{item.start}}
+				</view>
+				<view class="">
+					上车点：{{item.end}}
+				</view>
+				<view class="">
+					票价：{{item.price}}元
+				</view>
+				<view class="">
+					支付信息：{{item.status==0?'待支付':'已支付'}}
+				</view>
 			</uni-card>
 		</view>
 
@@ -29,13 +44,15 @@
 
 <script>
 	import {
-		getAllOrder
+		getAllOrder,
+		getBusOrderList
 	} from "../../config/api.js"
 	export default {
 		data() {
 			return {
 				show: false,
 				list: [],
+				busList: [],
 				list4: [{
 					name: '全部订单'
 				}, {
@@ -48,6 +65,8 @@
 					}, {
 						ladel: '电影',
 						orderType: 'movie'
+					}, {
+						ladel: '巴士订单',
 					}]
 				],
 
@@ -56,6 +75,7 @@
 		async onLoad() {
 			await getAllOrder().then(res => {
 				this.list = res.rows
+
 			})
 		},
 		methods: {
@@ -63,6 +83,10 @@
 			clickClassify(item) {
 				if (item.index == 1) {
 					this.show = true
+				} else {
+					getAllOrder().then(res => {
+						this.list = res.rows
+					})
 				}
 			},
 			// 关闭选择器
@@ -73,13 +97,22 @@
 			confirm(item) {
 				this.show = false
 				this.list4[1].name = item.value[0].ladel
-				getAllOrder({
-					params: {
-						orderType: item.value[0].orderType
-					}
-				}).then(res => {
-					this.list = res.rows
-				})
+				if (item.value[0].orderType) {
+					getAllOrder({
+						params: {
+							orderType: item.value[0].orderType
+						}
+					}).then(res => {
+						this.busList = ''
+						this.list = res.rows
+					})
+				} else {
+					getBusOrderList().then(res => {
+						this.list = ''
+						this.busList = res.rows
+					})
+				}
+
 
 			}
 		}

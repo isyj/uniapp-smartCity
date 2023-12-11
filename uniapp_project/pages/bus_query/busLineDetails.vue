@@ -29,6 +29,7 @@
 		},
 		onLoad(e) {
 			this.lineId = e.id
+			// 获取线路详情
 			getBusLineDetails({}, e.id).then(res => {
 				this.data = res.data
 			})

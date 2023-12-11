@@ -314,34 +314,38 @@
 			}
 		},
 		{
-			"path" : "pages/bus_query/custom_shuttle",
-			"style" : 
-			{
-				"navigationBarTitleText" : "智慧巴士",
-				"enablePullDownRefresh" : false
+			"path": "pages/bus_query/custom_shuttle",
+			"style": {
+				"navigationBarTitleText": "智慧巴士",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/bus_query/busLineDetails",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
+			"path": "pages/bus_query/busLineDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/bus_query/busDate",
-			"style" : 
-			{
-				"navigationBarTitleText" : "选择日期",
-				"enablePullDownRefresh" : false
+			"path": "pages/bus_query/busDate",
+			"style": {
+				"navigationBarTitleText": "选择日期",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path" : "pages/bus_query/uploadBusOrder",
+			"path": "pages/bus_query/uploadBusOrder",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path" : "pages/bus_query/payBus",
 			"style" : 
 			{
-				"navigationBarTitleText" : "订单",
+				"navigationBarTitleText" : "支付订单",
 				"enablePullDownRefresh" : false
 			}
 		}
