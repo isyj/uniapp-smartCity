@@ -23,10 +23,12 @@
 	export default {
 		data() {
 			return {
-				data: {}
+				data: {},
+				lineId: ''
 			};
 		},
 		onLoad(e) {
+			this.lineId = e.id
 			getBusLineDetails({}, e.id).then(res => {
 				this.data = res.data
 			})
@@ -34,7 +36,7 @@
 		methods: {
 			jump() {
 				uni.navigateTo({
-					url: '/pages/bus_query/busDate'
+					url: '/pages/bus_query/busDate?lineId=' + this.lineId
 				})
 			}
 		}

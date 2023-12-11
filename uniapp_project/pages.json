@@ -336,6 +336,14 @@
 				"navigationBarTitleText" : "选择日期",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/bus_query/uploadBusOrder",
+			"style" : 
+			{
+				"navigationBarTitleText" : "订单",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
