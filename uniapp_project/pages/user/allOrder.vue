@@ -77,6 +77,10 @@
 				this.list = res.rows
 
 			})
+			await getBusOrderList().then(res => {
+				this.list = ''
+				this.busList = res.rows
+			})
 		},
 		methods: {
 			// 点击订单分类
@@ -86,6 +90,10 @@
 				} else {
 					getAllOrder().then(res => {
 						this.list = res.rows
+					})
+					getBusOrderList().then(res => {
+						this.list = ''
+						this.busList = res.rows
 					})
 				}
 			},

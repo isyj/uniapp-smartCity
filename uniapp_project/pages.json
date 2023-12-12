@@ -348,6 +348,22 @@
 				"navigationBarTitleText" : "支付订单",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/movie/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "看电影",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/movie/movieDetails",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {

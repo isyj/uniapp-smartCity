@@ -192,3 +192,12 @@ export const getBusOrderList = (data) => http.get('/prod-api/api/bus/order/list'
 export const postBusOrder = (params) => http.post('/prod-api/api/bus/order', params)
 // post请求，支付巴士订单
 export const postPayBusOrder = (params) => http.post('/prod-api/api/bus/pay', params)
+
+
+
+// get请求，获取电影轮播图
+export const getMovieSwiper = (data) => http.get('/prod-api/api/movie/rotation/list', data)
+// get请求，查询影片信息列表
+export const getMovieList = (data) => http.get('/prod-api/api/movie/film/list', data)
+// get请求，查询影片信息详情
+export const getMovieDetails = (data, id) => http.get('/prod-api/api/movie/film/detail/' + id, data)
