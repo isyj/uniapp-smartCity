@@ -201,3 +201,17 @@ export const getMovieSwiper = (data) => http.get('/prod-api/api/movie/rotation/l
 export const getMovieList = (data) => http.get('/prod-api/api/movie/film/list', data)
 // get请求，查询影片信息详情
 export const getMovieDetails = (data, id) => http.get('/prod-api/api/movie/film/detail/' + id, data)
+
+
+
+// get请求，获取志愿服务广告轮播图
+export const getVolunteerSwiper = (data) => http.get('/prod-api/api/volunteer-service/ad-banner/list', data)
+// get请求，获取志愿服务新闻列表
+export const getVolunteerNewsList = (data) => http.get('/prod-api/api/volunteer-service/news/list', data)
+// get请求，获取志愿服务新闻详情
+export const getVolunteerNewsDetails = (data, id) => http.get('/prod-api/api/volunteer-service/news/' + id, data)
+// get请求，获取志愿服务活动列表
+export const getVolunteerActivityList = (data) => http.get('/prod-api/api/volunteer-service/activity/list', data)
+// get请求，获取志愿服活动详情
+export const getVolunteerActivityDetails = (data, id) => http.get('/prod-api/api/volunteer-service/activity/' + id,
+	data)

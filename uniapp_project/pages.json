@@ -364,6 +364,46 @@
 				"navigationBarTitleText" : "",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/voluntee/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : "志愿服务",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/voluntee/volunteeNewsList",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/voluntee/Volunteering",
+			"style" : 
+			{
+				"navigationBarTitleText" : "志愿活动",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/voluntee/myActivitity",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的活动",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/voluntee/volunteeringDetails",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
