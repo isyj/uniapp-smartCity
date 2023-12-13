@@ -85,7 +85,6 @@
 		methods: {
 			/* 报名活动 */
 			async signup() {
-				// 发起报名请求
 				await postActivitySignup({
 					activityId: this.activityId
 				}).then(res => {
@@ -94,7 +93,6 @@
 						icon: 'none'
 					})
 				})
-				// 检查是否报名活动
 				await postActivitySignupCheck({
 					params: {
 						activityId: this.activityId
@@ -109,7 +107,6 @@
 			},
 			/* 发表评论 */
 			clickBtn() {
-				//发起评论请求
 				postActivityCommon({
 					activityId: this.activityId,
 					content: this.common
@@ -125,7 +122,6 @@
 						})
 					}
 				})
-				//重新获取评论列表
 				getActivityCommonList({
 					params: {
 						activityId: this.activityId,
@@ -154,7 +150,6 @@
 			loadMore() {
 				this.status = 'loading'
 				this.pageNum += 1
-				//获取更多评论列表
 				getActivityCommonList({
 					params: {
 						activityId: this.activityId,
@@ -174,11 +169,9 @@
 		},
 		onLoad(e) {
 			this.activityId = e.id
-			//获取活动详情
 			getActivityDetails({}, this.activityId).then(res => {
 				this.list = res.data
 			})
-			//获取评论列表
 			getActivityCommonList({
 				params: {
 					activityId: this.activityId,
@@ -188,7 +181,6 @@
 			}).then(res => {
 				this.commonList = res.rows
 			})
-			//获取推荐活动列表
 			getActivityList({
 				params: {
 					recommend: 'Y'
@@ -196,7 +188,6 @@
 			}).then(res => {
 				this.recommendList = res.rows
 			})
-			// 检查是否报名活动
 			postActivitySignupCheck({
 				params: {
 					activityId: this.activityId

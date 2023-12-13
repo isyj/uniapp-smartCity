@@ -13,7 +13,6 @@
 
 <script>
 	import {
-		getDataType,
 		getVolunteerMyActivity
 	} from "../../config/api.js"
 	export default {
