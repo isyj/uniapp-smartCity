@@ -212,6 +212,12 @@ export const getVolunteerNewsList = (data) => http.get('/prod-api/api/volunteer-
 export const getVolunteerNewsDetails = (data, id) => http.get('/prod-api/api/volunteer-service/news/' + id, data)
 // get请求，获取志愿服务活动列表
 export const getVolunteerActivityList = (data) => http.get('/prod-api/api/volunteer-service/activity/list', data)
-// get请求，获取志愿服活动详情
+// get请求，获取志愿服务活动详情
 export const getVolunteerActivityDetails = (data, id) => http.get('/prod-api/api/volunteer-service/activity/' + id,
+	data)
+// post请求，报名/取消报名某场志愿活动
+export const postVolunteerRegister = (params) => http.post('/prod-api/api/volunteer-service/register', params)
+// get请求，获取当前用户活动列表
+export const getVolunteerMyActivity = (data, state) => http.get(
+	'/prod-api/api/volunteer-service/activity/my-list/' + state,
 	data)
